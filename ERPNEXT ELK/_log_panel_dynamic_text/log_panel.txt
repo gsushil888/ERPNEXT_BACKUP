@@ -1,0 +1,439 @@
+<div class="filter-container" data-panel="panel1">
+  <select id="fieldSelect-panel1" onchange="onFieldSelect('panel1')">
+    <option value="">Select a field</option>
+    <option value="formatted_log_timestamp">Formatted Timestamp</option>
+    <option value="timestamp">Timestamp</option>
+    <option value="url">Url</option>
+    <option value="error">Error</option>
+    <option value="email_status">Email Sended</option>
+    <option value="response_code">Response Code</option>
+  </select>
+
+  <input type="text" id="searchFilter-panel1" placeholder="Search by fields" oninput="filterData('panel1')" disabled>
+  <!-- Time filter dropdown -->
+  <select id="timeFilter-panel1" onchange="applyTimeFilter('panel1')">
+    <option value="">Select Time Range</option>
+    <option value="1d">Last 1 Day</option>
+    <option value="7d">Last 7 Days</option>
+    <option value="30d">Last 30 Days</option>
+  </select>
+
+  <button class="download-button" onclick="generateReport('panel1')">
+    <span class="download-icon">🡇</span>
+  </button>
+</div>
+
+
+<div class="accordion-container" id="accordionContainer" data-panel="panel1">
+  {{#each data }}
+  <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+      <strong>Timestamp: </strong> {{formatted_log_timestamp}}
+    </button>
+    <div class="accordion-content">
+      <table class="accordion-table">
+        <tr>
+          <td><strong>Formatted Timestamp:</strong></td>
+          <td>{{formatted_log_timestamp}}</td>
+        </tr>
+        <tr>
+          <td><strong>Log Timestamp:</strong></td>
+          <td>{{timestamp}}</td>
+        </tr>
+        <tr>
+          <td><strong>Url:</strong></td>
+          <td>{{url}}</td>
+        </tr>
+        <tr>
+          <td><strong>Error:</strong></td>
+          <td>{{error}}</td>
+        </tr>
+        <tr>
+          <td><strong>Expected Response Code:</strong></td>
+          <td>{{expected_response_code}}</td>
+        </tr>
+        <tr>
+          <td><strong>Actual Response Code:</strong></td>
+          <td>{{actual_response_code}}</td>
+        </tr>
+        <tr>
+          <td><strong>Response Status Message:</strong></td>
+          <td>{{response_code_status}}</td>
+        </tr>
+        <tr>
+          <td><strong>Response Time:</strong></td>
+          <td>{{response_time}} ms</td>
+        </tr>
+        <tr>
+          <td><strong>Response Time Message:</strong></td>
+          <td>{{response_time_status}}</td>
+        </tr>
+        <tr>
+          <td><strong>Expected Response Content:</strong></td>
+          <td>{{expected_content_status}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+
+-----------------------------------------------
+
+
+let filteredData = [];
+let selectedField = "";
+let isFiltering = false;  // Flag to indicate filtering state
+let refreshIntervalId = null;  // Variable to store the refresh interval ID
+let debounceTimeout = null;  // Store the timeout ID for debouncing
+
+// Function to handle the field selection event based on the panel ID
+onFieldSelect = (panelId) => {
+    const fieldSelect = document.getElementById(`fieldSelect-${panelId}`);
+    selectedField = fieldSelect.value;
+    console.log("Selected field", selectedField);
+    const searchFilter = document.getElementById(`searchFilter-${panelId}`);
+    if (selectedField) {
+        searchFilter.disabled = false;
+    } else {
+        searchFilter.disabled = true;
+        searchFilter.value = "";
+    }
+
+    // Filter data based on the field selection
+    filterData(panelId);
+};
+
+// Function to filter data based on the selected field and search query
+filterData = (panelId) => {
+    isFiltering = true;  // Set the filtering flag to true
+
+    const searchValue = document.getElementById(`searchFilter-${panelId}`).value.toLowerCase();
+    const values = context.data;
+    const dataArray = Array.isArray(values) ? values : Object.values(values);
+    console.log(selectedField);
+
+    if (selectedField) {
+        filteredData = dataArray.filter(item => {
+            const fieldValue = item[selectedField];
+            return fieldValue && fieldValue.toString().toLowerCase().includes(searchValue);
+        });
+    } else {
+        filteredData = dataArray;
+    }
+
+    updateCardUI(panelId, filteredData);
+
+    // Stop the data refresh while filtering
+    if (refreshIntervalId) {
+        clearInterval(refreshIntervalId);
+    }
+};
+
+// Function to update the UI for the specific panel based on filtered data
+updateCardUI = (panelId, filteredData) => {
+    const accordionContainer = document.querySelector(`#accordionContainer[data-panel="${panelId}"]`);
+    accordionContainer.innerHTML = '';
+
+    filteredData.forEach(item => {
+        const accordionItem = document.createElement("div");
+        accordionItem.classList.add("accordion-item");
+
+        const accordionHeader = document.createElement("button");
+        accordionHeader.classList.add("accordion-header");
+        accordionHeader.innerHTML = `<strong>Timestamp: </strong> ${item["formatted_log_timestamp"]}`;
+        accordionHeader.onclick = () => toggleAccordion(accordionHeader);
+
+        const accordionContent = document.createElement("div");
+        accordionContent.classList.add("accordion-content");
+
+        let tableHTML = "<table class='accordion-table'>";
+        for (const [key, value] of Object.entries(item)) {
+            if (key === "id") continue;
+            tableHTML += `
+                <tr>
+                    <td><strong>${capitalizeFirstLetter(key.replace(/_/g, " "))}:</strong></td>
+                    <td>${value}</td>
+                </tr>
+            `;
+        }
+        tableHTML += "</table>";
+        accordionContent.innerHTML = tableHTML;
+        accordionContent.style.display = "none";
+
+        accordionItem.appendChild(accordionHeader);
+        accordionItem.appendChild(accordionContent);
+        accordionContainer.appendChild(accordionItem);
+    });
+};
+
+// Helper function to capitalize the first letter of each word
+function capitalizeFirstLetter(str) {
+    return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+// Function to start the refresh of the data (simulating Grafana data refresh)
+const startDataRefresh = () => {
+    refreshIntervalId = setInterval(() => {
+        console.log("Refreshing data...");
+        // You would typically call an API here to fetch fresh data
+        // Example:
+        // fetchDataAndUpdateUI();
+    }, 10000);  // Refresh every 10 seconds (adjust as needed)
+};
+
+// Function to stop refreshing data
+const stopDataRefresh = () => {
+    if (refreshIntervalId) {
+        clearInterval(refreshIntervalId);
+        refreshIntervalId = null;
+    }
+};
+
+// Function to generate and download the report based on the panelId
+generateReport = (panelId) => {
+    const dataArray = filteredData.length > 0 ? filteredData : context.data;
+
+    const accordionContainer = document.querySelector(`.accordion-container[data-panel="${panelId}"]`);
+    if (!accordionContainer) {
+        console.error(`Accordion container with data-panel="${panelId}" not found.`);
+        return;
+    }
+
+    const firstAccordionContent = accordionContainer.querySelector(".accordion-content");
+    if (!firstAccordionContent) {
+        console.error("Accordion content not found.");
+        return;
+    }
+
+    firstAccordionContent.style.display = "block";
+
+    const headers = Array.from(firstAccordionContent.querySelectorAll("tr")).map(row => {
+        const headerCell = row.querySelector("td strong");
+        return headerCell ? headerCell.textContent.replace(":", "").trim() : "";
+    }).filter(header => header);
+
+    firstAccordionContent.style.display = "none";
+
+    let csvContent = headers.join(",") + "\n";
+
+    dataArray.forEach(item => {
+        const rowData = headers.map(header => {
+            const fieldKey = Object.keys(item).find(key => key.replace(/_/g, " ").toLowerCase() === header.toLowerCase());
+            return item[fieldKey] || "";
+        });
+        csvContent += rowData.join(",") + "\n";
+    });
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", `report_${panelId}.csv`);
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+};
+
+// Function to toggle the accordion's content visibility
+toggleAccordion = (element) => {
+    const accordionContent = element.nextElementSibling;
+
+    if (accordionContent.style.display === "block") {
+        accordionContent.style.display = "none";
+    } else {
+        const allContents = document.querySelectorAll(".accordion-content");
+        allContents.forEach(content => content.style.display = "none");
+        accordionContent.style.display = "block";
+    }
+};
+
+// Event listener to initialize accordion toggle behavior
+document.addEventListener("DOMContentLoaded", () => {
+    const allHeaders = document.querySelectorAll(".accordion-header");
+    allHeaders.forEach(header => {
+        header.addEventListener("click", () => toggleAccordion(header));
+    });
+
+    // Start refreshing data when the page loads
+    startDataRefresh();
+});
+
+// Event listener for search input with debounce
+document.getElementById("searchFilter-panel1").addEventListener("input", (event) => {
+    clearTimeout(debounceTimeout); // Clear any previous debounce timeout
+
+    // Wait for a short delay before triggering filterData (debounce)
+    debounceTimeout = setTimeout(() => {
+        if (!event.target.value) {
+            // If the search field is cleared, resume the refresh
+            isFiltering = false;
+            startDataRefresh();
+        } else {
+            filterData("panel1");  // Call the filter function after a short delay
+        }
+    }, 300); // 300ms debounce delay (adjust as needed)
+});
+
+---------------------------------------
+
+/* Container to align filter and button side by side */
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space between the elements */
+    flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+    margin-bottom: 10px; /* Space between the filters and the cards */
+}
+
+/* Style for the input field and dropdown */
+label {
+    font-size: 12px;
+    margin-bottom: 2px;
+    color: #333;
+}
+
+select, input[type="text"] {
+    padding: 6px 8px; /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    max-width: 130px; /* Set maximum width for better alignment */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Style for the input field */
+input[type="text"] {
+    transition: border-color 0.3s ease;
+}
+
+/* Focus state for input and dropdown */
+select:focus, input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Style for the download button */
+.download-button {
+    padding: 3px 10px; /* Reduced padding */
+    background-color: #007bff;
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Space between icon and text */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the download button */
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the download icon */
+.download-icon {
+    font-size: 18px;
+}
+
+/* Style for the card container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+/* Style for each log card */
+.log-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for cards */
+.log-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Text styling inside the log cards */
+.log-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    select, input[type="text"], .download-button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .log-card {
+        width: 100%;
+        max-width: 90%;
+    }
+}
+
+.accordion-container {
+  margin-top: 10px;
+}
+
+.accordion-item {
+  margin-bottom: 6px;
+}
+
+.accordion-header {
+  background-color: #0073e6;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  background-color: #43473e;
+}
+.accordion-content {
+  display: none;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.accordion-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.accordion-table td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+}
+
+.accordion-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

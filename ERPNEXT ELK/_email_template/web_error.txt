@@ -1,0 +1,52 @@
+--------OLD-----------
+
+Dear Team,
+
+I hope this message finds you well.
+We are currently facing an exception/error in the web server. 
+Below are the details for your reference:
+
+There are {{ len .Alerts.Firing }} firing alert(s),
+======================
+{{ range .Alerts }}{{ range  $key, $value := .Labels }}{{ if eq $key "log_level.keyword" }}
+LOG LEVEL = {{ $value }}{{ else if eq $key "process_id.keyword" }}
+PROCESS ID = {{ $value }}{{ else if eq $key "log_message.keyword" }}
+LOG MESSAGE = {{ $value }}{{ else if eq $key "process_instance.keyword" }}
+PROCESS INSTANCE = {{ $value }}{{ else if eq $key "@timestamp.keyword" }}
+TIMESTAMP = {{ $value }}{{ end }}{{ end }}
+======================{{ end }}
+Please investigate this issue at your earliest convenience.
+Thank you for your attention to this matter.
+
+Best regards.
+
+
+---------NEW--------
+
+Dear Team,
+
+I hope this message finds you well.
+We are currently facing an exception/error in the web server. 
+Below are the details for your reference:
+
+{{ if eq (len .Alerts.Firing) 0 }}There are no web server error occurred.{{ else if eq (len .Alerts.Firing) 1 }}
+There is 1 web server error occurred.{{ else }}
+There are {{ len .Alerts.Firing }} web server error occurred.{{ end }}
+
+======================{{ range .Alerts }}
+Alert Started At: {{ .StartsAt | date "02-Jan-2006 03:04:05 PM UTC" }}{{ range  $key, $value := .Labels }}{{ if eq $key "log_level.keyword" }}
+LOG LEVEL = {{ $value }}{{ else if eq $key "process_id.keyword" }}
+PROCESS ID = {{ $value }}{{ else if eq $key "log_message.keyword" }}
+LOG MESSAGE = {{ $value }}{{ else if eq $key "process_instance.keyword" }}
+PROCESS INSTANCE = {{ $value }}{{ else if eq $key "@timestamp.keyword" }}
+TIMESTAMP = {{ $value }} IST{{ end }}{{ end }}
+======================{{ end }}
+
+Please investigate this issue at your earliest convenience.
+Thank you for your attention to this matter.
+
+Best regards.
+
+
+-------Payload--------
+

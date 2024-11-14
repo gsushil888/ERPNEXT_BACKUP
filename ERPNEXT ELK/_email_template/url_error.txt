@@ -1,0 +1,129 @@
+----NEW-------
+
+
+-----
+
+Dear Team,
+
+I hope this message finds you well.
+Url is not working and need to check it on immediate basis.
+Below are the details for your reference:
+======================
+{{ range .Alerts }}Start at: {{ .StartsAt  | date "02-Jan-2006 03:04:05 PM" }} UTC{{ range  $key, $value := .Labels }}{{ if eq $key "url.keyword" }}
+URL = {{ $value }}{{ else if eq $key "formatted_log_timestamp.keyword" }}
+TIMESTAMP = {{ $value }} IST{{ else if eq $key "error.keyword" }}
+ERROR = {{ $value }}{{ else if eq $key "email_status.keyword" }}
+EMAIL STATUS = {{ $value }}{{ else if eq $key "actual_response_code.keyword" }}
+ACTUAL RESPONSE CODE = {{ $value }}{{ else if eq $key "expected_response_code.keyword" }}
+EXPECTED RESPONSE CODE = {{ $value }}{{ else if eq $key "response_code_status.keyword" }}
+RESPONSE CODE STATUS = {{ $value }}{{ else if eq $key "response_time_status.keyword" }}
+RESPONSE TIME STATUS = {{ $value }}{{ else if eq $key "response_time.keyword" }}
+RESPONSE TIME = {{ $value }} ms{{ else if eq $key "url_processed.keyword" }}
+URL PROCESSED = {{ $value }}{{ end }}{{ end }}
+======================
+{{ end }}
+
+
+Best regards.
+
+--------Payload---------
+
+[
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "1",
+      "__value_string__": "[ var='C' labels={actual_response_code.keyword=200, email_status.keyword=Success, error.keyword=N/A, expected_response_code.keyword=200, formatted_log_timestamp.keyword=07-Nov-2024 11:39:07 AM, response_code_status.keyword=Matches expected code., response_time.keyword=837, response_time_status.keyword=Exceeded expected range., url.keyword=https://erpnext.jfs.in/} value=1 ], [ var='D' labels={actual_response_code.keyword=200, email_status.keyword=Success, error.keyword=N/A, expected_response_code.keyword=200, formatted_log_timestamp.keyword=07-Nov-2024 11:39:07 AM, response_code_status.keyword=Matches expected code., response_time.keyword=837, response_time_status.keyword=Exceeded expected range., url.keyword=https://erpnext.jfs.in/} value=1 ]",
+      "__values__": "{\"C\":1,\"D\":1}",
+      "description": "URL is having working having error while loading",
+      "summary": "URL is having working having error while loading"
+    },
+    "labels": {
+      "URL": "ERROR",
+      "__alert_rule_uid__": "fe1irey3gc4xsc",
+      "actual_response_code.keyword": "200",
+      "alertname": "Url having Error",
+      "email_status.keyword": "Success",
+      "error.keyword": "N/A",
+      "expected_response_code.keyword": "200",
+      "formatted_log_timestamp.keyword": "07-Nov-2024 11:39:07 AM",
+      "grafana_folder": "NOT PERMITTED FOLDER/URL SYNTHETIC MONITORING",
+      "response_code_status.keyword": "Matches expected code.",
+      "response_time.keyword": "837",
+      "response_time_status.keyword": "Exceeded expected range.",
+      "url.keyword": "https://erpnext.jfs.in/"
+    },
+    "startsAt": "2024-11-07T06:09:30.000Z",
+    "endsAt": "2024-11-07T06:14:00.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/fe1irey3gc4xsc/view",
+    "fingerprint": "42ab0e27e10a8ac4"
+  },
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "1",
+      "__value_string__": "[ var='C' labels={actual_response_code.keyword=200, email_status.keyword=Success, error.keyword=N/A, expected_response_code.keyword=200, formatted_log_timestamp.keyword=07-Nov-2024 11:40:31 AM, response_code_status.keyword=Matches expected code., response_time.keyword=859, response_time_status.keyword=Exceeded expected range., url.keyword=https://erpnext.jfs.in/} value=1 ], [ var='D' labels={actual_response_code.keyword=200, email_status.keyword=Success, error.keyword=N/A, expected_response_code.keyword=200, formatted_log_timestamp.keyword=07-Nov-2024 11:40:31 AM, response_code_status.keyword=Matches expected code., response_time.keyword=859, response_time_status.keyword=Exceeded expected range., url.keyword=https://erpnext.jfs.in/} value=1 ]",
+      "__values__": "{\"C\":1,\"D\":1}",
+      "description": "URL is having working having error while loading",
+      "summary": "URL is having working having error while loading"
+    },
+    "labels": {
+      "URL": "ERROR",
+      "__alert_rule_uid__": "fe1irey3gc4xsc",
+      "actual_response_code.keyword": "200",
+      "alertname": "Url having Error",
+      "email_status.keyword": "Success",
+      "error.keyword": "N/A",
+      "expected_response_code.keyword": "200",
+      "formatted_log_timestamp.keyword": "07-Nov-2024 11:40:31 AM",
+      "grafana_folder": "NOT PERMITTED FOLDER/URL SYNTHETIC MONITORING",
+      "response_code_status.keyword": "Matches expected code.",
+      "response_time.keyword": "859",
+      "response_time_status.keyword": "Exceeded expected range.",
+      "url.keyword": "https://erpnext.jfs.in/"
+    },
+    "startsAt": "2024-11-07T06:11:00.000Z",
+    "endsAt": "2024-11-07T06:14:30.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/fe1irey3gc4xsc/view",
+    "fingerprint": "d010917e035669f7"
+  }
+]
+
+
+[
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "1",
+      "__value_string__": "[ var='C' labels={actual_response_code.keyword=502, email_status.keyword=Success, error.keyword=N/A, expected_response_code.keyword=200, formatted_log_timestamp.keyword=14-Nov-2024 04:30:02 PM, response_code_status.keyword=Does not match expected code., response_time.keyword=692, response_time_status.keyword=Within expected range., url.keyword=https://drerpnext.jfs.in/} value=1 ], [ var='D' labels={actual_response_code.keyword=502, email_status.keyword=Success, error.keyword=N/A, expected_response_code.keyword=200, formatted_log_timestamp.keyword=14-Nov-2024 04:30:02 PM, response_code_status.keyword=Does not match expected code., response_time.keyword=692, response_time_status.keyword=Within expected range., url.keyword=https://drerpnext.jfs.in/} value=1 ]",
+      "__values__": "{\"C\":1,\"D\":1}",
+      "description": "URL is having working having error while loading",
+      "summary": "URL is having working having error while loading"
+    },
+    "labels": {
+      "URL": "ERROR",
+      "__alert_rule_uid__": "fe1irey3gc4xsc",
+      "actual_response_code.keyword": "502",
+      "alertname": "Url having Error",
+      "email_status.keyword": "Success",
+      "error.keyword": "N/A",
+      "expected_response_code.keyword": "200",
+      "formatted_log_timestamp.keyword": "14-Nov-2024 04:30:02 PM",
+      "grafana_folder": "NOT PERMITTED FOLDER/URL SYNTHETIC MONITORING",
+      "response_code_status.keyword": "Does not match expected code.",
+      "response_time.keyword": "692",
+      "response_time_status.keyword": "Within expected range.",
+      "url.keyword": "https://drerpnext.jfs.in/"
+    },
+    "startsAt": "2024-11-14T11:01:30.000Z",
+    "endsAt": "2024-11-14T11:04:30.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/fe1irey3gc4xsc/view",
+    "fingerprint": "a947a41f9bf390d1"
+  }
+]
