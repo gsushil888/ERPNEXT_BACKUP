@@ -1,7 +1,7 @@
 -------------------ERPNEXT_JFL_JFS---------------------------------------
 PRODAPP (10.100.21.216)    -------   DRAPP (10.200.41.138)
 PRODDB (10.100.22.142)    -------   DRDB (10.200.42.66)
-PRODWEB (10.100.23.226)    -------   DRWEB (10.200.41.138)
+PRODWEB (10.100.23.226)    -------   DRWEB (10.200.43.223)
 
 
 -------------------BLACKROCK_WMC---------------------------------------
@@ -13,3 +13,5 @@ PRODJIOBLKWMCPROXY (10.100.29.213)
 PRODJIOBLKAMCAPP (10.100.27.52) 
 PRODJIOBLKAMCDB (10.100.28.19) 
 PRODJIOBLKAMCPROXY (10.100.29.115) 
+
+/elkapp/app/blackrocklogs/
