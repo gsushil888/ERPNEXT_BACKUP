@@ -1,0 +1,55 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  scan_frequency: 30s
+  paths:
+    - /elkapp/app/DClogs/synthetic-monitoring-DC.log
+  multiline:
+      pattern: 'Starting processing for URL'
+      #pattern: '^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2},\\d{3} \\[main\\] INFO  - Starting processing for URL'
+      negate: true
+      match: after
+      max_lines: 1000
+      timeout: 60s
+  fields:
+    app: synthetic-log
+    environment: "DC"
+    category: "ERPNEXT"
+  fields_under_root: true
+  encoding: utf-8
+- type: log
+  enabled: true
+  scan_frequency: 30s
+  paths:
+    - /elkapp/app/DRlogs/synthetic-monitoring-DR.log
+  multiline:
+      pattern: 'Starting processing for URL'
+      #pattern: '^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2},\\d{3} \\[main\\] INFO  - Starting processing for URL'
+      negate: true
+      match: after
+      max_lines: 1000
+      timeout: 60s
+  fields:
+    app: synthetic-log
+    environment: "DR"
+    category: "ERPNEXT"
+  fields_under_root: true
+  encoding: utf-8
+- type: log
+  enabled: true
+  scan_frequency: 30s
+  paths:
+    - /elkapp/app/blackrocklogs/synthetic-monitoring-DC.log
+  multiline:
+      pattern: 'Starting processing for URL'
+      #pattern: '^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2},\\d{3} \\[main\\] INFO  - Starting processing for URL'
+      negate: true
+      match: after
+      max_lines: 1000
+      timeout: 60s
+  fields:
+    app: synthetic-log
+    environment: "DC"
+    category: "BLACKROCK_WMC"
+  fields_under_root: true
+  encoding: utf-8

@@ -1,1 +1,342 @@
-{"apiVersion":1,"contactPoints":[{"orgId":1,"name":"Application  Disaster Recovery(DR) Sync Notification","receivers":[{"uid":"ae280ntbt66m8b","type":"email","settings":{"addresses":"erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nThe Disaster Recovery sync of the application has not occurred within the last hour\nBelow are the details for your reference:\n======================\n{{ range .Alerts }}{{ range  $key, $value := .Labels }}{{ if eq $key \"hostname.keyword\" }}\nHOST NAME = {{ $value }}{{ else if eq $key \"log_timestamp.keyword\" }}\nLOG TIMESTAMP= {{ $value }}{{ else if eq $key \"formatted_log_timestamp.keyword\" }}\nFORMATTED TIMESTAMP = {{ $value }}{{ else if eq $key \"user.keyword\" }}\nUSER = {{ $value }}{{ else if eq $key \"pid.keyword\" }}\nPID = {{ $value }}{{ else if eq $key \"command.keyword\" }}\nCOMMAND = {{ $value }}{{ end }}{{ end }}\n======================\n{{ end }}\n\n\nBest regards.","singleEmail":false,"subject":"Infra Alert: Application Disaster Recovery(DR) Sync not happened"},"disableResolveMessage":true},{"uid":"fe0cpb0sbrldsc","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nThe Disaster Recovery sync of the application has not occurred within the last hour\nBelow are the details for your reference:\n======================\n{{ range .Alerts }}{{ range  $key, $value := .Labels }}{{ if eq $key \"hostname.keyword\" }}\nHOST NAME = {{ $value }}{{ else if eq $key \"log_timestamp.keyword\" }}\nLOG TIMESTAMP= {{ $value }}{{ else if eq $key \"formatted_log_timestamp.keyword\" }}\nFORMATTED TIMESTAMP = {{ $value }}{{ else if eq $key \"user.keyword\" }}\nUSER = {{ $value }}{{ else if eq $key \"pid.keyword\" }}\nPID = {{ $value }}{{ else if eq $key \"command.keyword\" }}\nCOMMAND = {{ $value }}{{ end }}{{ end }}\n======================\n{{ end }}\n\n\nBest regards.","singleEmail":false,"subject":"Infra Alert: Application Disaster Recovery(DR) Sync not happened"},"disableResolveMessage":true}]},{"orgId":1,"name":"Application Backup Job Monitoring Notification","receivers":[{"uid":"ae280sbadnuo0b","type":"email","settings":{"addresses":"erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nApplication backup job activity not occurred of last day.\n\nBest regards.","singleEmail":false,"subject":"Infra Alert: Application Backup Job Activity Not Happened"},"disableResolveMessage":true},{"uid":"ee0tjv958q9s0a","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nApplication backup job activity not occurred of last day.\n\nBest regards.","singleEmail":false,"subject":"Infra Alert: Application Backup Job Activity Not Happened"},"disableResolveMessage":true}]},{"orgId":1,"name":"Application Error Notification","receivers":[{"uid":"ce0th2rc3yebkb","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com,erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nWe are currently facing an exception/error in the application.\nBelow are the details for your reference:\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no exception or error occurred in application.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 exception or error occurred in application.{{ else }}\nThere are {{ len .Alerts.Firing }} exception or error occurred in application.{{ end }}\n\n======================{{ range .Alerts }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM UTC\" }}{{ range  $key, $value := .Labels }}{{ if eq $key \"log_level.keyword\" }}\nLOG LEVEL = {{ $value }}{{ else if eq $key \"log_message.keyword\" }}\nLOG MESSAGE = {{ $value }}{{ else if eq $key \"formatted_log_timestamp.keyword\" }}\nLOG TIMESTAMP = {{ $value }} IST{{ else if eq $key \"payload_json.keyword\" }}\nPAYLOAD = {{ $value }}{{ end }}{{ end }}\n======================{{ end }}\n\nPlease investigate this issue at your earliest convenience.\nThank you for your attention to this matter.\n\nBest regards","singleEmail":false,"subject":"Application Alert: Application Exception/Error Occurred"},"disableResolveMessage":true}]},{"orgId":1,"name":"Cpu Idle Below Notification","receivers":[{"uid":"be0clyw27z7k0d","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers with CPU idle percentages below 20%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server with a CPU idle percentage below 20%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers with CPU idle percentages below 20%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu Idle(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}","singleEmail":false,"subject":"Infra Alert: Cpu Idle percentage goes below"},"disableResolveMessage":true},{"uid":"de2811xqtnxtsb","type":"email","settings":{"addresses":"erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers with CPU idle percentages below 20%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server with a CPU idle percentage below 20%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers with CPU idle percentages below 20%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu Idle(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}","singleEmail":false,"subject":"Infra Alert: Cpu Idle percentage goes below"},"disableResolveMessage":true}]},{"orgId":1,"name":"Cpu System Usage Above Notification","receivers":[{"uid":"ae0cn38f04rggd","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having cpu system usage percentages goes above 80%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having cpu system usage percentages goes above 80%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having cpu system usage percentages goes above 80%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu system's process utilization(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}","singleEmail":false,"subject":"Infra Alert: Cpu system usage goes above"},"disableResolveMessage":true},{"uid":"fe28194bw98n4c","type":"email","settings":{"addresses":"erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having cpu system usage percentages goes above 80%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having cpu system usage percentages goes above 80%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having cpu system usage percentages goes above 80%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu system's process utilization(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}","singleEmail":false,"subject":"Infra Alert: Cpu system usage goes above"},"disableResolveMessage":true}]},{"orgId":1,"name":"Cpu User Usage Above Notification","receivers":[{"uid":"ee0cmq0b4cwlcf","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having cpu user usage percentages goes above 80%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having cpu user usage percentages goes above 80%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having cpu user usage percentages goes above 80%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu user's process utilization(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}\n","singleEmail":false,"subject":"Infra Alert: Cpu User Usage Exceeds "},"disableResolveMessage":true},{"uid":"ee281bjgcrev4a","type":"email","settings":{"addresses":"erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having cpu user usage percentages goes above 80%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having cpu user usage percentages goes above 80%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having cpu user usage percentages goes above 80%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu user's process utilization(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}\n","singleEmail":false,"subject":"Infra Alert: Cpu User Usage Exceeds "},"disableResolveMessage":true}]},{"orgId":1,"name":"Database Backup Job Monitoring Notification","receivers":[{"uid":"de281fywvwu80f","type":"email","settings":{"addresses":"erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nDatabase backup job activity not occurred of last day.\n\nBest regards.","singleEmail":false,"subject":"Infra Alert: Database Backup Job Activity Not Happened"},"disableResolveMessage":true},{"uid":"fe0tk9qe8fz7kc","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nDatabase backup job activity not occurred of last day.\n\nBest regards.","singleEmail":false,"subject":"Infra Alert: Database Backup Job Activity Not Happened"},"disableResolveMessage":true}]},{"orgId":1,"name":"Database Long Running Queries Notification ","receivers":[{"uid":"fe0coimtsa3ggf","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com,erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\nWe are currently facing an issue with long-running queries in the database.\nBelow are the details for your reference:\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no long running queries occurred.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 long running queries occurred.{{ else }}\nThere are {{ len .Alerts.Firing }} long running queries occurred.{{ end }}\n\n======================\n{{ range .Alerts }}Alert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM UTC\" }}{{ range $key, $value := .Labels }}{{ if eq $key \"log_time.keyword\" }}\nLOG TIME = {{ $value }} IST{{ else if eq $key \"log_date.keyword\" }}\nLOG DATE = {{ $value }} IST{{ else if eq $key \"connection_string.keyword\" }}\nCONNECTION STRING = {{ $value }}{{ else if eq $key \"query_statement.keyword\" }}\nQUERY STATEMENT = {{ $value }}{{ else if eq $key \"host_ip.keyword\" }}\nHOST IP = {{ $value }}{{ else if eq $key \"user_id.keyword\" }}\nUSER ID = {{ $value }}{{ else if eq $key \"log_timestamp.keyword\" }}\nLOG TIMESTAMP = {{ $value }}{{ else if eq $key \"query_time\" }} \nQUERY TIME = {{ $value }} seconds {{ end }}{{ end }} \n======================\n{{ end }}\n\nPlease investigate this issue at your earliest convenience.\nThank you for your attention to this matter.\n\nBest regards.","singleEmail":false,"subject":"Application Alert : Database Long Running Queries"},"disableResolveMessage":true}]},{"orgId":1,"name":"Memory Usage Above Notification","receivers":[{"uid":"ee0ti9vq1845ce","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having memory usage goes above 95%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having memory usage goes above 95%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having memory usage goes above 95%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nAvaiable Memory(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}","singleEmail":false,"subject":"Infra Alert : Memory usage goes above"},"disableResolveMessage":true},{"uid":"ee27sgay0nnr4b","type":"email","settings":{"addresses":"erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having memory usage goes above 95%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having memory usage goes above 95%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having memory usage goes above 95%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nAvaiable Memory(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}","singleEmail":false,"subject":"Infra Alert : Memory usage goes above"},"disableResolveMessage":true}]},{"orgId":1,"name":"Ping or Reachability Notification","receivers":[{"uid":"be2820mi8r4lca","type":"email","settings":{"addresses":"erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers which is not reachable or pingable{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server which is not reachable or pingable{{ else }}\nThere are {{ len .Alerts.Firing }} servers which are not reachable or pingable{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"servername.keyword\") }}\nIp: {{ (index .Labels \"url.domain.keyword\") }}\n==============================\n{{ end }}","singleEmail":false,"subject":"Infra Alert :  Servers not reachable or pingable"},"disableResolveMessage":true},{"uid":"ee0tj0y3kudj4a","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers which is not reachable or pingable{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server which is not reachable or pingable{{ else }}\nThere are {{ len .Alerts.Firing }} servers which are not reachable or pingable{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"servername.keyword\") }}\nIp: {{ (index .Labels \"url.domain.keyword\") }}\n==============================\n{{ end }}","singleEmail":false,"subject":"Infra Alert :  Servers not reachable or pingable"},"disableResolveMessage":true}]},{"orgId":1,"name":"Redis Job Monitoring Notification","receivers":[{"uid":"be2823ptiuygwc","type":"email","settings":{"addresses":"erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nRedis  services are  not running\n\nBest regards.","singleEmail":false,"subject":"Infra Alert:  Redis is not in running state"},"disableResolveMessage":true},{"uid":"ee0tktus2w7i8c","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nRedis  services are  not running\n\nBest regards.","singleEmail":false,"subject":"Infra Alert:  Redis is not in running state"},"disableResolveMessage":true}]},{"orgId":1,"name":"Url not working","receivers":[{"uid":"ae1irnxje0nb4f","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nUrl is not working and need to check it on immediate basis.\nBelow are the details for your reference:\n======================\n{{ range .Alerts }}Start at: {{ .StartsAt  | date \"02-Jan-2006 03:04:05 PM\" }} UTC{{ range  $key, $value := .Labels }}{{ if eq $key \"url.keyword\" }}\nURL = {{ $value }}{{ else if eq $key \"formatted_log_timestamp.keyword\" }}\nTIMESTAMP = {{ $value }} IST{{ else if eq $key \"error.keyword\" }}\nERROR = {{ $value }}{{ else if eq $key \"email_status.keyword\" }}\nEMAIL STATUS = {{ $value }}{{ else if eq $key \"actual_response_code.keyword\" }}\nACTUAL RESPONSE CODE = {{ $value }}{{ else if eq $key \"expected_response_code.keyword\" }}\nEXPECTED RESPONSE CODE = {{ $value }}{{ else if eq $key \"response_code_status.keyword\" }}\nRESPONSE CODE STATUS = {{ $value }}{{ else if eq $key \"response_time_status.keyword\" }}\nRESPONSE TIME STATUS = {{ $value }}{{ else if eq $key \"response_time.keyword\" }}\nRESPONSE TIME = {{ $value }} ms{{ else if eq $key \"url_processed.keyword\" }}\nURL PROCESSED = {{ $value }}{{ end }}{{ end }}\n======================\n{{ end }}\n\n\nBest regards.","singleEmail":false,"subject":"Application Alert: {{ range .Alerts }}{{ if ne (index .Labels \"error.keyword\") \"N/A\" }} URL is not working {{ else if (ne (index .Labels \"response_time_status.keyword\") \"Within expected range.\") }} Time exceeded {{ else if (eq (index .Labels \"response_code_status.keyword\") \"Does not match expected code.\") }} Response code does not match {{ end }}{{ end }}"},"disableResolveMessage":true}]},{"orgId":1,"name":"Web Server Error Notification","receivers":[{"uid":"be0tikzc2xvk0d","type":"email","settings":{"addresses":"tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com,erpnextsupport@cloverinfotech.com","message":"Dear Team,\n\nI hope this message finds you well.\nWe are currently facing an exception/error in the web server. \nBelow are the details for your reference:\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no web server error occurred.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 web server error occurred.{{ else }}\nThere are {{ len .Alerts.Firing }} web server error occurred.{{ end }}\n\n======================{{ range .Alerts }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM UTC\" }}{{ range  $key, $value := .Labels }}{{ if eq $key \"log_level.keyword\" }}\nLOG LEVEL = {{ $value }}{{ else if eq $key \"process_id.keyword\" }}\nPROCESS ID = {{ $value }}{{ else if eq $key \"log_message.keyword\" }}\nLOG MESSAGE = {{ $value }}{{ else if eq $key \"process_instance.keyword\" }}\nPROCESS INSTANCE = {{ $value }}{{ else if eq $key \"@timestamp.keyword\" }}\nTIMESTAMP = {{ $value }} IST{{ end }}{{ end }}\n======================{{ end }}\n\nPlease investigate this issue at your earliest convenience.\nThank you for your attention to this matter.\n\nBest regards.","singleEmail":false,"subject":"Application Alert : Web Server is having errors"},"disableResolveMessage":true}]},{"orgId":1,"name":"grafana-default-email","receivers":[{"uid":"adzu88ybrepkwf","type":"email","settings":{"addresses":"tmail7458@gmail.com","message":"Default Template","singleEmail":false,"subject":"Default Template"},"disableResolveMessage":true}]}]}
+{
+    "apiVersion": 1,
+    "contactPoints": [
+        {
+            "orgId": 1,
+            "name": "Application  Disaster Recovery(DR) Sync Notification",
+            "receivers": [
+                {
+                    "uid": "ae280ntbt66m8b",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nThe Disaster Recovery sync of the application has not occurred within the last hour\nBelow are the details for your reference:\n======================\n{{ range .Alerts }}{{ range  $key, $value := .Labels }}{{ if eq $key \"hostname.keyword\" }}\nHOST NAME = {{ $value }}{{ else if eq $key \"log_timestamp.keyword\" }}\nLOG TIMESTAMP= {{ $value }}{{ else if eq $key \"formatted_log_timestamp.keyword\" }}\nFORMATTED TIMESTAMP = {{ $value }}{{ else if eq $key \"user.keyword\" }}\nUSER = {{ $value }}{{ else if eq $key \"pid.keyword\" }}\nPID = {{ $value }}{{ else if eq $key \"command.keyword\" }}\nCOMMAND = {{ $value }}{{ end }}{{ end }}\n======================\n{{ end }}\n\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Application Disaster Recovery(DR) Sync not happened"
+                    },
+                    "disableResolveMessage": true
+                },
+                {
+                    "uid": "fe0cpb0sbrldsc",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nThe Disaster Recovery sync of the application has not occurred within the last hour\nBelow are the details for your reference:\n======================\n{{ range .Alerts }}{{ range  $key, $value := .Labels }}{{ if eq $key \"hostname.keyword\" }}\nHOST NAME = {{ $value }}{{ else if eq $key \"log_timestamp.keyword\" }}\nLOG TIMESTAMP= {{ $value }}{{ else if eq $key \"formatted_log_timestamp.keyword\" }}\nFORMATTED TIMESTAMP = {{ $value }}{{ else if eq $key \"user.keyword\" }}\nUSER = {{ $value }}{{ else if eq $key \"pid.keyword\" }}\nPID = {{ $value }}{{ else if eq $key \"command.keyword\" }}\nCOMMAND = {{ $value }}{{ end }}{{ end }}\n======================\n{{ end }}\n\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Application Disaster Recovery(DR) Sync not happened"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Application Backup Job Monitoring Notification",
+            "receivers": [
+                {
+                    "uid": "ae280sbadnuo0b",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nApplication backup job activity not occurred of last day.\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Application Backup Job Activity Not Happened"
+                    },
+                    "disableResolveMessage": true
+                },
+                {
+                    "uid": "ee0tjv958q9s0a",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nApplication backup job activity not occurred of last day.\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Application Backup Job Activity Not Happened"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Application Error Notification",
+            "receivers": [
+                {
+                    "uid": "ce0th2rc3yebkb",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com,erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nWe are currently facing an exception/error in the application.\nBelow are the details for your reference:\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no exception or error occurred in application.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 exception or error occurred in application.{{ else }}\nThere are {{ len .Alerts.Firing }} exception or error occurred in application.{{ end }}\n\n======================{{ range .Alerts }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM UTC\" }}{{ range  $key, $value := .Labels }}{{ if eq $key \"log_level.keyword\" }}\nLOG LEVEL = {{ $value }}{{ else if eq $key \"log_message.keyword\" }}\nLOG MESSAGE = {{ $value }}{{ else if eq $key \"formatted_log_timestamp.keyword\" }}\nLOG TIMESTAMP = {{ $value }} IST{{ else if eq $key \"payload_json.keyword\" }}\nPAYLOAD = {{ $value }}{{ end }}{{ end }}\n======================{{ end }}\n\nPlease investigate this issue at your earliest convenience.\nThank you for your attention to this matter.\n\nBest regards",
+                        "singleEmail": false,
+                        "subject": "Application Alert: Application Exception/Error Occurred"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Cpu Idle Below Notification",
+            "receivers": [
+                {
+                    "uid": "be0clyw27z7k0d",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers with CPU idle percentages below 20%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server with a CPU idle percentage below 20%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers with CPU idle percentages below 20%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu Idle(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Cpu Idle percentage goes below"
+                    },
+                    "disableResolveMessage": true
+                },
+                {
+                    "uid": "de2811xqtnxtsb",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers with CPU idle percentages below 20%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server with a CPU idle percentage below 20%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers with CPU idle percentages below 20%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu Idle(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Cpu Idle percentage goes below"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Cpu System Usage Above Notification",
+            "receivers": [
+                {
+                    "uid": "ae0cn38f04rggd",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having cpu system usage percentages goes above 80%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having cpu system usage percentages goes above 80%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having cpu system usage percentages goes above 80%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu system's process utilization(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Cpu system usage goes above"
+                    },
+                    "disableResolveMessage": true
+                },
+                {
+                    "uid": "fe28194bw98n4c",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having cpu system usage percentages goes above 80%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having cpu system usage percentages goes above 80%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having cpu system usage percentages goes above 80%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu system's process utilization(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Cpu system usage goes above"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Cpu User Usage Above Notification",
+            "receivers": [
+                {
+                    "uid": "ee0cmq0b4cwlcf",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having cpu user usage percentages goes above 80%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having cpu user usage percentages goes above 80%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having cpu user usage percentages goes above 80%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu user's process utilization(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}\n",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Cpu User Usage Exceeds "
+                    },
+                    "disableResolveMessage": true
+                },
+                {
+                    "uid": "ee281bjgcrev4a",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having cpu user usage percentages goes above 80%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having cpu user usage percentages goes above 80%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having cpu user usage percentages goes above 80%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nCpu user's process utilization(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}\n",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Cpu User Usage Exceeds "
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Database Backup Job Monitoring Notification",
+            "receivers": [
+                {
+                    "uid": "de281fywvwu80f",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nDatabase backup job activity not occurred of last day.\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Database Backup Job Activity Not Happened"
+                    },
+                    "disableResolveMessage": true
+                },
+                {
+                    "uid": "fe0tk9qe8fz7kc",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nDatabase backup job activity not occurred of last day.\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Infra Alert: Database Backup Job Activity Not Happened"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Database Long Running Queries Notification ",
+            "receivers": [
+                {
+                    "uid": "fe0coimtsa3ggf",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com,erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\nWe are currently facing an issue with long-running queries in the database.\nBelow are the details for your reference:\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no long running queries occurred.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 long running queries occurred.{{ else }}\nThere are {{ len .Alerts.Firing }} long running queries occurred.{{ end }}\n\n======================\n{{ range .Alerts }}Alert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM UTC\" }}{{ range $key, $value := .Labels }}{{ if eq $key \"log_time.keyword\" }}\nLOG TIME = {{ $value }} IST{{ else if eq $key \"log_date.keyword\" }}\nLOG DATE = {{ $value }} IST{{ else if eq $key \"connection_string.keyword\" }}\nCONNECTION STRING = {{ $value }}{{ else if eq $key \"query_statement.keyword\" }}\nQUERY STATEMENT = {{ $value }}{{ else if eq $key \"host_ip.keyword\" }}\nHOST IP = {{ $value }}{{ else if eq $key \"user_id.keyword\" }}\nUSER ID = {{ $value }}{{ else if eq $key \"log_timestamp.keyword\" }}\nLOG TIMESTAMP = {{ $value }}{{ else if eq $key \"query_time\" }} \nQUERY TIME = {{ $value }} seconds {{ end }}{{ end }} \n======================\n{{ end }}\n\nPlease investigate this issue at your earliest convenience.\nThank you for your attention to this matter.\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Application Alert : Database Long Running Queries"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Memory Usage Above Notification",
+            "receivers": [
+                {
+                    "uid": "ee0ti9vq1845ce",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having memory usage goes above 95%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having memory usage goes above 95%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having memory usage goes above 95%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nAvaiable Memory(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}",
+                        "singleEmail": false,
+                        "subject": "Infra Alert : Memory usage goes above"
+                    },
+                    "disableResolveMessage": true
+                },
+                {
+                    "uid": "ee27sgay0nnr4b",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers having memory usage goes above 95%.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server having memory usage goes above 95%.{{ else }}\nThere are {{ len .Alerts.Firing }} servers having memory usage goes above 95%.{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"host.hostname.keyword\") }}\nAvaiable Memory(%): {{ printf \"%.2f\" (index .Values \"B\") }}%\n==============================\n{{ end }}",
+                        "singleEmail": false,
+                        "subject": "Infra Alert : Memory usage goes above"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Ping or Reachability Notification",
+            "receivers": [
+                {
+                    "uid": "be2820mi8r4lca",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers which is not reachable or pingable{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server which is not reachable or pingable{{ else }}\nThere are {{ len .Alerts.Firing }} servers which are not reachable or pingable{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"servername.keyword\") }}\nIp: {{ (index .Labels \"url.domain.keyword\") }}\n==============================\n{{ end }}",
+                        "singleEmail": false,
+                        "subject": "Infra Alert :  Servers not reachable or pingable"
+                    },
+                    "disableResolveMessage": true
+                },
+                {
+                    "uid": "ee0tj0y3kudj4a",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no servers which is not reachable or pingable{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 server which is not reachable or pingable{{ else }}\nThere are {{ len .Alerts.Firing }} servers which are not reachable or pingable{{ end }}\n\n=============================={{ range .Alerts }}\nAlert Summary: {{ .Annotations.summary }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM\" }}\nHostname: {{ (index .Labels \"servername.keyword\") }}\nIp: {{ (index .Labels \"url.domain.keyword\") }}\n==============================\n{{ end }}",
+                        "singleEmail": false,
+                        "subject": "Infra Alert :  Servers not reachable or pingable"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Redis Job Monitoring Notification",
+            "receivers": [
+                {
+                    "uid": "be2823ptiuygwc",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nRedis  services are  not running\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Infra Alert:  Redis is not in running state"
+                    },
+                    "disableResolveMessage": true
+                },
+                {
+                    "uid": "ee0tktus2w7i8c",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nRedis  services are  not running\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Infra Alert:  Redis is not in running state"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Url not working",
+            "receivers": [
+                {
+                    "uid": "ae1irnxje0nb4f",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nUrl is not working and need to check it on immediate basis.\nBelow are the details for your reference:\n======================\n{{ range .Alerts }}Start at: {{ .StartsAt  | date \"02-Jan-2006 03:04:05 PM\" }} UTC{{ range  $key, $value := .Labels }}{{ if eq $key \"url.keyword\" }}\nURL = {{ $value }}{{ else if eq $key \"formatted_log_timestamp.keyword\" }}\nTIMESTAMP = {{ $value }} IST{{ else if eq $key \"error.keyword\" }}\nERROR = {{ $value }}{{ else if eq $key \"email_status.keyword\" }}\nEMAIL STATUS = {{ $value }}{{ else if eq $key \"actual_response_code.keyword\" }}\nACTUAL RESPONSE CODE = {{ $value }}{{ else if eq $key \"expected_response_code.keyword\" }}\nEXPECTED RESPONSE CODE = {{ $value }}{{ else if eq $key \"response_code_status.keyword\" }}\nRESPONSE CODE STATUS = {{ $value }}{{ else if eq $key \"response_time_status.keyword\" }}\nRESPONSE TIME STATUS = {{ $value }}{{ else if eq $key \"response_time.keyword\" }}\nRESPONSE TIME = {{ $value }} ms{{ else if eq $key \"url_processed.keyword\" }}\nURL PROCESSED = {{ $value }}{{ end }}{{ end }}\n======================\n{{ end }}\n\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Application Alert: {{ range .Alerts }}{{ if ne (index .Labels \"error.keyword\") \"N/A\" }} URL is not working {{ else if (ne (index .Labels \"response_time_status.keyword\") \"Within expected range.\") }} Time exceeded {{ else if (eq (index .Labels \"response_code_status.keyword\") \"Does not match expected code.\") }} Response code does not match {{ end }}{{ end }}"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "Web Server Error Notification",
+            "receivers": [
+                {
+                    "uid": "be0tikzc2xvk0d",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com,jflalert.monitoring@cloverinfotech.com,naresh.dingankar@cloverinfotech.com,erpnextsupport@cloverinfotech.com",
+                        "message": "Dear Team,\n\nI hope this message finds you well.\nWe are currently facing an exception/error in the web server. \nBelow are the details for your reference:\n\n{{ if eq (len .Alerts.Firing) 0 }}There are no web server error occurred.{{ else if eq (len .Alerts.Firing) 1 }}\nThere is 1 web server error occurred.{{ else }}\nThere are {{ len .Alerts.Firing }} web server error occurred.{{ end }}\n\n======================{{ range .Alerts }}\nAlert Started At: {{ .StartsAt | date \"02-Jan-2006 03:04:05 PM UTC\" }}{{ range  $key, $value := .Labels }}{{ if eq $key \"log_level.keyword\" }}\nLOG LEVEL = {{ $value }}{{ else if eq $key \"process_id.keyword\" }}\nPROCESS ID = {{ $value }}{{ else if eq $key \"log_message.keyword\" }}\nLOG MESSAGE = {{ $value }}{{ else if eq $key \"process_instance.keyword\" }}\nPROCESS INSTANCE = {{ $value }}{{ else if eq $key \"@timestamp.keyword\" }}\nTIMESTAMP = {{ $value }} IST{{ end }}{{ end }}\n======================{{ end }}\n\nPlease investigate this issue at your earliest convenience.\nThank you for your attention to this matter.\n\nBest regards.",
+                        "singleEmail": false,
+                        "subject": "Application Alert : Web Server is having errors"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        },
+        {
+            "orgId": 1,
+            "name": "grafana-default-email",
+            "receivers": [
+                {
+                    "uid": "adzu88ybrepkwf",
+                    "type": "email",
+                    "settings": {
+                        "addresses": "tmail7458@gmail.com",
+                        "message": "Default Template",
+                        "singleEmail": false,
+                        "subject": "Default Template"
+                    },
+                    "disableResolveMessage": true
+                }
+            ]
+        }
+    ]
+}

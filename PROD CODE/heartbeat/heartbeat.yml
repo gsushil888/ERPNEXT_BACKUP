@@ -1,0 +1,16 @@
+heartbeat.config.monitors:
+  # Directory + glob pattern to search for configuration files
+  path: ${path.config}/monitors.d/*.yml
+  # If enabled, heartbeat will periodically check the config.monitors path for changes
+  reload.enabled: false
+  # How often to check for changes
+  reload.period: 5s
+
+# Configure monitors inline
+heartbeat.monitors:
+- type: icmp
+  schedule: '@every 10s'  # Adjust the interval as needed
+  hosts: ["10.100.22.142","10.100.23.226","10.100.21.216","10.100.27.191","10.100.28.180","10.100.29.213"
+  ,"10.100.27.52","10.100.28.19","10.100.29.115","10.200.42.66","10.200.43.223","10.200.41.138"]
+
+
