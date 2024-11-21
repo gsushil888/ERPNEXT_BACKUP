@@ -1,0 +1,2398 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": {
+                    "type": "grafana",
+                    "uid": "-- Grafana --"
+                },
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 20,
+    "links": [],
+    "panels": [
+        {
+            "collapsed": true,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 15,
+            "panels": [
+                {
+                    "datasource": {
+                        "default": true,
+                        "type": "elasticsearch",
+                        "uid": "fdzjmszpwyayoe"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": true,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "series",
+                                "axisGridShow": true,
+                                "axisLabel": "CPU %",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 32,
+                                "gradientMode": "opacity",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "smooth",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": true,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 0,
+                        "y": 1
+                    },
+                    "id": 1,
+                    "interval": "10s",
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "mode": "multi",
+                            "sort": "desc"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "alias": "{{host.hostname.keyword}}",
+                            "bucketAggs": [
+                                {
+                                    "field": "host.hostname.keyword",
+                                    "id": "3",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "10"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "@timestamp",
+                                    "id": "2",
+                                    "settings": {
+                                        "interval": "10s"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "fdzjmszpwyayoe"
+                            },
+                            "metrics": [
+                                {
+                                    "field": "system.cpu.idle.norm.pct",
+                                    "id": "1",
+                                    "settings": {
+                                        "script": "_value * 100"
+                                    },
+                                    "type": "avg"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "$panel_interval",
+                    "title": "CPU IDLE PERCENTAGE",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "default": true,
+                        "type": "elasticsearch",
+                        "uid": "fdzjmszpwyayoe"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": true,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "series",
+                                "axisGridShow": true,
+                                "axisLabel": "CPU %",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 32,
+                                "gradientMode": "opacity",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "smooth",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": true,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 8,
+                        "y": 1
+                    },
+                    "id": 2,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "mode": "multi",
+                            "sort": "desc"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "alias": "{{host.hostname.keyword}}",
+                            "bucketAggs": [
+                                {
+                                    "field": "host.hostname.keyword",
+                                    "id": "3",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "10"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "@timestamp",
+                                    "id": "2",
+                                    "settings": {
+                                        "interval": "10s"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "fdzjmszpwyayoe"
+                            },
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "field": "system.cpu.user.norm.pct",
+                                    "id": "1",
+                                    "settings": {
+                                        "script": "_value * 100"
+                                    },
+                                    "type": "avg"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "$panel_interval",
+                    "title": "CPU USER USAGE",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "default": true,
+                        "type": "elasticsearch",
+                        "uid": "fdzjmszpwyayoe"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": true,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "series",
+                                "axisGridShow": true,
+                                "axisLabel": "CPU %",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 32,
+                                "gradientMode": "opacity",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "smooth",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": true,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 16,
+                        "y": 1
+                    },
+                    "id": 3,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "mode": "multi",
+                            "sort": "desc"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "alias": "{{host.hostname.keyword}}",
+                            "bucketAggs": [
+                                {
+                                    "field": "host.hostname.keyword",
+                                    "id": "3",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "10"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "@timestamp",
+                                    "id": "2",
+                                    "settings": {
+                                        "interval": "10s"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "fdzjmszpwyayoe"
+                            },
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "field": "system.cpu.system.norm.pct",
+                                    "id": "1",
+                                    "settings": {
+                                        "script": "_value * 100"
+                                    },
+                                    "type": "avg"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "$panel_interval",
+                    "title": "CPU SYSTEM USAGE",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "default": true,
+                        "type": "elasticsearch",
+                        "uid": "fdzjmszpwyayoe"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": true,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "series",
+                                "axisLabel": "MEMORY %",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 32,
+                                "gradientMode": "opacity",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": true,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "area"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 0
+                                    },
+                                    {
+                                        "color": "#76f7e9",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 8,
+                        "x": 0,
+                        "y": 8
+                    },
+                    "id": 4,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "mode": "multi",
+                            "sort": "desc"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "alias": "{{host.hostname.keyword}}",
+                            "bucketAggs": [
+                                {
+                                    "field": "host.hostname.keyword",
+                                    "id": "3",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "10"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "@timestamp",
+                                    "id": "2",
+                                    "settings": {
+                                        "interval": "10s"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "fdzjmszpwyayoe"
+                            },
+                            "metrics": [
+                                {
+                                    "field": "system.memory.actual.used.pct",
+                                    "id": "1",
+                                    "settings": {
+                                        "script": "100 - (_value * 100)"
+                                    },
+                                    "type": "avg"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "$panel_interval",
+                    "title": "MEMORY FREE PERCENTAGE",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "default": true,
+                        "type": "elasticsearch",
+                        "uid": "fdzjmszpwyayoe"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": true,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "series",
+                                "axisLabel": "MEMORY %",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 32,
+                                "gradientMode": "opacity",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": true,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "area"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "#93bcfa",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 50
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 8,
+                        "x": 8,
+                        "y": 8
+                    },
+                    "id": 6,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "none"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "alias": "{{host.hostname.keyword}}",
+                            "bucketAggs": [
+                                {
+                                    "field": "host.hostname.keyword",
+                                    "id": "3",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "10"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "@timestamp",
+                                    "id": "2",
+                                    "settings": {
+                                        "interval": "10s"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "fdzjmszpwyayoe"
+                            },
+                            "metrics": [
+                                {
+                                    "field": "system.memory.used.pct",
+                                    "id": "1",
+                                    "settings": {
+                                        "script": "_value * 100"
+                                    },
+                                    "type": "avg"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "$panel_interval",
+                    "title": "SWAP MEMORY USAGE",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "default": false,
+                        "type": "elasticsearch",
+                        "uid": "bdztu9x1m5dz4e"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": true,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "series",
+                                "axisLabel": "LATENCY (MS)",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 32,
+                                "gradientMode": "opacity",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": true,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "area"
+                                }
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "10.100.21.216": {
+                                            "index": 0,
+                                            "text": "PRODAPP"
+                                        },
+                                        "10.100.22.142": {
+                                            "index": 1,
+                                            "text": "PRODDB"
+                                        },
+                                        "10.100.23.226": {
+                                            "index": 2,
+                                            "text": "PRODWEB"
+                                        }
+                                    },
+                                    "type": "value"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "#93bcfa",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 50
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 8,
+                        "x": 16,
+                        "y": 8
+                    },
+                    "id": 5,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "none"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "alias": "{{servername.keyword}} = {{url.domain.keyword}}",
+                            "bucketAggs": [
+                                {
+                                    "field": "servername.keyword",
+                                    "id": "3",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "10"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "url.domain.keyword",
+                                    "id": "4",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "10"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "@timestamp",
+                                    "id": "2",
+                                    "settings": {
+                                        "interval": "10s"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "bdztu9x1m5dz4e"
+                            },
+                            "metrics": [
+                                {
+                                    "field": "latency",
+                                    "id": "1",
+                                    "settings": {
+                                        "script": "_value"
+                                    },
+                                    "type": "avg"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "$panel_interval",
+                    "title": "PING STATUS",
+                    "type": "timeseries"
+                }
+            ],
+            "title": "CPU/MEMORY/PING",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 1
+            },
+            "id": 18,
+            "panels": [
+                {
+                    "datasource": {
+                        "default": false,
+                        "type": "elasticsearch",
+                        "uid": "fdzqnb11d47i8f"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": false,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "text",
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 1,
+                                "drawStyle": "bars",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 2
+                    },
+                    "hideTimeOverride": false,
+                    "id": 7,
+                    "interval": "1m",
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": false
+                        },
+                        "timezone": [
+                            "utc"
+                        ],
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "desc"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [
+                                {
+                                    "field": "hostname.keyword",
+                                    "id": "3",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "1",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "pid.keyword",
+                                    "id": "4",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "1",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "user.keyword",
+                                    "id": "5",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "1",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "command.keyword",
+                                    "id": "6",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "log_timestamp.keyword",
+                                    "id": "7",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "@timestamp",
+                                    "id": "2",
+                                    "settings": {
+                                        "interval": "5m"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "fdzqnb11d47i8f"
+                            },
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "24h",
+                    "title": "APP DR SYNC STATUS(SERVER TIME UTC)",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "default": false,
+                        "type": "elasticsearch",
+                        "uid": "fdzqnb11d47i8f"
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 2
+                    },
+                    "hideTimeOverride": false,
+                    "id": 8,
+                    "interval": "1m",
+                    "options": {
+                        "dedupStrategy": "none",
+                        "enableLogDetails": true,
+                        "prettifyLogMessage": true,
+                        "showCommonLabels": false,
+                        "showLabels": false,
+                        "showTime": true,
+                        "sortOrder": "Descending",
+                        "wrapLogMessage": true
+                    },
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "fdzqnb11d47i8f"
+                            },
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "settings": {
+                                        "limit": "500"
+                                    },
+                                    "type": "logs"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "24h",
+                    "title": "Dr Sync Logs",
+                    "transformations": [
+                        {
+                            "id": "filterFieldsByName",
+                            "options": {
+                                "include": {
+                                    "names": [
+                                        "@timestamp",
+                                        "command",
+                                        "formatted_log_timestamp",
+                                        "hostname",
+                                        "id",
+                                        "log_timestamp",
+                                        "pid",
+                                        "user"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": "extractFields",
+                            "options": {
+                                "format": "kvp",
+                                "keepTime": false,
+                                "replace": false,
+                                "source": "payload_json"
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {},
+                                "includeByName": {},
+                                "indexByName": {
+                                    "@timestamp": 0,
+                                    "command": 4,
+                                    "formatted_log_timestamp": 1,
+                                    "hostname": 3,
+                                    "id": 7,
+                                    "log_timestamp": 2,
+                                    "pid": 6,
+                                    "user": 5
+                                },
+                                "renameByName": {
+                                    "@timestamp": "Timestamp",
+                                    "command": "Command",
+                                    "formatted_log_timestamp": "Formatted Log Timestamp",
+                                    "hostname": "Host Name",
+                                    "id": "Id",
+                                    "log_timestamp": "Log Timestamp",
+                                    "pid": "Pid",
+                                    "user": "User"
+                                }
+                            }
+                        },
+                        {
+                            "id": "sortBy",
+                            "options": {
+                                "fields": {},
+                                "sort": [
+                                    {
+                                        "desc": true,
+                                        "field": "Formatted Log Timestamp"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "type": "logs"
+                }
+            ],
+            "title": "APPLICATION DR SYNC",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 2
+            },
+            "id": 16,
+            "panels": [
+                {
+                    "datasource": {
+                        "default": false,
+                        "type": "elasticsearch",
+                        "uid": "ee0fyzqcxwwzkb"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": false,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "text",
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 1,
+                                "drawStyle": "bars",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "normal"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 3
+                    },
+                    "hideTimeOverride": false,
+                    "id": 9,
+                    "interval": "1h",
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "timezone": [
+                            "browser"
+                        ],
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "desc"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [
+                                {
+                                    "field": "file_backup_date.keyword",
+                                    "id": "3",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "file_name.keyword",
+                                    "id": "4",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "@timestamp",
+                                    "id": "2",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "timeZone": "Asia/Kolkata"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "ee0fyzqcxwwzkb"
+                            },
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "7d",
+                    "title": "APP JOB MONITORING",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "default": false,
+                        "type": "elasticsearch",
+                        "uid": "ee0fyzqcxwwzkb"
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 3
+                    },
+                    "hideTimeOverride": false,
+                    "id": 10,
+                    "interval": "3h",
+                    "options": {
+                        "dedupStrategy": "none",
+                        "enableLogDetails": true,
+                        "prettifyLogMessage": true,
+                        "showCommonLabels": false,
+                        "showLabels": false,
+                        "showTime": false,
+                        "sortOrder": "Descending",
+                        "wrapLogMessage": true
+                    },
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "ee0fyzqcxwwzkb"
+                            },
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "settings": {
+                                        "limit": "500"
+                                    },
+                                    "type": "logs"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "7d",
+                    "title": "App Job Monitoring Logs",
+                    "transformations": [
+                        {
+                            "id": "filterFieldsByName",
+                            "options": {
+                                "include": {
+                                    "names": [
+                                        "@timestamp",
+                                        "file_backup_date",
+                                        "file_creation_timestamp",
+                                        "file_name",
+                                        "file_number",
+                                        "file_size",
+                                        "group",
+                                        "owner",
+                                        "permissions"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "@Timestamp": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "@timestamp": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "Backup Date": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    },
+                                    "Backup File Creation Timestamp": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "File Number": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "File Size": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "Filename": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "Group": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "Owner": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "Permissions": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "file_backup_date": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    },
+                                    "file_creation_timestamp": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "file_name": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "file_number": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "file_size": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "group": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "owner": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "permissions": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "hard_links": false,
+                                    "log_time_actual": false,
+                                    "time": false,
+                                    "timestamp": false
+                                },
+                                "includeByName": {},
+                                "indexByName": {
+                                    "@timestamp": 2,
+                                    "file_backup_date": 0,
+                                    "file_creation_timestamp": 1,
+                                    "file_name": 3,
+                                    "file_number": 4,
+                                    "file_size": 5,
+                                    "group": 7,
+                                    "hard_links": 8,
+                                    "owner": 6,
+                                    "permissions": 9
+                                },
+                                "renameByName": {
+                                    "@timestamp": "@Timestamp",
+                                    "@timestamp (lastNotNull)": "",
+                                    "bytes_sent": "Byte Sent",
+                                    "connection_string": "Connection String",
+                                    "connection_time": "Connection Time",
+                                    "file_backup_date": "",
+                                    "file_creation_timestamp": "Backup File Creation Timestamp",
+                                    "file_creation_timestamp (lastNotNull)": "",
+                                    "file_name": "Filename",
+                                    "file_name (lastNotNull)": "",
+                                    "file_number": "File Number",
+                                    "file_size": "File Size",
+                                    "group": "Group",
+                                    "host_ip": "Host Ip",
+                                    "host_name": "Host name",
+                                    "lock_time": "Lock Time",
+                                    "log_date": "Log Date",
+                                    "log_time": "Log Time",
+                                    "log_time_actual": "Log Time Actual",
+                                    "log_timestamp": "Log Timestamp",
+                                    "owner": "Owner",
+                                    "permissions": "Permissions",
+                                    "qc_hit": "QC Hit",
+                                    "query_statement": "Query Statement",
+                                    "query_time": "Query Time",
+                                    "rows_affected": "Rows Affected",
+                                    "rows_examined": "Rows Examined",
+                                    "rows_sent": "Rows Sent",
+                                    "schema": "Schema",
+                                    "thread_id": "Thread ID",
+                                    "time": "Log Date",
+                                    "timestamp": "Log Timestamp",
+                                    "unix_timestamp": "Unix Timestamp",
+                                    "user_id": "User Id",
+                                    "user_id_inner": "User Id Inner"
+                                }
+                            }
+                        },
+                        {
+                            "id": "sortBy",
+                            "options": {
+                                "fields": {},
+                                "sort": [
+                                    {
+                                        "desc": true,
+                                        "field": "file_backup_date"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "type": "logs"
+                },
+                {
+                    "datasource": {
+                        "default": false,
+                        "type": "elasticsearch",
+                        "uid": "ae0fkk6ynkjr4a"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": false,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "text",
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 1,
+                                "drawStyle": "bars",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "normal"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 11
+                    },
+                    "hideTimeOverride": false,
+                    "id": 11,
+                    "interval": "1h",
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "timezone": [
+                            "browser"
+                        ],
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "desc"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [
+                                {
+                                    "field": "file_backup_date.keyword",
+                                    "id": "3",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "file_name.keyword",
+                                    "id": "4",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "@timestamp",
+                                    "id": "2",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "timeZone": "Asia/Kolkata"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "ae0fkk6ynkjr4a"
+                            },
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "7d",
+                    "title": "DB JOB MONITORING",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "default": false,
+                        "type": "elasticsearch",
+                        "uid": "ae0fkk6ynkjr4a"
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 11
+                    },
+                    "hideTimeOverride": false,
+                    "id": 12,
+                    "interval": "3h",
+                    "options": {
+                        "dedupStrategy": "none",
+                        "enableLogDetails": true,
+                        "prettifyLogMessage": true,
+                        "showCommonLabels": false,
+                        "showLabels": false,
+                        "showTime": false,
+                        "sortOrder": "Descending",
+                        "wrapLogMessage": true
+                    },
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "ae0fkk6ynkjr4a"
+                            },
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "settings": {
+                                        "limit": "500"
+                                    },
+                                    "type": "logs"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "7d",
+                    "title": "Db Job Monitoring Logs",
+                    "transformations": [
+                        {
+                            "id": "filterFieldsByName",
+                            "options": {
+                                "include": {
+                                    "names": [
+                                        "@timestamp",
+                                        "file_backup_date",
+                                        "file_creation_timestamp",
+                                        "file_name",
+                                        "file_number",
+                                        "file_size",
+                                        "group",
+                                        "owner",
+                                        "permissions"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "@timestamp": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "file_backup_date": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    },
+                                    "file_creation_timestamp": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "file_name": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "file_number": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "file_size": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "group": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "owner": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "permissions": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "hard_links": false,
+                                    "log_time_actual": false,
+                                    "time": false,
+                                    "timestamp": false
+                                },
+                                "includeByName": {},
+                                "indexByName": {
+                                    "@timestamp": 2,
+                                    "file_backup_date": 0,
+                                    "file_creation_timestamp": 1,
+                                    "file_name": 3,
+                                    "file_number": 4,
+                                    "file_size": 5,
+                                    "group": 7,
+                                    "hard_links": 8,
+                                    "owner": 6,
+                                    "permissions": 9
+                                },
+                                "renameByName": {
+                                    "@timestamp": "@Timestamp",
+                                    "bytes_sent": "Byte Sent",
+                                    "connection_string": "Connection String",
+                                    "connection_time": "Connection Time",
+                                    "file_backup_date": "Backup Date",
+                                    "file_creation_timestamp": "Backup File Creation Timestamp",
+                                    "file_name": "Filename",
+                                    "file_number": "File Number",
+                                    "file_size": "File Size",
+                                    "group": "Group",
+                                    "host_ip": "Host Ip",
+                                    "host_name": "Host name",
+                                    "lock_time": "Lock Time",
+                                    "log_date": "Log Date",
+                                    "log_time": "Log Time",
+                                    "log_time_actual": "Log Time Actual",
+                                    "log_timestamp": "Log Timestamp",
+                                    "owner": "Owner",
+                                    "permissions": "Permissions",
+                                    "qc_hit": "QC Hit",
+                                    "query_statement": "Query Statement",
+                                    "query_time": "Query Time",
+                                    "rows_affected": "Rows Affected",
+                                    "rows_examined": "Rows Examined",
+                                    "rows_sent": "Rows Sent",
+                                    "schema": "Schema",
+                                    "thread_id": "Thread ID",
+                                    "time": "Log Date",
+                                    "timestamp": "Log Timestamp",
+                                    "unix_timestamp": "Unix Timestamp",
+                                    "user_id": "User Id",
+                                    "user_id_inner": "User Id Inner"
+                                }
+                            }
+                        },
+                        {
+                            "id": "sortBy",
+                            "options": {
+                                "fields": {},
+                                "sort": [
+                                    {
+                                        "desc": true,
+                                        "field": "Backup Date"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "type": "logs"
+                }
+            ],
+            "title": "BACKUP JOB MONITORING",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 3
+            },
+            "id": 17,
+            "panels": [
+                {
+                    "datasource": {
+                        "default": false,
+                        "type": "elasticsearch",
+                        "uid": "ce0ga5wnk6l1cf"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": true,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "text",
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 1,
+                                "drawStyle": "line",
+                                "fillOpacity": 9,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": true,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 4
+                    },
+                    "hideTimeOverride": false,
+                    "id": 13,
+                    "interval": "30s",
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "timezone": [
+                            "utc"
+                        ],
+                        "tooltip": {
+                            "mode": "multi",
+                            "sort": "desc"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "alias": "{{process_name.keyword}}",
+                            "bucketAggs": [
+                                {
+                                    "field": "process_name.keyword",
+                                    "id": "3",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "_term",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "@timestamp",
+                                    "id": "2",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "timeZone": "utc"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "ce0ga5wnk6l1cf"
+                            },
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "field": "status_number",
+                                    "id": "1",
+                                    "type": "avg"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "1h",
+                    "title": "REDIS MONITORING",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "default": false,
+                        "type": "elasticsearch",
+                        "uid": "ce0ga5wnk6l1cf"
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 4
+                    },
+                    "hideTimeOverride": false,
+                    "id": 14,
+                    "interval": "3h",
+                    "options": {
+                        "dedupStrategy": "none",
+                        "enableLogDetails": true,
+                        "prettifyLogMessage": true,
+                        "showCommonLabels": false,
+                        "showLabels": false,
+                        "showTime": true,
+                        "sortOrder": "Descending",
+                        "wrapLogMessage": true
+                    },
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [],
+                            "datasource": {
+                                "type": "elasticsearch",
+                                "uid": "ce0ga5wnk6l1cf"
+                            },
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "settings": {
+                                        "limit": "500"
+                                    },
+                                    "type": "logs"
+                                }
+                            ],
+                            "query": "environment: $environment\nAND \ncategory: \"BLACKROCK_WMC\"",
+                            "refId": "A",
+                            "timeField": "@timestamp"
+                        }
+                    ],
+                    "timeFrom": "7d",
+                    "title": "Redis Monitoring Logs",
+                    "transformations": [
+                        {
+                            "id": "filterFieldsByName",
+                            "options": {
+                                "include": {
+                                    "names": [
+                                        "@timestamp",
+                                        "pid",
+                                        "process_name",
+                                        "service_name",
+                                        "status",
+                                        "uptime_days",
+                                        "uptime_time"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": "sortBy",
+                            "options": {
+                                "fields": {},
+                                "sort": [
+                                    {
+                                        "desc": false,
+                                        "field": "@timestamp"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "hard_links": false,
+                                    "log_time_actual": false,
+                                    "time": false,
+                                    "timestamp": false
+                                },
+                                "includeByName": {},
+                                "indexByName": {
+                                    "@timestamp": 5,
+                                    "pid": 4,
+                                    "process_name": 0,
+                                    "service_name": 2,
+                                    "status": 1,
+                                    "uptime": 3
+                                },
+                                "renameByName": {
+                                    "@timestamp": "@Timestamp",
+                                    "bytes_sent": "Byte Sent",
+                                    "connection_string": "Connection String",
+                                    "connection_time": "Connection Time",
+                                    "file_backup_date": "Backup Date",
+                                    "file_creation_timestamp": "Backup File Creation Timestamp",
+                                    "file_name": "Filename",
+                                    "file_number": "File Number",
+                                    "file_size": "File Size",
+                                    "group": "Group",
+                                    "host_ip": "Host Ip",
+                                    "host_name": "Host name",
+                                    "lock_time": "Lock Time",
+                                    "log_date": "Log Date",
+                                    "log_time": "Log Time",
+                                    "log_time_actual": "Log Time Actual",
+                                    "log_timestamp": "Log Timestamp",
+                                    "owner": "Owner",
+                                    "permissions": "Permissions",
+                                    "qc_hit": "QC Hit",
+                                    "query_statement": "Query Statement",
+                                    "query_time": "Query Time",
+                                    "rows_affected": "Rows Affected",
+                                    "rows_examined": "Rows Examined",
+                                    "rows_sent": "Rows Sent",
+                                    "schema": "Schema",
+                                    "thread_id": "Thread ID",
+                                    "time": "Log Date",
+                                    "timestamp": "Log Timestamp",
+                                    "unix_timestamp": "Unix Timestamp",
+                                    "user_id": "User Id",
+                                    "user_id_inner": "User Id Inner"
+                                }
+                            }
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "@Timestamp": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "pid": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "process_name": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    },
+                                    "service_name": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "groupby"
+                                    },
+                                    "status": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "uptime_days": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "uptime_time": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "type": "logs"
+                }
+            ],
+            "title": "REDIS MONITORING",
+            "type": "row"
+        }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "current": {
+                    "selected": false,
+                    "text": "DC",
+                    "value": "DC"
+                },
+                "datasource": {
+                    "type": "elasticsearch",
+                    "uid": "fdzjmszpwyayoe"
+                },
+                "definition": "{\"find\":\"terms\",\"field\":\"environment.keyword\"}",
+                "hide": 0,
+                "includeAll": true,
+                "label": "environment",
+                "multi": false,
+                "name": "environment",
+                "options": [],
+                "query": "{\"find\":\"terms\",\"field\":\"environment.keyword\"}",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            },
+            {
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": {
+                    "type": "elasticsearch",
+                    "uid": "fdzjmszpwyayoe"
+                },
+                "definition": "{\"find\":\"terms\",\"field\":\"host.hostname.keyword\"}",
+                "hide": 0,
+                "includeAll": true,
+                "label": "server",
+                "multi": false,
+                "name": "server",
+                "options": [],
+                "query": "{\"find\":\"terms\",\"field\":\"host.hostname.keyword\"}",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            },
+            {
+                "auto": false,
+                "auto_count": 30,
+                "auto_min": "10s",
+                "current": {
+                    "selected": false,
+                    "text": "5m",
+                    "value": "5m"
+                },
+                "description": "All the panel having graph are changed based on time range selected of CPU/MEMORY/PING",
+                "hide": 0,
+                "label": "panel interval",
+                "name": "panel_interval",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "1m",
+                        "value": "1m"
+                    },
+                    {
+                        "selected": false,
+                        "text": "2m",
+                        "value": "2m"
+                    },
+                    {
+                        "selected": true,
+                        "text": "5m",
+                        "value": "5m"
+                    },
+                    {
+                        "selected": false,
+                        "text": "10m",
+                        "value": "10m"
+                    },
+                    {
+                        "selected": false,
+                        "text": "20m",
+                        "value": "20m"
+                    },
+                    {
+                        "selected": false,
+                        "text": "30m",
+                        "value": "30m"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1h",
+                        "value": "1h"
+                    },
+                    {
+                        "selected": false,
+                        "text": "2h",
+                        "value": "2h"
+                    },
+                    {
+                        "selected": false,
+                        "text": "3h",
+                        "value": "3h"
+                    },
+                    {
+                        "selected": false,
+                        "text": "4h",
+                        "value": "4h"
+                    },
+                    {
+                        "selected": false,
+                        "text": "6h",
+                        "value": "6h"
+                    },
+                    {
+                        "selected": false,
+                        "text": "12h",
+                        "value": "12h"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1d",
+                        "value": "1d"
+                    },
+                    {
+                        "selected": false,
+                        "text": "2d",
+                        "value": "2d"
+                    },
+                    {
+                        "selected": false,
+                        "text": "3d",
+                        "value": "3d"
+                    },
+                    {
+                        "selected": false,
+                        "text": "4d",
+                        "value": "4d"
+                    },
+                    {
+                        "selected": false,
+                        "text": "7d",
+                        "value": "7d"
+                    }
+                ],
+                "query": "1m,2m,5m,10m,20m,30m,1h,2h,3h,4h,6h,12h,1d,2d,3d,4d,7d",
+                "queryValue": "",
+                "refresh": 2,
+                "skipUrlSync": false,
+                "type": "interval"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "BLACKROCK WMC INFRA DASHBOARD",
+    "uid": "be3mgnv1l80zke",
+    "version": 21,
+    "weekStart": ""
+}

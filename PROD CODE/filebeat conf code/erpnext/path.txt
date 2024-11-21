@@ -1,0 +1,18 @@
+ERPNEXT DC/DR APP
+
+cat /home/frappe/frappe-bench/logs/frappe.log
+cat /var/log/cron
+cat /etc/filebeat/job_app_logs.log
+cat /etc/filebeat/redis_status.log
+cat /var/log/nginx/error.log
+
+ERPNEXT DC/DR DB
+
+cat /proddb/mysql/mysql-slow.log
+cat /etc/filebeat/job_db_logs.log
+cat /proddb/db_bkp/backup_status_log/log_file_*.txt
+cat /proddb/db_bkp/backup_error_log/mysqldump_error_*.txt
+
+ERPNEXT DC/DR WEB
+
+cat /var/log/nginx/error.log

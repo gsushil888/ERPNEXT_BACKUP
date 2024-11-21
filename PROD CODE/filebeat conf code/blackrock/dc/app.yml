@@ -1,0 +1,76 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+#    - /home/frappe/frappe-bench/logs/frappe.log*
+    - /app/frappe-bench/logs/frappe.log*
+#    - /etc/filebeat/frappe_test.log
+  multiline:
+      pattern: '^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}'
+      negate: true
+      match: after
+  fields:
+    app: app-frappe-log
+    environment: "DC"
+    category: "BLACKROCK_WMC"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h
+
+- type: log
+  enabled: true
+  scan_frequency: 10s
+  paths:
+    - /var/log/cron*
+  multiline:
+#    pattern: '^[A-Za-z]{3} \d{2} \d{2}:\d{2}:\d{2}'
+    pattern: '^[A-Za-z]{3} {1,2}\d{1,2} \d{2}:\d{2}:\d{2}'
+    negate: true
+    match: after
+  fields:
+    app: DC-sync-log
+    environment: "DC"
+    category: "BLACKROCK_WMC"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h
+- type: log
+  enabled: true
+  scan_frequency: 10s
+  paths:
+    - /etc/filebeat/job_app_logs.log
+  fields:
+    app: job-monitoring-app-log
+    environment: "DC"
+    category: "BLACKROCK_WMC"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h
+- type: log
+  enabled: true
+  scan_frequency: 10s
+  paths:
+    - /etc/filebeat/redis_status.log
+  fields:
+    app: redis-monitoring-log
+    environment: "DC"
+    category: "BLACKROCK_WMC"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h
+- type: log
+  enabled: true
+  paths:
+    - /var/log/nginx/error.log
+#    - /var/log/nginx/error.log.*.gz
+  multiline:
+      pattern: '^\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2}'
+      negate: true
+      match: after
+  fields:
+    app: app-nginx-error-log
+    environment: "DC"
+    category: "BLACKROCK_WMC"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h

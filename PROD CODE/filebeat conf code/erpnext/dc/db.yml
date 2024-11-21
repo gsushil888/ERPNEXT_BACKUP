@@ -1,0 +1,72 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  scan_frequency: 10s
+  paths:
+    - /proddb/mysql/mysql-slow.log
+  multiline:
+    pattern: '^/usr/sbin/mariadbd'
+    negate: true
+    match: after
+    max_lines: 1000
+  fields:
+    app: db-slow-queries-test
+    environment: "DC"
+    category: "ERPNEXT"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h
+- type: log
+  enabled: true
+  scan_frequency: 10s
+  paths:
+    - /proddb/mysql/mysql-slow.log
+  multiline:
+    pattern: '^\# Time:'
+    negate: true
+    match: after
+    max_lines: 1000
+  fields:
+    app: db-slow-queries-log
+    environment: "DC"
+    category: "ERPNEXT"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h
+- type: log
+  enabled: true
+  scan_frequency: 10s
+  paths:
+    - /etc/filebeat/job_db_logs.log
+  fields:
+    app: job-monitoring-db-log
+    environment: "DC"
+    category: "ERPNEXT"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h
+- type: log
+  enabled: true
+  scan_frequency: 10s
+  paths:
+   # - /proddb/db_bkp/backup_error_log/mysqldump_error_*.txt
+    - /proddb/db_bkp/backup_status_log/log_file_*.txt
+  fields:
+    app: job-monitoring-db-success
+    environment: "DC"
+    category: "ERPNEXT"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h
+- type: log
+  enabled: true
+  scan_frequency: 10s
+  paths:
+    - /proddb/db_bkp/backup_error_log/mysqldump_error_*.txt
+  fields:
+    app: job-monitoring-db-error
+    environment: "DC"
+    category: "ERPNEXT"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h

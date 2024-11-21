@@ -1,0 +1,17 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/log/nginx/error.log
+#    - /var/log/nginx/error.log.*.gz
+  multiline:
+      pattern: '^\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2}'
+      negate: true
+      match: after
+  fields:
+    app: web-error-log
+    environment: "DR"
+    category: "ERPNEXT"
+  fields_under_root: true
+  encoding: utf-8
+  ignore_older: 72h
