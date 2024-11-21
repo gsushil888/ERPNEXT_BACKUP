@@ -1,0 +1,99 @@
+{
+  "datasource": {
+    "default": false,
+    "type": "elasticsearch",
+    "uid": "be1ih06esa8zkd"
+  },
+  "fieldConfig": {
+    "defaults": {
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "color": "green",
+            "value": null
+          },
+          {
+            "color": "red",
+            "value": 80
+          }
+        ]
+      }
+    },
+    "overrides": []
+  },
+  "gridPos": {
+    "h": 7,
+    "w": 11,
+    "x": 11,
+    "y": 47
+  },
+  "id": 18,
+  "options": {
+    "renderMode": "allRows",
+    "editors": [
+      "afterRender",
+      "styles"
+    ],
+    "editor": {
+      "language": "html",
+      "format": "none"
+    },
+    "wrap": false,
+    "contentPartials": [],
+    "content": "<!-- <div class=\"filter-container\" data-panel=\"panel1\">\n  <select id=\"fieldSelect-panel1\" onchange=\"onFieldSelect('panel1')\">\n    <option value=\"\">Select a field</option>\n    <option value=\"formatted_log_timestamp\">Formatted Timestamp</option>\n    <option value=\"timestamp\">Timestamp</option>\n    <option value=\"url\">Url</option>\n    <option value=\"error\">Error</option>\n    <option value=\"email_status\">Email Sended</option>\n    <option value=\"response_code\">Response Code</option>\n  </select>\n\n  <input type=\"text\" id=\"searchFilter-panel1\" placeholder=\"Search by fields\" oninput=\"filterData('panel1')\" disabled>\n\n  <select id=\"timeFilter-panel1\" onchange=\"applyTimeFilter('panel1')\">\n    <option value=\"\">Select Time Range</option>\n    <option value=\"1h\">Last 1 Hour</option>\n    <option value=\"1d\">Last 1 Day</option>\n    <option value=\"7d\">Last 7 Days</option>\n    <option value=\"30d\">Last 30 Days</option>\n  </select>\n\n  <button class=\"download-button\" onclick=\"generateReport('panel1')\">\n    <span class=\"download-icon\">🡇</span>\n  </button>\n</div>\n\n\n<div class=\"accordion-container\" id=\"accordionContainer\" data-panel=\"panel1\">\n  {{#each data }}\n  <div class=\"accordion-item\">\n    <button class=\"accordion-header\" onclick=\"toggleAccordion(this)\">\n      <strong>Timestamp: </strong> {{formatted_log_timestamp}}\n    </button>\n    <div class=\"accordion-content\">\n      <table class=\"accordion-table\">\n        <tr>\n          <td><strong>Formatted Timestamp:</strong></td>\n          <td>{{formatted_log_timestamp}}</td>\n        </tr>\n        <tr>\n          <td><strong>Log Timestamp:</strong></td>\n          <td>{{timestamp}}</td>\n        </tr>\n        <tr>\n          <td><strong>Url:</strong></td>\n          <td>{{url}}</td>\n        </tr>\n        <tr>\n          <td><strong>Error:</strong></td>\n          <td>{{error}}</td>\n        </tr>\n        <tr>\n          <td><strong>Expected Response Code:</strong></td>\n          <td>{{expected_response_code}}</td>\n        </tr>\n        <tr>\n          <td><strong>Actual Response Code:</strong></td>\n          <td>{{actual_response_code}}</td>\n        </tr>\n        <tr>\n          <td><strong>Response Status Message:</strong></td>\n          <td>{{response_code_status}}</td>\n        </tr>\n        <tr>\n          <td><strong>Response Time:</strong></td>\n          <td>{{response_time}} ms</td>\n        </tr>\n        <tr>\n          <td><strong>Response Time Message:</strong></td>\n          <td>{{response_time_status}}</td>\n        </tr>\n        <tr>\n          <td><strong>Expected Response Content:</strong></td>\n          <td>{{expected_content_status}}</td>\n        </tr>\n      </table>\n    </div>\n  </div>\n  {{/each}}\n</div> -->",
+    "defaultContent": "The query didn't return any results.",
+    "helpers": "",
+    "afterRender": "// let filteredData = [];\r\n// let selectedField = \"\";\r\n// let selectedTimeRange = \"\";  // Track the selected time range\r\n// let isFiltering = false;  // Flag to indicate filtering state\r\n// let refreshIntervalId = null;  // Variable to store the refresh interval ID\r\n// let debounceTimeout = null;  // Store the timeout ID for debouncing\r\n\r\n// // Function to handle the field selection event based on the panel ID\r\n// onFieldSelect = (panelId) => {\r\n//     const fieldSelect = document.getElementById(`fieldSelect-${panelId}`);\r\n//     selectedField = fieldSelect.value;\r\n//     console.log(\"Selected field\", selectedField);\r\n//     const searchFilter = document.getElementById(`searchFilter-${panelId}`);\r\n//     if (selectedField) {\r\n//         searchFilter.disabled = false;\r\n//     } else {\r\n//         searchFilter.disabled = true;\r\n//         searchFilter.value = \"\";\r\n//     }\r\n\r\n//     // Filter data based on the field selection\r\n//     filterData(panelId);\r\n// };\r\n\r\n// // Function to apply the time filter based on selected range\r\n// applyTimeFilter = (panelId) => {\r\n//     const timeFilter = document.getElementById(`timeFilter-${panelId}`);\r\n//     selectedTimeRange = timeFilter.value;\r\n//     filterData(panelId);  // Re-apply filter with time range\r\n// };\r\n\r\n// // Function to filter data based on the selected field, time range, and search query\r\n// filterData = (panelId) => {\r\n//     isFiltering = true;  // Set the filtering flag to true\r\n\r\n//     const searchValue = document.getElementById(`searchFilter-${panelId}`).value.toLowerCase();\r\n//     const values = context.data;\r\n//     const dataArray = Array.isArray(values) ? values : Object.values(values);\r\n\r\n//     // Calculate time range for filtering\r\n//     const now = new Date();\r\n//     let filteredDataByTime = dataArray;\r\n//     if (selectedTimeRange) {\r\n//         const timeLimit = {\r\n//             \"1h\": new Date(now.getTime() - 1 * 60 * 60 * 1000),\r\n//             \"1d\": new Date(now.getTime() - 24 * 60 * 60 * 1000),\r\n//             \"7d\": new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000),\r\n//             \"30d\": new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000)\r\n//         }[selectedTimeRange];\r\n//         console.log(selectedTimeRange);\r\n//         filteredDataByTime = dataArray.filter(item => {\r\n//             const itemTimestamp = new Date(item['@timestamp']);\r\n//             return itemTimestamp >= timeLimit;\r\n//         });\r\n//         console.log(filteredDataByTime);\r\n//     }\r\n\r\n//     // Field-based filtering\r\n//     if (selectedField) {\r\n//         filteredData = filteredDataByTime.filter(item => {\r\n//             const fieldValue = item[selectedField];\r\n//             return fieldValue && fieldValue.toString().toLowerCase().includes(searchValue);\r\n//         });\r\n//     } else {\r\n//         filteredData = filteredDataByTime;\r\n//     }\r\n\r\n//     updateCardUI(panelId, filteredData);\r\n\r\n//     // Stop the data refresh while filtering\r\n//     if (refreshIntervalId) {\r\n//         clearInterval(refreshIntervalId);\r\n//     }\r\n// };\r\n\r\n// // Function to update the UI for the specific panel based on filtered data\r\n// updateCardUI = (panelId, filteredData) => {\r\n//     const accordionContainer = document.querySelector(`#accordionContainer[data-panel=\"${panelId}\"]`);\r\n//     accordionContainer.innerHTML = '';\r\n\r\n//     filteredData.forEach(item => {\r\n//         const accordionItem = document.createElement(\"div\");\r\n//         accordionItem.classList.add(\"accordion-item\");\r\n\r\n//         const accordionHeader = document.createElement(\"button\");\r\n//         accordionHeader.classList.add(\"accordion-header\");\r\n//         accordionHeader.innerHTML = `<strong>Timestamp: </strong> ${item[\"formatted_log_timestamp\"]}`;\r\n//         accordionHeader.onclick = () => toggleAccordion(accordionHeader);\r\n\r\n//         const accordionContent = document.createElement(\"div\");\r\n//         accordionContent.classList.add(\"accordion-content\");\r\n\r\n//         let tableHTML = \"<table class='accordion-table'>\";\r\n//         for (const [key, value] of Object.entries(item)) {\r\n//             if (key === \"id\") continue;\r\n//             tableHTML += `\r\n//                 <tr>\r\n//                     <td><strong>${capitalizeFirstLetter(key.replace(/_/g, \" \"))}:</strong></td>\r\n//                     <td>${value}</td>\r\n//                 </tr>\r\n//             `;\r\n//         }\r\n//         tableHTML += \"</table>\";\r\n//         accordionContent.innerHTML = tableHTML;\r\n//         accordionContent.style.display = \"none\";\r\n\r\n//         accordionItem.appendChild(accordionHeader);\r\n//         accordionItem.appendChild(accordionContent);\r\n//         accordionContainer.appendChild(accordionItem);\r\n//     });\r\n// };\r\n\r\n// // Helper function to capitalize the first letter of each word\r\n// function capitalizeFirstLetter(str) {\r\n//     return str.replace(/\\b\\w/g, char => char.toUpperCase());\r\n// }\r\n\r\n// // Function to start the refresh of the data (simulating Grafana data refresh)\r\n// const startDataRefresh = () => {\r\n//     refreshIntervalId = setInterval(() => {\r\n//         console.log(\"Refreshing data...\");\r\n//         // You would typically call an API here to fetch fresh data\r\n//         // Example:\r\n//         // fetchDataAndUpdateUI();\r\n//     }, 10000);  // Refresh every 10 seconds (adjust as needed)\r\n// };\r\n\r\n// // Function to stop refreshing data\r\n// const stopDataRefresh = () => {\r\n//     if (refreshIntervalId) {\r\n//         clearInterval(refreshIntervalId);\r\n//         refreshIntervalId = null;\r\n//     }\r\n// };\r\n\r\n// // Function to generate and download the report based on the panelId\r\n// generateReport = (panelId) => {\r\n//     const dataArray = filteredData.length > 0 ? filteredData : context.data;\r\n\r\n//     const accordionContainer = document.querySelector(`.accordion-container[data-panel=\"${panelId}\"]`);\r\n//     if (!accordionContainer) {\r\n//         console.error(`Accordion container with data-panel=\"${panelId}\" not found.`);\r\n//         return;\r\n//     }\r\n\r\n//     const firstAccordionContent = accordionContainer.querySelector(\".accordion-content\");\r\n//     if (!firstAccordionContent) {\r\n//         console.error(\"Accordion content not found.\");\r\n//         return;\r\n//     }\r\n\r\n//     firstAccordionContent.style.display = \"block\";\r\n\r\n//     const headers = Array.from(firstAccordionContent.querySelectorAll(\"tr\")).map(row => {\r\n//         const headerCell = row.querySelector(\"td strong\");\r\n//         return headerCell ? headerCell.textContent.replace(\":\", \"\").trim() : \"\";\r\n//     }).filter(header => header);\r\n\r\n//     firstAccordionContent.style.display = \"none\";\r\n\r\n//     let csvContent = headers.join(\",\") + \"\\n\";\r\n\r\n//     dataArray.forEach(item => {\r\n//         const rowData = headers.map(header => {\r\n//             const fieldKey = Object.keys(item).find(key => key.replace(/_/g, \" \").toLowerCase() === header.toLowerCase());\r\n//             return item[fieldKey] || \"\";\r\n//         });\r\n//         csvContent += rowData.join(\",\") + \"\\n\";\r\n//     });\r\n\r\n//     const blob = new Blob([csvContent], { type: \"text/csv;charset=utf-8;\" });\r\n//     const link = document.createElement(\"a\");\r\n//     const url = URL.createObjectURL(blob);\r\n//     link.setAttribute(\"href\", url);\r\n//     link.setAttribute(\"download\", `report_${panelId}.csv`);\r\n\r\n//     document.body.appendChild(link);\r\n//     link.click();\r\n//     document.body.removeChild(link);\r\n//     URL.revokeObjectURL(url);\r\n// };\r\n\r\n// // Function to toggle the accordion's content visibility\r\n// toggleAccordion = (element) => {\r\n//     const accordionContent = element.nextElementSibling;\r\n\r\n//     if (accordionContent.style.display === \"block\") {\r\n//         accordionContent.style.display = \"none\";\r\n//     } else {\r\n//         const allContents = document.querySelectorAll(\".accordion-content\");\r\n//         allContents.forEach(content => content.style.display = \"none\");\r\n//         accordionContent.style.display = \"block\";\r\n//     }\r\n// };\r\n\r\n// // Event listener to initialize accordion toggle behavior\r\n// document.addEventListener(\"DOMContentLoaded\", () => {\r\n//     const allHeaders = document.querySelectorAll(\".accordion-header\");\r\n//     allHeaders.forEach(header => {\r\n//         header.addEventListener(\"click\", () => toggleAccordion(header));\r\n//     });\r\n\r\n//     // Start refreshing data when the page loads\r\n//     startDataRefresh();\r\n// });\r\n\r\n// // Event listener for search input with debounce\r\n// document.getElementById(\"searchFilter-panel1\").addEventListener(\"input\", (event) => {\r\n//     clearTimeout(debounceTimeout); // Clear any previous debounce timeout\r\n\r\n//     // Wait for a short delay before triggering filterData (debounce)\r\n//     debounceTimeout = setTimeout(() => {\r\n//         if (!event.target.value && !selectedTimeRange) {\r\n//             // If the search field is cleared, resume the refresh\r\n//             isFiltering = false;\r\n//             startDataRefresh();\r\n//         } else {\r\n//             filterData(\"panel1\");  // Call the filter function after a short delay\r\n//         }\r\n//     }, 300); // 300ms debounce delay (adjust as needed)\r\n// });\r\n",
+    "externalStyles": [],
+    "styles": "// /* Container to align filter and button side by side */\r\n// .filter-container {\r\n//     display: flex;\r\n//     align-items: center;\r\n//     gap: 10px; /* Add space between the elements */\r\n//     flex-wrap: wrap; /* Ensure elements wrap on smaller screens */\r\n//     margin-bottom: 10px; /* Space between the filters and the cards */\r\n// }\r\n\r\n// /* Style for the input field and dropdown */\r\n// label {\r\n//     font-size: 12px;\r\n//     margin-bottom: 2px;\r\n//     color: #333;\r\n// }\r\n\r\n// select, input[type=\"text\"] {\r\n//     padding: 6px 8px; /* Reduced padding */\r\n//     border: 1px solid #ddd;\r\n//     border-radius: 5px;\r\n//     font-size: 14px;\r\n//     max-width: 130px; /* Set maximum width for better alignment */\r\n//     width: 100%;\r\n//     box-sizing: border-box;\r\n// }\r\n\r\n// /* Style for the input field */\r\n// input[type=\"text\"] {\r\n//     transition: border-color 0.3s ease;\r\n// }\r\n\r\n// /* Focus state for input and dropdown */\r\n// select:focus, input[type=\"text\"]:focus {\r\n//     border-color: #007bff;\r\n//     outline: none;\r\n// }\r\n\r\n// /* Style for the download button */\r\n// .download-button {\r\n//     padding: 3px 10px; /* Reduced padding */\r\n//     background-color: #007bff;\r\n//     color: white;\r\n//     font-size: 12px;\r\n//     border: none;\r\n//     border-radius: 5px;\r\n//     cursor: pointer;\r\n//     display: flex;\r\n//     align-items: center;\r\n//     gap: 6px; /* Space between icon and text */\r\n//     transition: background-color 0.3s ease;\r\n// }\r\n\r\n// /* Hover effect for the download button */\r\n// .download-button:hover {\r\n//     background-color: #0056b3;\r\n// }\r\n\r\n// /* Style for the download icon */\r\n// .download-icon {\r\n//     font-size: 18px;\r\n// }\r\n\r\n// /* Style for the card container */\r\n// .card-container {\r\n//     display: flex;\r\n//     flex-wrap: wrap;\r\n//     gap: 10px;\r\n//     justify-content: flex-start;\r\n// }\r\n\r\n// /* Style for each log card */\r\n// .log-card {\r\n//     border: 1px solid #ddd;\r\n//     padding: 10px;\r\n//     margin: 10px;\r\n//     width: 300px;\r\n//     background: #f9f9f9;\r\n//     border-radius: 8px;\r\n//     transition: transform 0.2s ease, box-shadow 0.2s ease;\r\n// }\r\n\r\n// /* Hover effect for cards */\r\n// .log-card:hover {\r\n//     transform: translateY(-5px);\r\n//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\r\n// }\r\n\r\n// /* Text styling inside the log cards */\r\n// .log-card p {\r\n//     font-size: 14px;\r\n//     color: #555;\r\n//     margin: 5px 0;\r\n// }\r\n\r\n// /* Responsive layout for smaller screens */\r\n// @media (max-width: 768px) {\r\n//     .filter-container {\r\n//         flex-direction: column;\r\n//         align-items: flex-start;\r\n//     }\r\n\r\n//     select, input[type=\"text\"], .download-button {\r\n//         width: 100%;\r\n//         max-width: 300px;\r\n//     }\r\n\r\n//     .log-card {\r\n//         width: 100%;\r\n//         max-width: 90%;\r\n//     }\r\n// }\r\n\r\n// .accordion-container {\r\n//   margin-top: 10px;\r\n// }\r\n\r\n// .accordion-item {\r\n//   margin-bottom: 6px;\r\n// }\r\n\r\n// .accordion-header {\r\n//   background-color: #0073e6;\r\n//   color: white;\r\n//   cursor: pointer;\r\n//   padding: 10px;\r\n//   width: 100%;\r\n//   border: none;\r\n//   text-align: left;\r\n//   outline: none;\r\n// }\r\n\r\n// .accordion-content {\r\n//   display: none;\r\n//   padding: 10px;\r\n//   background-color: #43473e;\r\n// }\r\n// .accordion-content {\r\n//   display: none;\r\n//   padding: 0;\r\n//   background-color: #f9f9f9;\r\n// }\r\n\r\n// .accordion-table {\r\n//   width: 100%;\r\n//   border-collapse: collapse;\r\n// }\r\n\r\n// .accordion-table td {\r\n//   padding: 8px 12px;\r\n//   border: 1px solid #ddd;\r\n//   font-size: 14px;\r\n//   color: #333;\r\n// }\r\n\r\n// .accordion-table tr:nth-child(even) {\r\n//   background-color: #f2f2f2;\r\n// }\r\n"
+  },
+  "pluginVersion": "5.4.0",
+  "targets": [
+    {
+      "alias": "",
+      "bucketAggs": [],
+      "datasource": {
+        "type": "elasticsearch",
+        "uid": "be1ih06esa8zkd"
+      },
+      "hide": false,
+      "metrics": [
+        {
+          "id": "1",
+          "settings": {
+            "size": "500"
+          },
+          "type": "raw_data"
+        }
+      ],
+      "query": "",
+      "refId": "A",
+      "timeField": "@timestamp"
+    }
+  ],
+  "transformations": [
+    {
+      "id": "filterFieldsByName",
+      "options": {
+        "include": {
+          "names": [
+            "@timestamp",
+            "actual_response_code",
+            "error",
+            "expected_response_code",
+            "formatted_log_timestamp",
+            "response_code_status",
+            "response_time_status",
+            "url",
+            "email_status",
+            "response_time",
+            "timestamp",
+            "expected_content_status"
+          ]
+        }
+      }
+    }
+  ],
+  "type": "marcusolsson-dynamictext-panel"
+}

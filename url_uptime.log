@@ -1,0 +1,214 @@
+{
+  "took": 14,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 3998,
+      "relation": "eq"
+    },
+    "max_score": null,
+    "hits": [
+      {
+        "_index": "synthetic_index",
+        "_id": "6lZVQ5MB1SQZzYBLQm98",
+        "_score": null,
+        "_ignored": [
+          "message.keyword"
+        ],
+        "_source": {
+          "expected_response_code": "200",
+          "url_processed": "https://drerpnext.jfs.in/",
+          "tags": [
+            "beats_input_codec_plain_applied"
+          ],
+          "message": "2024-11-19 13:00:02,294 [main] INFO  - Starting processing for URL: https://drerpnext.jfs.in/\n2024-11-19 13:00:03,658 [main] INFO  - Navigating to URL: https://drerpnext.jfs.in/\n2024-11-19 13:00:09,827 [main] INFO  - URL: https://drerpnext.jfs.in/\n2024-11-19 13:00:09,834 [main] INFO  - Response Time: 888\n2024-11-19 13:00:09,834 [main] INFO  - Response Time Status: Within expected range.\n2024-11-19 13:00:09,834 [main] INFO  - Expected Response Code: 200\n2024-11-19 13:00:09,834 [main] INFO  - Actual Response Code: 200\n2024-11-19 13:00:09,834 [main] INFO  - Response Code Status: Matches expected code.\n2024-11-19 13:00:09,857 [main] INFO  - Expected Content Status: This is an example website auto-generated from ERPNext\n2024-11-19 13:00:09,857 [main] INFO  - Finished processing for URL: https://drerpnext.jfs.in/\n2024-11-19 13:00:09,857 [main] INFO  - Email Status: N/A",
+          "response_time_status": "Within expected range.",
+          "actual_response_code": "200",
+          "error": "N/A",
+          "expected_content_status": "This is an example website auto-generated from ERPNext",
+          "environment": "DR",
+          "app": "synthetic-log",
+          "timestamp": "2024-11-19 13:00:02,294",
+          "url": "https://drerpnext.jfs.in/",
+          "@timestamp": "2024-11-19T07:30:09.061Z",
+          "email_status": "N/A",
+          "response_time": "888",
+          "category": "ERPNEXT",
+          "response_code_status": "Matches expected code.",
+          "navigated_url": "https://drerpnext.jfs.in/",
+          "formatted_log_timestamp": "19-Nov-2024 01:00:02 PM",
+          "url_processing": "https://drerpnext.jfs.in/"
+        },
+        "sort": [
+          1732001409061
+        ]
+      },
+      {
+        "_index": "synthetic_index",
+        "_id": "wlZQQ5MB1SQZzYBLvVxy",
+        "_score": null,
+        "_ignored": [
+          "message.keyword"
+        ],
+        "_source": {
+          "expected_response_code": "200",
+          "url_processed": "https://drerpnext.jfs.in/",
+          "tags": [
+            "beats_input_codec_plain_applied"
+          ],
+          "message": "2024-11-19 12:55:03,027 [main] INFO  - Starting processing for URL: https://drerpnext.jfs.in/\n2024-11-19 12:55:04,362 [main] INFO  - Navigating to URL: https://drerpnext.jfs.in/\n2024-11-19 12:55:10,635 [main] INFO  - URL: https://drerpnext.jfs.in/\n2024-11-19 12:55:10,642 [main] INFO  - Response Time: 1002\n2024-11-19 12:55:10,642 [main] INFO  - Response Time Status: Within expected range.\n2024-11-19 12:55:10,642 [main] INFO  - Expected Response Code: 200\n2024-11-19 12:55:10,642 [main] INFO  - Actual Response Code: 200\n2024-11-19 12:55:10,642 [main] INFO  - Response Code Status: Matches expected code.\n2024-11-19 12:55:10,666 [main] INFO  - Expected Content Status: This is an example website auto-generated from ERPNext\n2024-11-19 12:55:10,666 [main] INFO  - Finished processing for URL: https://drerpnext.jfs.in/\n2024-11-19 12:55:10,666 [main] INFO  - Email Status: N/A",
+          "response_time_status": "Within expected range.",
+          "actual_response_code": "200",
+          "error": "N/A",
+          "expected_content_status": "This is an example website auto-generated from ERPNext",
+          "environment": "DR",
+          "app": "synthetic-log",
+          "timestamp": "2024-11-19 12:55:03,027",
+          "url": "https://drerpnext.jfs.in/",
+          "@timestamp": "2024-11-19T07:25:06.977Z",
+          "email_status": "N/A",
+          "response_time": "1002",
+          "category": "ERPNEXT",
+          "response_code_status": "Matches expected code.",
+          "navigated_url": "https://drerpnext.jfs.in/",
+          "formatted_log_timestamp": "19-Nov-2024 12:55:03 PM",
+          "url_processing": "https://drerpnext.jfs.in/"
+        },
+        "sort": [
+          1732001106977
+        ]
+      },
+      {
+        "_index": "synthetic_index",
+        "_id": "LlZMQ5MB1SQZzYBLIUmt",
+        "_score": null,
+        "_ignored": [
+          "message.keyword"
+        ],
+        "_source": {
+          "expected_response_code": "200",
+          "url_processed": "https://drerpnext.jfs.in/",
+          "tags": [
+            "beats_input_codec_plain_applied"
+          ],
+          "message": "2024-11-19 12:50:02,833 [main] INFO  - Starting processing for URL: https://drerpnext.jfs.in/\n2024-11-19 12:50:04,238 [main] INFO  - Navigating to URL: https://drerpnext.jfs.in/\n2024-11-19 12:50:10,396 [main] INFO  - URL: https://drerpnext.jfs.in/\n2024-11-19 12:50:10,403 [main] INFO  - Response Time: 896\n2024-11-19 12:50:10,403 [main] INFO  - Response Time Status: Within expected range.\n2024-11-19 12:50:10,403 [main] INFO  - Expected Response Code: 200\n2024-11-19 12:50:10,403 [main] INFO  - Actual Response Code: 200\n2024-11-19 12:50:10,403 [main] INFO  - Response Code Status: Matches expected code.\n2024-11-19 12:50:10,426 [main] INFO  - Expected Content Status: This is an example website auto-generated from ERPNext\n2024-11-19 12:50:10,426 [main] INFO  - Finished processing for URL: https://drerpnext.jfs.in/\n2024-11-19 12:50:10,426 [main] INFO  - Email Status: N/A",
+          "response_time_status": "Within expected range.",
+          "actual_response_code": "200",
+          "error": "N/A",
+          "expected_content_status": "This is an example website auto-generated from ERPNext",
+          "environment": "DR",
+          "app": "synthetic-log",
+          "timestamp": "2024-11-19 12:50:02,833",
+          "url": "https://drerpnext.jfs.in/",
+          "@timestamp": "2024-11-19T07:20:08.921Z",
+          "email_status": "N/A",
+          "response_time": "896",
+          "category": "ERPNEXT",
+          "response_code_status": "Matches expected code.",
+          "navigated_url": "https://drerpnext.jfs.in/",
+          "formatted_log_timestamp": "19-Nov-2024 12:50:02 PM",
+          "url_processing": "https://drerpnext.jfs.in/"
+        },
+        "sort": [
+          1732000808921
+        ]
+      },
+      {
+        "_index": "synthetic_index",
+        "_id": "n8rTPJMBvaEC_PPOMZUo",
+        "_score": null,
+        "_ignored": [
+          "message.keyword"
+        ],
+        "_source": {
+          "formatted_log_timestamp": "18-Nov-2024 06:40:02 AM",
+          "url_processed": "https://drerpnext.jfs.in/",
+          "message": """2024-11-18 06:40:02,732 [main] INFO  - Starting processing for URL: https://drerpnext.jfs.in/
+            2024-11-18 06:40:03,700 [main] INFO  - Navigating to URL: https://drerpnext.jfs.in/
+            2024-11-18 06:40:14,991 [main] INFO  - URL: https://drerpnext.jfs.in/
+            2024-11-18 06:40:14,997 [main] INFO  - Response Time: 6003
+            2024-11-18 06:40:14,998 [main] INFO  - Response Time Status: Exceeded expected range.
+            2024-11-18 06:40:14,998 [main] INFO  - Expected Response Code: 200
+            2024-11-18 06:40:14,998 [main] INFO  - Actual Response Code: 200
+            2024-11-18 06:40:14,998 [main] INFO  - Response Code Status: Matches expected code.
+            2024-11-18 06:40:15,022 [main] INFO  - Expected Content Status: This is an example website auto-generated from ERPNext
+            2024-11-18 06:40:15,023 [main] INFO  - Finished processing for URL: https://drerpnext.jfs.in/
+            2024-11-18 06:40:15,050 [main] INFO  - Email Status: Success""",
+          "url_processing": "https://drerpnext.jfs.in/",
+          "tags": [
+            "beats_input_codec_plain_applied"
+          ],
+          "navigated_url": "https://drerpnext.jfs.in/",
+          "environment": "DR",
+          "app": "synthetic-log",
+          "response_time": "6003",
+          "actual_response_code": "200",
+          "url": "https://drerpnext.jfs.in/",
+          "expected_response_code": "200",
+          "response_time_status": "Exceeded expected range.",
+          "error": "N/A",
+          "category": "ERPNEXT",
+          "@timestamp": "2024-11-18T01:10:07.253Z",
+          "expected_content_status": "This is an example website auto-generated from ERPNext",
+          "timestamp": "2024-11-18 06:40:02,732",
+          "email_status": "Success",
+          "response_code_status": "Matches expected code."
+        },
+        "sort": [
+          1731892207253
+        ]
+      },
+      {
+        "_index": "synthetic_index",
+        "_id": "PY5eKpMBvaEC_PPO4h1v",
+        "_score": null,
+        "_ignored": [
+          "message.keyword"
+        ],
+        "_source": {
+          "@timestamp": "2024-11-14T11:10:06.955Z",
+          "response_time_status": "Within expected range.",
+          "response_time": "797",
+          "message": """2024-11-14 16:40:02,577 [main] INFO  - Starting processing for URL: https://drerpnext.jfs.in/
+            2024-11-14 16:40:03,144 [main] INFO  - Navigating to URL: https://drerpnext.jfs.in/
+            2024-11-14 16:40:09,029 [main] INFO  - URL: https://drerpnext.jfs.in/
+            2024-11-14 16:40:09,036 [main] INFO  - Response Time: 797
+            2024-11-14 16:40:09,036 [main] INFO  - Response Time Status: Within expected range.
+            2024-11-14 16:40:09,036 [main] INFO  - Expected Response Code: 200
+            2024-11-14 16:40:09,037 [main] INFO  - Actual Response Code: 502
+            2024-11-14 16:40:09,037 [main] WARN  - Response Code Status: Does not match expected code.
+            2024-11-14 16:40:09,046 [main] WARN  - Expected Content Status: No names are present in the page's HTML content.
+            2024-11-14 16:40:09,046 [main] INFO  - Finished processing for URL: https://drerpnext.jfs.in/
+            2024-11-14 16:40:09,058 [main] INFO  - Email Status: Success""",
+          "error": "N/A",
+          "url_processed": "https://drerpnext.jfs.in/",
+          "app": "synthetic-log",
+          "timestamp": "2024-11-14 16:40:02,577",
+          "url": "https://drerpnext.jfs.in/",
+          "environment": "DC",
+          "expected_response_code": "200",
+          "tags": [
+            "beats_input_codec_plain_applied"
+          ],
+          "category": "ERPNEXT",
+          "navigated_url": "https://drerpnext.jfs.in/",
+          "response_code_status": "Does not match expected code.",
+          "expected_content_status": "No names are present in the page's HTML content.",
+          "url_processing": "https://drerpnext.jfs.in/",
+          "formatted_log_timestamp": "14-Nov-2024 04:40:02 PM",
+          "actual_response_code": "502",
+          "email_status": "Success"
+        },
+        "sort": [
+          1731582606955
+        ]
+      },
+    ]
+  }
+}

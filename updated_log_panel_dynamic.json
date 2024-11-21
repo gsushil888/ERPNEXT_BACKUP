@@ -1,0 +1,97 @@
+{
+    "datasource": {
+      "default": false,
+      "type": "elasticsearch",
+      "uid": "fdzqnb11d47i8f"
+    },
+    "fieldConfig": {
+      "defaults": {
+        "thresholds": {
+          "mode": "absolute",
+          "steps": [
+            {
+              "color": "green",
+              "value": null
+            },
+            {
+              "color": "red",
+              "value": 80
+            }
+          ]
+        }
+      },
+      "overrides": []
+    },
+    "gridPos": {
+      "h": 7,
+      "w": 11,
+      "x": 0,
+      "y": 47
+    },
+    "id": 17,
+    "options": {
+      "renderMode": "allRows",
+      "editors": [
+        "afterRender",
+        "styles"
+      ],
+      "editor": {
+        "language": "html",
+        "format": "none"
+      },
+      "wrap": true,
+      "contentPartials": [],
+      "content": "",
+      "defaultContent": "The query didn't return any results.",
+      "helpers": "",
+      "afterRender": "// let filteredData = []; // Global variable to store filtered data\r\n// let selectedField = \"\"; // Store the selected field for filtering\r\n\r\n// // Function to handle selection of filter field from dropdown\r\n// onFieldSelect=()=> {\r\n//     const fieldSelect = document.getElementById(\"fieldSelect\");\r\n//     selectedField = fieldSelect.value;\r\n//     console.log(selectedField);\r\n//     // Enable or disable the input field based on selection\r\n//     const searchFilter = document.getElementById(\"searchFilter\");\r\n//     console.log(\"SELECTED\",selectedField);\r\n//     if (selectedField) {\r\n//         searchFilter.disabled = false; // Enable the input field\r\n//     } else {\r\n//         searchFilter.disabled = true; // Disable the input field if no field is selected\r\n//         searchFilter.value = \"\"; // Clear input value when disabling\r\n//     }\r\n    \r\n//     filterData(); // Reapply the filter whenever the field is selected or changed\r\n// }\r\n\r\n// // Function to handle filtering based on input value\r\n// filterData=()=> {\r\n//     console.log(\"inside filter\");\r\n//     const searchValue = document.getElementById(\"searchFilter\").value.toLowerCase();\r\n//     console.log(\"SEARCH\",searchValue);\r\n//     // Assuming `context.data` holds the current data\r\n//     const values = context.data;\r\n//     const dataArray = Array.isArray(values) ? values : Object.values(values);\r\n\r\n//     // Filter the data based on the selected field and search value\r\n//     if (selectedField) {\r\n//         filteredData = dataArray.filter(item => {\r\n//             const fieldValue = item[selectedField];\r\n//             return fieldValue && fieldValue.toString().toLowerCase().includes(searchValue);\r\n//         });\r\n//     } else {\r\n//         filteredData = dataArray; // If no field selected, show all data\r\n//     }\r\n//     console.log(filteredData);\r\n//     // Update the UI with the filtered data\r\n//     updateCardUI(filteredData);\r\n// }\r\n\r\n// // Function to update the UI with filtered data\r\n// // updateCardUI=(filteredData)=> {\r\n// //     const cardContainer = document.getElementById(\"cardContainer\");\r\n// //     cardContainer.innerHTML = ''; // Clear existing cards\r\n\r\n// //     // Create new cards for the filtered data\r\n// //     filteredData.forEach(item => {\r\n// //         const card = document.createElement(\"div\");\r\n// //         card.classList.add(\"log-card\");\r\n// //         card.innerHTML = `\r\n// //             <p><strong>Timestamp</strong> {{\"@timestamp\"}}</p>\r\n// //             <p><strong>Formatted Timestamp:</strong> {{\"formatted_log_timestamp\"}}</p>\r\n// //             <p><strong>Category</strong> {{\"category\"}}</p>\r\n// //             <p><strong>Environment:</strong> {{\"environment\"}}</p>\r\n// //             <p><strong>User</strong> {{\"user\"}}</p>\r\n// //             <p><strong>Hostname</strong> {{\"hostname\"}}</p>\r\n// //             <p><strong>PID</strong> {{\"pid\"}}</p>\r\n// //         `;\r\n// //         cardContainer.appendChild(card);\r\n// //     });\r\n// // }\r\n\r\n// // Function to update the UI with filtered data in the accordion\r\n// updateCardUI = (filteredData) => {\r\n//     console.log(filteredData);\r\n//     const accordionContainer = document.getElementById(\"accordionContainer\");\r\n//     accordionContainer.innerHTML = ''; // Clear existing accordion items\r\n\r\n//     // Create new accordion items for the filtered data\r\n//     filteredData.forEach(item => {\r\n//         const accordionItem = document.createElement(\"div\");\r\n//         accordionItem.classList.add(\"accordion-item\");\r\n\r\n//         // Create the accordion header with a dynamic timestamp\r\n//         const accordionHeader = document.createElement(\"button\");\r\n//         accordionHeader.classList.add(\"accordion-header\");\r\n//         accordionHeader.innerHTML = `\r\n//             <strong>Timestamp: </strong> ${item[\"formatted_log_timestamp\"]}\r\n//         `;\r\n//         accordionHeader.onclick = () => toggleAccordion(accordionHeader); // Toggle content when clicked\r\n//         // console.log(accordionHeader);\r\n//         // Create the accordion content with dynamic data\r\n//         const accordionContent = document.createElement(\"div\");\r\n//         accordionContent.classList.add(\"accordion-content\");\r\n//         accordionContent.innerHTML = `\r\n//             <p><strong>Timestamp</strong> ${item[\"@timestamp\"]}</p>\r\n//             <p><strong>Formatted Timestamp:</strong> ${item[\"formatted_log_timestamp\"]}</p>\r\n//             <p><strong>Category</strong> ${item[\"category\"]}</p>\r\n//             <p><strong>Environment:</strong> ${item[\"environment\"]}</p>\r\n//             <p><strong>User</strong> ${item[\"user\"]}</p>\r\n//             <p><strong>Hostname</strong> ${item[\"hostname\"]}</p>\r\n//             <p><strong>PID</strong> ${item[\"pid\"]}</p>\r\n//         `;\r\n//         // console.log(accordionContent);\r\n//         accordionContent.style.display = \"none\"; // Initially hide the content\r\n\r\n//         // Append the header and content to the accordion item\r\n//         accordionItem.appendChild(accordionHeader);\r\n//         accordionItem.appendChild(accordionContent);\r\n\r\n//         // Append the accordion item to the accordion container\r\n//         accordionContainer.appendChild(accordionItem);\r\n//         // console.log(accordionContainer);\r\n//     });\r\n// }\r\n\r\n// // Function to generate the CSV report based on filtered data\r\n// generateReport=()=> {\r\n//     const dataArray = filteredData.length > 0 ? filteredData : context.data; // Use filtered data if available, otherwise use all data\r\n\r\n//     const groupByHour = (data) => {\r\n//         return data.reduce((groups, item) => {\r\n//             const timestamp = item[\"@timestamp\"];\r\n//             const hour = new Date(timestamp).setMinutes(0, 0, 0); // Round timestamp to the start of the hour\r\n//             if (!groups[hour]) {\r\n//                 groups[hour] = [];\r\n//             }\r\n//             groups[hour].push(item);\r\n//             return groups;\r\n//         }, {});\r\n//     };\r\n\r\n//     const groupedData = groupByHour(dataArray);\r\n\r\n//     const headers = [\r\n//         \"@timestamp\",\r\n//         \"formatted_log_timestamp\",\r\n//         \"category\",\r\n//         \"environment\",\r\n//         \"user\",\r\n//         \"hostname\",\r\n//         \"pid\"\r\n//     ];\r\n\r\n//     let csvContent = headers.join(\",\") + \"\\n\";\r\n\r\n//     Object.keys(groupedData).forEach(hour => {\r\n//         const hourData = groupedData[hour];\r\n//         hourData.forEach(item => {\r\n//             csvContent += [\r\n//                 item[\"@timestamp\"] || \"\",\r\n//                 item[\"formatted_log_timestamp\"] || \"\",\r\n//                 item[\"category\"] || \"\",\r\n//                 item[\"environment\"] || \"\",\r\n//                 item[\"user\"] || \"\",\r\n//                 item[\"hostname\"] || \"\",\r\n//                 item[\"pid\"] || \"\"\r\n//             ].join(\",\") + \"\\n\";\r\n//         });\r\n//     });\r\n\r\n//     // Create a Blob for the CSV content and trigger a download\r\n//     const blob = new Blob([csvContent], { type: \"text/csv;charset=utf-8;\" });\r\n//     const link = document.createElement(\"a\");\r\n//     const url = URL.createObjectURL(blob);\r\n//     link.setAttribute(\"href\", url);\r\n//     link.setAttribute(\"download\", \"report.csv\");\r\n\r\n//     document.body.appendChild(link);\r\n//     link.click();\r\n\r\n//     document.body.removeChild(link);\r\n//     URL.revokeObjectURL(url); // Free memory\r\n// };\r\n\r\n// // Function to toggle the accordion content\r\n// toggleAccordion = (element) => {\r\n//     const accordionContent = element.nextElementSibling; // Get the content of the clicked accordion header\r\n\r\n//     // If the content is already open, close it\r\n//     if (accordionContent.style.display === \"block\") {\r\n//         accordionContent.style.display = \"none\";\r\n//     } else {\r\n//         // Close all other accordion items\r\n//         const allContents = document.querySelectorAll(\".accordion-content\");\r\n//         allContents.forEach(content => {\r\n//             content.style.display = \"none\";\r\n//         });\r\n\r\n//         // Open the clicked accordion content\r\n//         accordionContent.style.display = \"block\";\r\n//     }\r\n// };\r\n\r\n// // Apply the accordion toggle when the page loads or the data is inserted\r\n// document.addEventListener(\"DOMContentLoaded\", () => {\r\n//     const allHeaders = document.querySelectorAll(\".accordion-header\");\r\n//     allHeaders.forEach(header => {\r\n//         header.addEventListener(\"click\", () => toggleAccordion(header));\r\n//     });\r\n// });\r\n",
+      "externalStyles": [],
+      "styles": "// /* Container to align filter and button side by side */\r\n// .filter-container {\r\n//     display: flex;\r\n//     align-items: center;\r\n//     gap: 10px; /* Add space between the elements */\r\n//     flex-wrap: wrap; /* Ensure elements wrap on smaller screens */\r\n//     margin-bottom: 10px; /* Space between the filters and the cards */\r\n// }\r\n\r\n// /* Style for the input field and dropdown */\r\n// label {\r\n//     font-size: 12px;\r\n//     margin-bottom: 2px;\r\n//     color: #333;\r\n// }\r\n\r\n// select, input[type=\"text\"] {\r\n//     padding: 6px 8px; /* Reduced padding */\r\n//     border: 1px solid #ddd;\r\n//     border-radius: 5px;\r\n//     font-size: 14px;\r\n//     max-width: 130px; /* Set maximum width for better alignment */\r\n//     width: 100%;\r\n//     box-sizing: border-box;\r\n// }\r\n\r\n// /* Style for the input field */\r\n// input[type=\"text\"] {\r\n//     transition: border-color 0.3s ease;\r\n// }\r\n\r\n// /* Focus state for input and dropdown */\r\n// select:focus, input[type=\"text\"]:focus {\r\n//     border-color: #007bff;\r\n//     outline: none;\r\n// }\r\n\r\n// /* Style for the download button */\r\n// .download-button {\r\n//     padding: 3px 10px; /* Reduced padding */\r\n//     background-color: #007bff;\r\n//     color: white;\r\n//     font-size: 12px;\r\n//     border: none;\r\n//     border-radius: 5px;\r\n//     cursor: pointer;\r\n//     display: flex;\r\n//     align-items: center;\r\n//     gap: 6px; /* Space between icon and text */\r\n//     transition: background-color 0.3s ease;\r\n// }\r\n\r\n// /* Hover effect for the download button */\r\n// .download-button:hover {\r\n//     background-color: #0056b3;\r\n// }\r\n\r\n// /* Style for the download icon */\r\n// .download-icon {\r\n//     font-size: 18px;\r\n// }\r\n\r\n// /* Style for the card container */\r\n// .card-container {\r\n//     display: flex;\r\n//     flex-wrap: wrap;\r\n//     gap: 10px;\r\n//     justify-content: flex-start;\r\n// }\r\n\r\n// /* Style for each log card */\r\n// .log-card {\r\n//     border: 1px solid #ddd;\r\n//     padding: 10px;\r\n//     margin: 10px;\r\n//     width: 300px;\r\n//     background: #f9f9f9;\r\n//     border-radius: 8px;\r\n//     transition: transform 0.2s ease, box-shadow 0.2s ease;\r\n// }\r\n\r\n// /* Hover effect for cards */\r\n// .log-card:hover {\r\n//     transform: translateY(-5px);\r\n//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\r\n// }\r\n\r\n// /* Text styling inside the log cards */\r\n// .log-card p {\r\n//     font-size: 14px;\r\n//     color: #555;\r\n//     margin: 5px 0;\r\n// }\r\n\r\n// /* Responsive layout for smaller screens */\r\n// @media (max-width: 768px) {\r\n//     .filter-container {\r\n//         flex-direction: column;\r\n//         align-items: flex-start;\r\n//     }\r\n\r\n//     select, input[type=\"text\"], .download-button {\r\n//         width: 100%;\r\n//         max-width: 300px;\r\n//     }\r\n\r\n//     .log-card {\r\n//         width: 100%;\r\n//         max-width: 90%;\r\n//     }\r\n// }\r\n\r\n// .accordion-container {\r\n//   margin-top: 10px;\r\n// }\r\n\r\n// .accordion-item {\r\n//   margin-bottom: 6px;\r\n// }\r\n\r\n// .accordion-header {\r\n//   background-color: #0073e6;\r\n//   color: white;\r\n//   cursor: pointer;\r\n//   padding: 10px;\r\n//   width: 100%;\r\n//   border: none;\r\n//   text-align: left;\r\n//   outline: none;\r\n// }\r\n\r\n// .accordion-content {\r\n//   display: none;\r\n//   padding: 10px;\r\n//   background-color: #43473e;\r\n// }\r\n"
+    },
+    "pluginVersion": "5.4.0",
+    "targets": [
+      {
+        "alias": "",
+        "bucketAggs": [],
+        "datasource": {
+          "type": "elasticsearch",
+          "uid": "fdzqnb11d47i8f"
+        },
+        "hide": false,
+        "metrics": [
+          {
+            "id": "1",
+            "settings": {
+              "size": "500"
+            },
+            "type": "raw_data"
+          }
+        ],
+        "query": "",
+        "refId": "A",
+        "timeField": "@timestamp"
+      }
+    ],
+    "transformations": [
+      {
+        "id": "filterFieldsByName",
+        "options": {
+          "include": {
+            "names": [
+              "@timestamp",
+              "app",
+              "category",
+              "command",
+              "environment",
+              "formatted_log_timestamp",
+              "hostname",
+              "log_timestamp",
+              "pid",
+              "user"
+            ]
+          }
+        }
+      }
+    ],
+    "type": "marcusolsson-dynamictext-panel"
+  }
