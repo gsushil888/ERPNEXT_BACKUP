@@ -1,0 +1,20 @@
+Dear Team,
+
+I hope this message finds you well.
+The Disaster Recovery sync of the application has not occurred within the last hour
+Below are the details for your reference:
+======================
+{{ range .Alerts }}{{ range  $key, $value := .Labels }}{{ if eq $key "hostname.keyword" }}
+HOST NAME = {{ $value }}{{ else if eq $key "log_timestamp.keyword" }}
+LOG TIMESTAMP= {{ $value }}{{ else if eq $key "formatted_log_timestamp.keyword" }}
+FORMATTED TIMESTAMP = {{ $value }}{{ else if eq $key "user.keyword" }}
+USER = {{ $value }}{{ else if eq $key "pid.keyword" }}
+PID = {{ $value }}{{ else if eq $key "command.keyword" }}
+COMMAND = {{ $value }}{{ end }}{{ end }}
+======================
+{{ end }}
+
+
+Best regards.
+
+-----------Updated---------

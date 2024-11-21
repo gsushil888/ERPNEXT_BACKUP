@@ -1,0 +1,29 @@
+Dear Team,
+
+I hope this message finds you well.
+
+We are currently facing an issue with long-running queries in the database.
+Below are the details for your reference:
+
+There are {{ len .Alerts.Firing }} long running queries
+======================
+{{ range .Alerts }}Start Time: {{ .StartsAt }} 
+{{ range $key, $value := .Labels }}{{ if eq $key "log_time.keyword" }}
+LOG TIME = {{ $value }}{{ else if eq $key "log_date.keyword" }}
+LOG DATE = {{ $value }}{{ else if eq $key "connection_string.keyword" }}
+CONNECTION STRING = {{ $value }}{{ else if eq $key "query_statement.keyword" }}
+QUERY STATEMENT = {{ $value }}{{ else if eq $key "host_ip.keyword" }}
+HOST IP = {{ $value }}{{ else if eq $key "user_id.keyword" }}
+USER ID = {{ $value }}{{ else if eq $key "log_timestamp.keyword" }}
+LOG TIMESTAMP = {{ $value }}{{ else if eq $key "query_time" }} 
+QUERY TIME = {{ $value }}{{ end }}{{ end }} 
+======================
+{{ end }}
+
+Please investigate this issue at your earliest convenience.
+Thank you for your attention to this matter.
+
+Best regards.
+
+
+--------Updated-----------

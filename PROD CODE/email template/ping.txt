@@ -1,0 +1,113 @@
+Dear Team,
+
+I hope this message finds you well.
+
+There are {{ len .Alerts.Firing }} server which are not reachable or pingable
+
+======================
+{{ range .Alerts }}
+Started At: {{ .StartsAt }}
+{{ range $key, $value := .Labels }}{{ if eq $key "host.hostname.keyword" }}Hostname: {{ $value }}
+{{ end }}{{ end }}======================
+{{ end }}
+
+Best Regards.
+
+-------------Updated------------
+
+Dear Team,
+
+I hope this message finds you well.
+
+{{ if eq (len .Alerts.Firing) 0 }}There are no servers which is not reachable or pingable{{ else if eq (len .Alerts.Firing) 1 }}
+There is 1 server which is not reachable or pingable{{ else }}
+There are {{ len .Alerts.Firing }} servers which are not reachable or pingable{{ end }}
+
+=============================={{ range .Alerts }}
+Alert Summary: {{ .Annotations.summary }}
+Alert Started At: {{ .StartsAt | date "02-Jan-2006 03:04:05 PM" }}
+Hostname: {{ (index .Labels "servername.keyword") }}
+Ip: {{ (index .Labels "url.domain.keyword") }}
+==============================
+{{ end }}
+
+
+-------PING PAYLOAD-------
+
+[
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "ce27gynenmayof",
+      "__orgId__": "1",
+      "__panelId__": "5",
+      "__value_string__": "[ var='B' labels={metricId=1, servername.keyword=PRODWEB, url.domain.keyword=10.100.23.226} value=1.3869999647140503 ], [ var='C' labels={metricId=1, servername.keyword=PRODWEB, url.domain.keyword=10.100.23.226} value=1 ]",
+      "__values__": "{\"B\":1.3869999647140503,\"C\":1}",
+      "description": "Below Servers ping time exceeds 1000ms for last 5 min continuously",
+      "summary": "Server's are not rechable or pingable for last 5min continuously."
+    },
+    "labels": {
+      "PING": "STATUS",
+      "__alert_rule_uid__": "cdzu2jh0hzabkb",
+      "alertname": "Server is not pingable or rechable",
+      "grafana_folder": "NOT PERMITTED FOLDER/HARDWARE RESOURCE UTILIZATION",
+      "metricId": "1",
+      "servername.keyword": "PRODWEB",
+      "url.domain.keyword": "10.100.23.226"
+    },
+    "startsAt": "2024-11-04T06:25:00.000Z",
+    "endsAt": "2024-11-04T06:29:00.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/cdzu2jh0hzabkb/view",
+    "fingerprint": "3a27e048e33493b9"
+  },
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "ce27gynenmayof",
+      "__orgId__": "1",
+      "__panelId__": "5",
+      "__value_string__": "[ var='B' labels={metricId=1, servername.keyword=PRODAPP, url.domain.keyword=10.100.21.216} value=1.4639999866485596 ], [ var='C' labels={metricId=1, servername.keyword=PRODAPP, url.domain.keyword=10.100.21.216} value=1 ]",
+      "__values__": "{\"B\":1.4639999866485596,\"C\":1}",
+      "description": "Below Servers ping time exceeds 1000ms for last 5 min continuously",
+      "summary": "Server's are not rechable or pingable for last 5min continuously."
+    },
+    "labels": {
+      "PING": "STATUS",
+      "__alert_rule_uid__": "cdzu2jh0hzabkb",
+      "alertname": "Server is not pingable or rechable",
+      "grafana_folder": "NOT PERMITTED FOLDER/HARDWARE RESOURCE UTILIZATION",
+      "metricId": "1",
+      "servername.keyword": "PRODAPP",
+      "url.domain.keyword": "10.100.21.216"
+    },
+    "startsAt": "2024-11-04T06:25:00.000Z",
+    "endsAt": "2024-11-04T06:29:00.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/cdzu2jh0hzabkb/view",
+    "fingerprint": "49284b3fdfa7c6bb"
+  },
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "ce27gynenmayof",
+      "__orgId__": "1",
+      "__panelId__": "5",
+      "__value_string__": "[ var='B' labels={metricId=1, servername.keyword=PRODDB, url.domain.keyword=10.100.22.142} value=1.2359999418258667 ], [ var='C' labels={metricId=1, servername.keyword=PRODDB, url.domain.keyword=10.100.22.142} value=1 ]",
+      "__values__": "{\"B\":1.2359999418258667,\"C\":1}",
+      "description": "Below Servers ping time exceeds 1000ms for last 5 min continuously",
+      "summary": "Server's are not rechable or pingable for last 5min continuously."
+    },
+    "labels": {
+      "PING": "STATUS",
+      "__alert_rule_uid__": "cdzu2jh0hzabkb",
+      "alertname": "Server is not pingable or rechable",
+      "grafana_folder": "NOT PERMITTED FOLDER/HARDWARE RESOURCE UTILIZATION",
+      "metricId": "1",
+      "servername.keyword": "PRODDB",
+      "url.domain.keyword": "10.100.22.142"
+    },
+    "startsAt": "2024-11-04T06:25:00.000Z",
+    "endsAt": "2024-11-04T06:29:00.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/cdzu2jh0hzabkb/view",
+    "fingerprint": "58e632dec619925b"
+  }
+]

@@ -1,0 +1,153 @@
+Dear Team,
+
+I hope this message finds you well.
+We are currently facing an exception/error in the application.
+Below are the details for your reference:
+
+There are {{ len .Alerts.Firing }} exception or error within last hour of email.
+======================
+{{ range .Alerts }}{{ range  $key, $value := .Labels }}{{ if eq $key "log_level.keyword" }}
+LOG LEVEL = {{ $value }}{{ else if eq $key "log_message.keyword" }}
+LOG MESSAGE = {{ $value }}{{ else if eq $key "formatted_log_timestamp.keyword" }}
+LOG TIMESTAMP = {{ $value }}{{ else if eq $key "payload_json.keyword" }}
+PAYLOAD = {{ $value }}{{ end }}{{ end }}
+======================{{ end }}
+Please investigate this issue at your earliest convenience.
+Thank you for your attention to this matter.
+
+Best regards
+
+---------Updated------------
+
+Dear Team,
+
+I hope this message finds you well.
+We are currently facing an exception/error in the application.
+Below are the details for your reference:
+
+There are {{ len .Alerts.Firing }} exception or error within last hour of email.
+======================
+{{ range .Alerts }}ALERT START AT = {{ .StartsAt | date "02-Jan-2006 03:04:05 PM" }}
+ALERT ENDS AT ={{ .EndsAt | date "02-Jan-2006 03:04:05 PM"}}{{ range  $key, $value := .Labels }}{{ if eq $key "log_level.keyword" }}
+LOG LEVEL = {{ $value }}{{ else if eq $key "log_message.keyword" }}
+LOG MESSAGE = {{ $value }}{{ else if eq $key "formatted_log_timestamp.keyword" }}
+LOG TIMESTAMP = {{ $value }}{{ else if eq $key "payload_json.keyword" }}
+PAYLOAD = {{ $value }}{{ end }}{{ end }}
+======================{{ end }}
+Please investigate this issue at your earliest convenience.
+Thank you for your attention to this matter.
+
+Best regards
+
+---------LATEST------------
+Dear Team,
+
+I hope this message finds you well.
+We are currently facing an exception/error in the application.
+Below are the details for your reference:
+
+{{ if eq (len .Alerts.Firing) 0 }}There are no exception or error occurred in application.{{ else if eq (len .Alerts.Firing) 1 }}
+There is 1 exception or error occurred in application.{{ else }}
+There are {{ len .Alerts.Firing }} exception or error occurred in application.{{ end }}
+
+======================{{ range .Alerts }}
+Alert Started At: {{ .StartsAt | date "02-Jan-2006 03:04:05 PM UTC" }}{{ range  $key, $value := .Labels }}{{ if eq $key "log_level.keyword" }}
+LOG LEVEL = {{ $value }}{{ else if eq $key "log_message.keyword" }}
+LOG MESSAGE = {{ $value }}{{ else if eq $key "formatted_log_timestamp.keyword" }}
+LOG TIMESTAMP = {{ $value }} IST{{ else if eq $key "payload_json.keyword" }}
+PAYLOAD = {{ $value }}{{ else if eq $key "category.keyword" }}
+ENTITY NAME = {{ $value }}{{ else if eq $key "environment.keyword" }}
+ENVIRONMENT = {{ $value }}{{ end }}{{ end }}
+======================{{ end }}
+
+Please investigate this issue at your earliest convenience.
+Thank you for your attention to this matter.
+
+Best regards
+
+-----------Payload------------
+
+[
+
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "3",
+      "__value_string__": "[ var='B' labels={formatted_log_timestamp.keyword=04-Nov-2024 12:30:18 PM, log_level.keyword=ERROR, log_message.keyword=Check log message as message is too long} value=1 ]",
+      "__values__": "{\"B\":1}",
+      "summary": "Application having error or exception in last hour"
+    },
+    "labels": {
+      "APP": "ERROR",
+      "__alert_rule_uid__": "adzk7v4yzl0cgd",
+      "alertname": "Application having error or exception ",
+      "formatted_log_timestamp.keyword": "04-Nov-2024 12:30:18 PM",
+      "grafana_folder": "NOT PERMITTED FOLDER/APPLICATION ALERTS",
+      "log_level.keyword": "ERROR",
+      "log_message.keyword": "Check log message as message is too long"
+    },
+    "startsAt": "2024-11-04T12:34:50.000Z",
+    "endsAt": "2024-11-04T12:38:50.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/adzk7v4yzl0cgd/view",
+    "fingerprint": "39cbb91470f3505d"
+  }
+]
+
+
+[
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "3",
+      "__value_string__": "[ var='B' labels={formatted_log_timestamp.keyword=14-Nov-2024 10:51:58 AM, log_level.keyword=ERROR, log_message.keyword=New Exception collected with id: 2024-11-14 10:51:58.795535-10.100.23.226-d0e} value=1 ]",
+      "__values__": "{\"B\":1}",
+      "summary": "Application having error or exception in last hour"
+    },
+    "labels": {
+      "APP": "ERROR",
+      "__alert_rule_uid__": "adzk7v4yzl0cgd",
+      "alertname": "Application having error or exception ",
+      "formatted_log_timestamp.keyword": "14-Nov-2024 10:51:58 AM",
+      "grafana_folder": "NOT PERMITTED FOLDER/APPLICATION ALERTS",
+      "log_level.keyword": "ERROR",
+      "log_message.keyword": "New Exception collected with id: 2024-11-14 10:51:58.795535-10.100.23.226-d0e"
+    },
+    "startsAt": "2024-11-14T10:55:50.000Z",
+    "endsAt": "2024-11-14T11:15:50.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/adzk7v4yzl0cgd/view",
+    "fingerprint": "3c3d242fe0ba3592"
+  }
+]
+
+[
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "3",
+      "__value_string__": "[ var='B' labels={category.keyword=ERPNEXT, environment.keyword=DR, formatted_log_timestamp.keyword=21-Nov-2024 10:00:53 AM, log_level.keyword=ERROR, log_message.keyword=Check log message as message is too long} value=1 ]",
+      "__values__": "{\"B\":1}",
+      "summary": "Application having error or exception in last hour"
+    },
+    "labels": {
+      "APP": "ERROR",
+      "__alert_rule_uid__": "adzk7v4yzl0cgd",
+      "alertname": "Application having error or exception ",
+      "category.keyword": "ERPNEXT",
+      "environment.keyword": "DR",
+      "formatted_log_timestamp.keyword": "21-Nov-2024 10:00:53 AM",
+      "grafana_folder": "NOT PERMITTED FOLDER/APPLICATION ALERTS",
+      "log_level.keyword": "ERROR",
+      "log_message.keyword": "Check log message as message is too long"
+    },
+    "startsAt": "2024-11-21T05:30:50.000Z",
+    "endsAt": "2024-11-21T09:30:50.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/adzk7v4yzl0cgd/view",
+    "fingerprint": "e3878655ea005710"
+  }
+]

@@ -1,0 +1,131 @@
+Dear Team,
+
+I hope this message finds you well.
+
+There are {{ len .Alerts.Firing }} server having cpu idle percentages goes below 20%.
+
+======================
+{{ range .Alerts }}
+Started At: {{ .StartsAt }}
+{{ range $key, $value := .Labels }}{{ if eq $key "host.hostname.keyword" }}Hostname: {{ $value }}
+{{ end }}{{ end }}======================
+{{ end }}
+
+Best Regards.
+
+--------Updated------------
+
+Dear Team,
+
+I hope this message finds you well.
+
+{{ if eq (len .Alerts.Firing) 0 }}There are no server with CPU idle percentages below 20%.{{ else if eq (len .Alerts.Firing) 1 }}
+There is 1 server with a CPU idle percentage below 20%.{{ else }}
+There are {{ len .Alerts.Firing }} servers with CPU idle percentages below 20%.{{ end }}
+
+=============================={{ range .Alerts }}
+Alert Summary: {{ .Annotations.summary }}
+Alert Started At: {{ .StartsAt | date "02-Jan-2006 03:04:05 PM" }}
+Hostname: {{ (index .Labels "host.hostname.keyword") }}
+Cpu Idle(%): {{ printf "%.2f" (index .Values "B") }}%
+==============================
+{{ end }}
+
+-------CPU IDLE PAYLOAD------------
+[
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "ce27gynenmayof",
+      "__orgId__": "1",
+      "__panelId__": "1",
+      "__value_string__": "[ var='B' labels={host.hostname.keyword=PRODWEB} value=99.74000155925751 ], [ var='C' labels={host.hostname.keyword=PRODWEB} value=1 ]",
+      "__values__": "{\"B\":99.74000155925751,\"C\":1}",
+      "summary": "Server's Cpu Idle percentages goes below 20% for last 5min continuously."
+    },
+    "labels": {
+      "CPU": "IDLE",
+      "__alert_rule_uid__": "fdzjwc3zwe2gwb",
+      "alertname": "Cpu Idle percentages goes below 20%",
+      "grafana_folder": "NOT PERMITTED FOLDER/HARDWARE RESOURCE UTILIZATION",
+      "host.hostname.keyword": "PRODWEB"
+    },
+    "startsAt": "2024-11-04T06:12:40.000Z",
+    "endsAt": "2024-11-04T06:16:40.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/fdzjwc3zwe2gwb/view",
+    "fingerprint": "44225ca942200542"
+  },
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "ce27gynenmayof",
+      "__orgId__": "1",
+      "__panelId__": "1",
+      "__value_string__": "[ var='B' labels={host.hostname.keyword=PRODAPP} value=99.58000183105469 ], [ var='C' labels={host.hostname.keyword=PRODAPP} value=1 ]",
+      "__values__": "{\"B\":99.58000183105469,\"C\":1}",
+      "summary": "Server's Cpu Idle percentages goes below 20% for last 5min continuously."
+    },
+    "labels": {
+      "CPU": "IDLE",
+      "__alert_rule_uid__": "fdzjwc3zwe2gwb",
+      "alertname": "Cpu Idle percentages goes below 20%",
+      "grafana_folder": "NOT PERMITTED FOLDER/HARDWARE RESOURCE UTILIZATION",
+      "host.hostname.keyword": "PRODAPP"
+    },
+    "startsAt": "2024-11-04T06:12:40.000Z",
+    "endsAt": "2024-11-04T06:16:40.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/fdzjwc3zwe2gwb/view",
+    "fingerprint": "d405333274323ee1"
+  }
+]
+-------------------
+[
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "adzjrujy7yy2of",
+      "__orgId__": "1",
+      "__panelId__": "1",
+      "__value_string__": "[ var='B' labels={host.hostname.keyword=SUSHIL} value=92.47000217437744 ], [ var='C' labels={host.hostname.keyword=SUSHIL} value=1 ]",
+      "__values__": "{\"B\":92.47000217437744,\"C\":1}",
+      "description": "Cpu idle percentages goes below 20% for last 5min continously",
+      "summary": "Cpu idle percentages drops."
+    },
+    "labels": {
+      "__alert_rule_uid__": "fe2u2a8ezn11cd",
+      "alertname": "Cpu idle percentage goes below",
+      "cpu": "idle",
+      "grafana_folder": "Hardware Alerts",
+      "host.hostname.keyword": "SUSHIL"
+    },
+    "startsAt": "2024-11-04T10:34:30.000+05:30",
+    "endsAt": "2024-11-04T10:36:30.000+05:30",
+    "generatorURL": "http://localhost:3000/alerting/grafana/fe2u2a8ezn11cd/view",
+    "fingerprint": "c9ff53f045964a5c"
+  },
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "adzjrujy7yy2of",
+      "__orgId__": "1",
+      "__panelId__": "2",
+      "__value_string__": "[ var='B' labels={host.hostname.keyword=RAMESH} value=88.55000123456789 ], [ var='C' labels={host.hostname.keyword=RAMESH} value=2 ]",
+      "__values__": "{\"B\":88.55000123456789,\"C\":2}",
+      "description": "Cpu usage goes above 80% for last 5min continuously",
+      "summary": "Cpu usage spikes."
+    },
+    "labels": {
+      "__alert_rule_uid__": "fe3a4f9zxk1yzv",
+      "alertname": "Cpu usage above threshold",
+      "cpu": "usage",
+      "grafana_folder": "Hardware Alerts",
+      "host.hostname.keyword": "RAMESH"
+    },
+    "startsAt": "2024-11-04T11:00:00.000+05:30",
+    "endsAt": "2024-11-04T11:05:00.000+05:30",
+    "generatorURL": "http://localhost:3000/alerting/grafana/fe3a4f9zxk1yzv/view",
+    "fingerprint": "f2a66d3c8abcde4f"
+  }
+]
+
+
