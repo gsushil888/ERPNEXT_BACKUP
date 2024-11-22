@@ -1,0 +1,5 @@
+/usr/share/metricbeat/bin/metricbeat -e -c /etc/metricbeat/metricbeat.yml
+
+
+http://10.100.0.199:9200/_cat/allocation?v&pretty
+

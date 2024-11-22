@@ -1,0 +1,247 @@
+GET heartbeat_index-13-11-2024/_search
+{
+  "sort": [
+    {
+      "@timestamp": {
+        "order": "desc"
+      }
+    }
+  ],
+  "size": 10000
+}
+
+GET _cat/indices
+
+POST /_forcemerge?only_expunge_deletes=true
+
+POST app_nginx_error_index/_update_by_query
+{
+  "script": {
+    "source": "ctx._source.category = 'ERPNEXT'",
+    "lang": "painless"
+  },
+  "query": {
+    "term": {
+      "category.keyword": "ERPNXT"
+    }
+  }
+}
+
+GET /app_nginx_error_index/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "script_fields": {
+    "process_instance": {
+      "script": {
+        "source": "doc['proc'].value"
+      }
+    }
+  }
+}
+
+GET _cat/indices/metricbeat_index?v
+
+GET _cat/indices/metricbeat_index?v&h=index,store.size
+
+
+GET metricbeat_index/_search
+
+GET metricbeat_index/_search
+{
+  "query": {
+    "range": {
+      "@timestamp": {
+        "gte": "2024-10-30T00:00:01.782Z",
+        "lt": "2024-11-05T23:59:59.782Z"
+      }
+    }
+  }
+}
+
+
+POST metricbeat_index/_delete_by_query
+{
+  "query": {
+    "range": {
+      "@timestamp": {
+        "gte": "2024-10-05T00:00:01.782Z",
+        "lt": "2024-11-10T23:59:59.782Z"
+      }
+    }
+  }
+}
+
+
+
+PUT _ilm/policy/delete_after_2gb
+{
+  "policy": {
+    "phases": {
+      "hot": {
+        "actions": {}
+      },
+      "delete": {
+        "min_age": "0ms",
+        "actions": {
+          "delete": {}
+        }
+      }
+    }
+  }
+}
+
+GET metricbeat_index-07-10-2024/_search
+{
+  "sort": [
+    {
+      "@timestamp": {
+        "order": "desc"
+      }
+    }
+  ]
+}
+
+
+GET app_nginx_error_index/_search
+{
+  "sort": [
+    {
+      "@timestamp": {
+        "order": "desc"
+      }
+    }
+  ],
+  "size": 10000
+}
+
+GET synthetic_index/_search
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "url.keyword": "https://drerpnext.jfs.in/"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "now-30d/m",
+              "lte": "now"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "status_count": {
+      "terms": {
+        "field": "email_status.keyword",
+        "size": 2
+      }
+    }
+  }
+}
+
+
+
+POST /synthetic_index/_delete_by_query
+{
+  "query": {
+    "term": {
+      "environment.keyword": "DR"
+    }
+  }
+}
+
+GET app_nginx_error_index/_search
+
+GET synthetic_index/_search
+{
+  "query": {
+    "match": {
+      "email_status.keyword": "Success"
+    }
+  },
+  "sort": [
+    {
+      "@timestamp": {
+        "order": "desc"
+      }
+    }
+  ],
+  "size": 1000
+}
+
+
+POST /redis_monitoring_index/_update_by_query
+{
+  "script": {
+    "source": """
+      if (ctx._source.environment == null) {
+        ctx._source.environment = 'DC';
+      }
+      if (ctx._source.category == null) {
+        ctx._source.category = 'ERPNEXT';
+      }
+    """,
+    "lang": "painless"
+  },
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "bool": {
+            "must_not": [
+              { "exists": { "field": "environment" } }
+            ]
+          }
+        },
+        {
+          "bool": {
+            "must_not": [
+              { "exists": { "field": "category" } }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+GET redis_monitoring_index/_search
+{
+  "sort": [
+    {
+      "@timestamp": {
+        "order": "desc"
+      }
+    }
+  ]
+}
+
+
+
+POST /synthetic_index/_delete_by_query
+{
+  "query": {
+    "term": {
+      "formatted_log_timestamp.keyword": "%{timestamp}"
+    }
+  }
+}
+
+POST /app_frappe_index/_delete_by_query
+{
+  "query": {
+    "term": {
+      "formatted_log_timestamp.keyword": "%{log_timestamp}"
+    }
+  }
+}

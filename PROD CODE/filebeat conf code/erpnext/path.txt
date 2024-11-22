@@ -6,12 +6,16 @@ cat /etc/filebeat/job_app_logs.log
 cat /etc/filebeat/redis_status.log
 cat /var/log/nginx/error.log
 
+cd /home/frappe/frappe-bench/sites/jio/private/backups/
+
 ERPNEXT DC/DR DB
 
 cat /proddb/mysql/mysql-slow.log
 cat /etc/filebeat/job_db_logs.log
 cat /proddb/db_bkp/backup_status_log/log_file_*.txt
 cat /proddb/db_bkp/backup_error_log/mysqldump_error_*.txt
+
+cd /proddb/db_bkp/
 
 ERPNEXT DC/DR WEB
 
