@@ -1,0 +1,143 @@
+-----------LATEST---------
+Dear Team,
+
+I hope this message finds you well.
+We are currently facing an exception/error in the app nginx server. 
+Below are the details for your reference:
+
+{{ if eq (len .Alerts.Firing) 0 }}There are no app nginx server error occurred.{{ else if eq (len .Alerts.Firing) 1 }}
+There is 1 app nginx server error occurred.{{ else }}
+There are {{ len .Alerts.Firing }} app nginx server error occurred.{{ end }}
+
+======================{{ range .Alerts }}
+Alert Started At: {{ .StartsAt | date "02-Jan-2006 03:04:05 PM UTC" }}{{ range  $key, $value := .Labels }}{{ if eq $key "log_level.keyword" }}
+LOG LEVEL = {{ $value }}{{ else if eq $key "process_id.keyword" }}
+PROCESS ID = {{ $value }}{{ else if eq $key "log_message.keyword" }}
+LOG MESSAGE = {{ $value }}{{ else if eq $key "process_instance.keyword" }}
+PROCESS INSTANCE = {{ $value }}{{ else if eq $key "timestamp" }}
+TIMESTAMP = {{ $value }} IST{{ end }}{{ end }}
+======================{{ end }}
+
+Please investigate this issue at your earliest convenience.
+Thank you for your attention to this matter.
+
+Best regards.
+
+---------PAYLOAD----------
+
+[
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "15",
+      "__value_string__": "[ var='B' labels={category.keyword=ERPNEXT, environment.keyword=DR, log_level.keyword=crit, log_message.keyword=stat() \"/home/frappe/frappe-bench/sites/jio/public//files/POJBAM000000010.pdf\" failed (13: Permission denied), client: 10.200.43.223, server: jio, request: \"GET /files/POJBAM000000010.pdf HTTP/1.1\", host: \"drerpnext.jfs.in\", process_id.keyword=483433, process_instance.keyword=483433, timestamp=2024/11/26 10:17:39} value=1 ]",
+      "__values__": "{\"B\":1}",
+      "summary": "Application having nginx server error in last hour"
+    },
+    "labels": {
+      "APP": "NGINX",
+      "__alert_rule_uid__": "de53fidxfzmkgf",
+      "alertname": "Application having nginx error",
+      "category.keyword": "ERPNEXT",
+      "environment.keyword": "DR",
+      "grafana_folder": "NOT PERMITTED FOLDER/APPLICATION ALERTS",
+      "log_level.keyword": "crit",
+      "log_message.keyword": "stat() \"/home/frappe/frappe-bench/sites/jio/public//files/POJBAM000000010.pdf\" failed (13: Permission denied), client: 10.200.43.223, server: jio, request: \"GET /files/POJBAM000000010.pdf HTTP/1.1\", host: \"drerpnext.jfs.in\"",
+      "process_id.keyword": "483433",
+      "process_instance.keyword": "483433",
+      "timestamp": "2024/11/26 10:17:39"
+    },
+    "startsAt": "2024-11-26T09:28:50.000Z",
+    "endsAt": "2024-11-26T09:36:50.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/de53fidxfzmkgf/view",
+    "fingerprint": "8186a46a2b16df94"
+  },
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "15",
+      "__value_string__": "[ var='B' labels={category.keyword=ERPNEXT, environment.keyword=DR, log_level.keyword=crit, log_message.keyword=stat() \"/home/frappe/frappe-bench/sites/jio/public//files/POJBAM000000010.pdf\" failed (13: Permission denied), client: 10.200.43.223, server: jio, request: \"GET /files/POJBAM000000010.pdf HTTP/1.1\", host: \"drerpnext.jfs.in\", process_id.keyword=483433, process_instance.keyword=483433, timestamp=2024/11/26 10:14:04} value=1 ]",
+      "__values__": "{\"B\":1}",
+      "summary": "Application having nginx server error in last hour"
+    },
+    "labels": {
+      "APP": "NGINX",
+      "__alert_rule_uid__": "de53fidxfzmkgf",
+      "alertname": "Application having nginx error",
+      "category.keyword": "ERPNEXT",
+      "environment.keyword": "DR",
+      "grafana_folder": "NOT PERMITTED FOLDER/APPLICATION ALERTS",
+      "log_level.keyword": "crit",
+      "log_message.keyword": "stat() \"/home/frappe/frappe-bench/sites/jio/public//files/POJBAM000000010.pdf\" failed (13: Permission denied), client: 10.200.43.223, server: jio, request: \"GET /files/POJBAM000000010.pdf HTTP/1.1\", host: \"drerpnext.jfs.in\"",
+      "process_id.keyword": "483433",
+      "process_instance.keyword": "483433",
+      "timestamp": "2024/11/26 10:14:04"
+    },
+    "startsAt": "2024-11-26T09:28:50.000Z",
+    "endsAt": "2024-11-26T09:36:50.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/de53fidxfzmkgf/view",
+    "fingerprint": "9263819ee0e0baf5"
+  },
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "15",
+      "__value_string__": "[ var='B' labels={category.keyword=ERPNEXT, environment.keyword=DR, log_level.keyword=crit, log_message.keyword=stat() \"/home/frappe/frappe-bench/sites/jio/public//files/jio.png\" failed (13: Permission denied), client: 10.200.43.223, server: jio, request: \"GET /files/jio.png HTTP/1.1\", host: \"drerpnext.jfs.in\", process_id.keyword=483433, process_instance.keyword=483433, timestamp=2024/11/26 10:24:09} value=1 ]",
+      "__values__": "{\"B\":1}",
+      "summary": "Application having nginx server error in last hour"
+    },
+    "labels": {
+      "APP": "NGINX",
+      "__alert_rule_uid__": "de53fidxfzmkgf",
+      "alertname": "Application having nginx error",
+      "category.keyword": "ERPNEXT",
+      "environment.keyword": "DR",
+      "grafana_folder": "NOT PERMITTED FOLDER/APPLICATION ALERTS",
+      "log_level.keyword": "crit",
+      "log_message.keyword": "stat() \"/home/frappe/frappe-bench/sites/jio/public//files/jio.png\" failed (13: Permission denied), client: 10.200.43.223, server: jio, request: \"GET /files/jio.png HTTP/1.1\", host: \"drerpnext.jfs.in\"",
+      "process_id.keyword": "483433",
+      "process_instance.keyword": "483433",
+      "timestamp": "2024/11/26 10:24:09"
+    },
+    "startsAt": "2024-11-26T09:28:50.000Z",
+    "endsAt": "2024-11-26T09:36:50.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/de53fidxfzmkgf/view",
+    "fingerprint": "e448622719236eb7"
+  },
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "15",
+      "__value_string__": "[ var='B' labels={category.keyword=ERPNEXT, environment.keyword=DR, log_level.keyword=crit, log_message.keyword=stat() \"/home/frappe/frappe-bench/sites/jio/public//files/POJBAM000000010.pdf\" failed (13: Permission denied), client: 10.200.43.223, server: jio, request: \"GET /files/POJBAM000000010.pdf HTTP/1.1\", host: \"drerpnext.jfs.in\", process_id.keyword=483433, process_instance.keyword=483433, timestamp=2024/11/26 10:23:36} value=1 ]",
+      "__values__": "{\"B\":1}",
+      "summary": "Application having nginx server error in last hour"
+    },
+    "labels": {
+      "APP": "NGINX",
+      "__alert_rule_uid__": "de53fidxfzmkgf",
+      "alertname": "Application having nginx error",
+      "category.keyword": "ERPNEXT",
+      "environment.keyword": "DR",
+      "grafana_folder": "NOT PERMITTED FOLDER/APPLICATION ALERTS",
+      "log_level.keyword": "crit",
+      "log_message.keyword": "stat() \"/home/frappe/frappe-bench/sites/jio/public//files/POJBAM000000010.pdf\" failed (13: Permission denied), client: 10.200.43.223, server: jio, request: \"GET /files/POJBAM000000010.pdf HTTP/1.1\", host: \"drerpnext.jfs.in\"",
+      "process_id.keyword": "483433",
+      "process_instance.keyword": "483433",
+      "timestamp": "2024/11/26 10:23:36"
+    },
+    "startsAt": "2024-11-26T09:28:50.000Z",
+    "endsAt": "2024-11-26T09:36:50.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/de53fidxfzmkgf/view",
+    "fingerprint": "fa3304b188485964"
+  }
+]
+
+---------OLD----------

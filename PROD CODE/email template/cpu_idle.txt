@@ -1,20 +1,4 @@
-Dear Team,
-
-I hope this message finds you well.
-
-There are {{ len .Alerts.Firing }} server having cpu idle percentages goes below 20%.
-
-======================
-{{ range .Alerts }}
-Started At: {{ .StartsAt }}
-{{ range $key, $value := .Labels }}{{ if eq $key "host.hostname.keyword" }}Hostname: {{ $value }}
-{{ end }}{{ end }}======================
-{{ end }}
-
-Best Regards.
-
---------Updated------------
-
+-----------LATEST---------
 Dear Team,
 
 I hope this message finds you well.
@@ -31,7 +15,7 @@ Cpu Idle(%): {{ printf "%.2f" (index .Values "B") }}%
 ==============================
 {{ end }}
 
--------CPU IDLE PAYLOAD------------
+---------PAYLOAD----------
 [
   {
     "status": "firing",
@@ -78,7 +62,7 @@ Cpu Idle(%): {{ printf "%.2f" (index .Values "B") }}%
     "fingerprint": "d405333274323ee1"
   }
 ]
--------------------
+
 [
   {
     "status": "firing",
@@ -127,5 +111,24 @@ Cpu Idle(%): {{ printf "%.2f" (index .Values "B") }}%
     "fingerprint": "f2a66d3c8abcde4f"
   }
 ]
+
+---------OLD----------
+
+Dear Team,
+
+I hope this message finds you well.
+
+There are {{ len .Alerts.Firing }} server having cpu idle percentages goes below 20%.
+
+======================
+{{ range .Alerts }}
+Started At: {{ .StartsAt }}
+{{ range $key, $value := .Labels }}{{ if eq $key "host.hostname.keyword" }}Hostname: {{ $value }}
+{{ end }}{{ end }}======================
+{{ end }}
+
+Best Regards.
+
+
 
 

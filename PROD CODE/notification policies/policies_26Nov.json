@@ -1,0 +1,155 @@
+{
+    "apiVersion": 1,
+    "policies": [
+        {
+            "orgId": 1,
+            "receiver": "grafana-default-email",
+            "group_by": [
+                "grafana_folder",
+                "alertname"
+            ],
+            "routes": [
+                {
+                    "receiver": "Application  Disaster Recovery(DR) Sync Notification",
+                    "object_matchers": [
+                        [
+                            "APP",
+                            "=",
+                            "DR SYNC"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Application Error Notification",
+                    "object_matchers": [
+                        [
+                            "APP",
+                            "=",
+                            "ERROR"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Web Server Error Notification",
+                    "object_matchers": [
+                        [
+                            "WEB",
+                            "=",
+                            "ERROR"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Database Long Running Queries Notification ",
+                    "object_matchers": [
+                        [
+                            "DB",
+                            "=",
+                            "SLOW QUERIES"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Cpu Idle Below Notification",
+                    "object_matchers": [
+                        [
+                            "CPU",
+                            "=",
+                            "IDLE"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Cpu System Usage Above Notification",
+                    "object_matchers": [
+                        [
+                            "CPU",
+                            "=",
+                            "SYSTEM"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Cpu User Usage Above Notification",
+                    "object_matchers": [
+                        [
+                            "CPU",
+                            "=",
+                            "USER"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Memory Usage Above Notification",
+                    "object_matchers": [
+                        [
+                            "MEMORY",
+                            "=",
+                            "FREE"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Ping or Reachability Notification",
+                    "object_matchers": [
+                        [
+                            "PING",
+                            "=",
+                            "STATUS"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Application Backup Job Monitoring Notification",
+                    "object_matchers": [
+                        [
+                            "JOB",
+                            "=",
+                            "APP"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Url not working",
+                    "object_matchers": [
+                        [
+                            "URL",
+                            "=",
+                            "ERROR"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Database Backup Job Monitoring Notification",
+                    "object_matchers": [
+                        [
+                            "JOB",
+                            "=",
+                            "DB"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "Redis Job Monitoring Notification",
+                    "object_matchers": [
+                        [
+                            "REDIS",
+                            "=",
+                            "MONITOR"
+                        ]
+                    ]
+                },
+                {
+                    "receiver": "App Server Nginx Error Notification",
+                    "object_matchers": [
+                        [
+                            "APP",
+                            "=",
+                            "NGINX"
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

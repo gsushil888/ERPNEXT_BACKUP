@@ -1,3 +1,12 @@
+-----------LATEST---------
+
+
+
+---------PAYLOAD----------
+
+
+---------OLD----------
+
 Dear Team,
 
 I hope this message finds you well.
@@ -16,5 +25,3 @@ COMMAND = {{ $value }}{{ end }}{{ end }}
 
 
 Best regards.
-
------------Updated---------

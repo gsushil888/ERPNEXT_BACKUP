@@ -1,19 +1,4 @@
-Dear Team,
-
-I hope this message finds you well.
-
-There are {{ len .Alerts.Firing }} server which are not reachable or pingable
-
-======================
-{{ range .Alerts }}
-Started At: {{ .StartsAt }}
-{{ range $key, $value := .Labels }}{{ if eq $key "host.hostname.keyword" }}Hostname: {{ $value }}
-{{ end }}{{ end }}======================
-{{ end }}
-
-Best Regards.
-
--------------Updated------------
+-----------LATEST---------
 
 Dear Team,
 
@@ -32,7 +17,7 @@ Ip: {{ (index .Labels "url.domain.keyword") }}
 {{ end }}
 
 
--------PING PAYLOAD-------
+---------PAYLOAD----------
 
 [
   {
@@ -111,3 +96,19 @@ Ip: {{ (index .Labels "url.domain.keyword") }}
     "fingerprint": "58e632dec619925b"
   }
 ]
+
+---------OLD----------
+Dear Team,
+
+I hope this message finds you well.
+
+There are {{ len .Alerts.Firing }} server which are not reachable or pingable
+
+======================
+{{ range .Alerts }}
+Started At: {{ .StartsAt }}
+{{ range $key, $value := .Labels }}{{ if eq $key "host.hostname.keyword" }}Hostname: {{ $value }}
+{{ end }}{{ end }}======================
+{{ end }}
+
+Best Regards.

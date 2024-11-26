@@ -1,3 +1,72 @@
+--------LATEST-----------
+
+Dear Team,
+
+I hope this message finds you well.
+
+We are currently facing an issue with long-running queries in the database.
+Below are the details for your reference:
+
+{{ if eq (len .Alerts.Firing) 0 }}There are no long running queries occurred.{{ else if eq (len .Alerts.Firing) 1 }}
+There is 1 long running queries occurred.{{ else }}
+There are {{ len .Alerts.Firing }} long running queries occurred.{{ end }}
+
+======================
+{{ range .Alerts }}Alert Started At: {{ .StartsAt | date "02-Jan-2006 03:04:05 PM UTC" }}{{ range $key, $value := .Labels }}{{ if eq $key "log_time.keyword" }}
+LOG TIME = {{ $value }} IST{{ else if eq $key "log_date.keyword" }}
+LOG DATE = {{ $value }} IST{{ else if eq $key "connection_string.keyword" }}
+CONNECTION STRING = {{ $value }}{{ else if eq $key "query_statement.keyword" }}
+QUERY STATEMENT = {{ $value }}{{ else if eq $key "host_ip.keyword" }}
+HOST IP = {{ $value }}{{ else if eq $key "user_id.keyword" }}
+USER ID = {{ $value }}{{ else if eq $key "log_timestamp.keyword" }}
+LOG TIMESTAMP = {{ $value }}{{ else if eq $key "category.keyword" }}
+SERVER NAME = {{ $value }}{{ else if eq $key "environment.keyword" }}
+ENVIRONMENT = {{ $value }}{{ else if eq $key "query_time" }} 
+QUERY TIME = {{ $value }} seconds {{ end }}{{ end }} 
+======================
+{{ end }}
+
+Please investigate this issue at your earliest convenience.
+Thank you for your attention to this matter.
+
+Best regards.
+
+---------Payload--------
+
+[
+  {
+    "status": "firing",
+    "annotations": {
+      "__dashboardUid__": "fe27k6vwi47b4a",
+      "__orgId__": "1",
+      "__panelId__": "5",
+      "__value_string__": "[ var='B' labels={category.keyword=ERPNEXT, connection_string.keyword=# User@Host: root[root] @ localhost [], environment.keyword=DR, log_date.keyword=26-Nov-2024, log_time.keyword=12:06:39 PM, query_statement.keyword=select sleep(22), query_time=22, user_id.keyword=root} value=1 ], [ var='C' labels={category.keyword=ERPNEXT, connection_string.keyword=# User@Host: root[root] @ localhost [], environment.keyword=DR, log_date.keyword=26-Nov-2024, log_time.keyword=12:06:39 PM, query_statement.keyword=select sleep(22), query_time=22, user_id.keyword=root} value=1 ]",
+      "__values__": "{\"B\":1,\"C\":1}",
+      "summary": "Database server is having long running queries in last hour"
+    },
+    "labels": {
+      "DB": "SLOW QUERIES",
+      "__alert_rule_uid__": "bdzu7z25kmfi8e",
+      "alertname": "Database Long Running Queries",
+      "category.keyword": "ERPNEXT",
+      "connection_string.keyword": "# User@Host: root[root] @ localhost []",
+      "environment.keyword": "DR",
+      "grafana_folder": "NOT PERMITTED FOLDER/DB FOLDER",
+      "log_date.keyword": "26-Nov-2024",
+      "log_time.keyword": "12:06:39 PM",
+      "query_statement.keyword": "select sleep(22)",
+      "query_time": "22",
+      "user_id.keyword": "root"
+    },
+    "startsAt": "2024-11-26T06:54:40.000Z",
+    "endsAt": "2024-11-26T07:14:40.000Z",
+    "generatorURL": "http://localhost:3000/alerting/grafana/bdzu7z25kmfi8e/view",
+    "fingerprint": "a600aa4379044047"
+  }
+]
+
+-----------OLD------------
+
 Dear Team,
 
 I hope this message finds you well.
@@ -25,5 +94,3 @@ Thank you for your attention to this matter.
 
 Best regards.
 
-
---------Updated-----------

@@ -1,0 +1,292 @@
+2024-09-12 16:12:44,244 ERROR frappe New Exception collected with id: 2024-09-12 16:12:44.236094-10.200.43.223-1f5
+Site: jio
+Form Dict: {'doc': '{"name":"JSMH24INV0000186","owner":"chandresh.limbachiya@jiopay.in","creation":"2024-09-12 15:42:25.644639","modified":"2024-09-12 15:53:21.980363","modified_by":"chandresh.limbachiya@jiopay.in","docstatus":1,"idx":0,"title":"JIO PAYMENTS BANK LIMITED","naming_series":"SINV-.YY.###","custom_billing_type":"Gross Pay","advance_series":"SI2024-2025JPSL27","customer":"8063228","customer_name":"JIO PAYMENTS BANK LIMITED","custom_group_id":"rgosm0WdQvW6","company":"Jio Payment Solutions Limited","posting_date":"2024-09-11","posting_time":"15:42:21.888781","set_posting_time":1,"due_date":"2024-10-11","is_pos":0,"is_consolidated":0,"is_return":0,"taxes_and_charges_added":0,"custom_non_gst":0,"custom_export_customer":0,"reason_for_issuing_document":"","update_billed_amount_in_sales_order":0,"update_billed_amount_in_delivery_note":1,"is_debit_note":0,"is_reverse_charge":0,"is_export_with_gst":0,"state":"Maharashtra","custom_state_name":"MH","currency":"INR","conversion_rate":1,"selling_price_list":"Standard Selling","price_list_currency":"INR","plc_conversion_rate":1,"ignore_pricing_rule":0,"update_stock":0,"total_qty":1,"total_net_weight":0,"base_total":389236,"base_net_total":389236,"total":389236,"net_total":389236,"tax_category":"","taxes_and_charges":"Output GST In-state - RPSL","base_total_taxes_and_charges":70062,"total_taxes_and_charges":70062,"base_grand_total":459298,"base_rounding_adjustment":0,"base_rounded_total":459298,"base_in_words":"INR Four Lakh, Fifty Nine Thousand, Two Hundred And Ninety Eight only.","grand_total":459298,"rounding_adjustment":0,"use_company_roundoff_cost_center":0,"rounded_total":459298,"in_words":"INR Four Lakh, Fifty Nine Thousand, Two Hundred And Ninety Eight only.","total_advance":0,"outstanding_amount":459298,"disable_rounded_total":0,"apply_discount_on":"Grand Total","base_discount_amount":0,"is_cash_or_non_trade_discount":0,"additional_discount_percentage":0,"discount_amount":0,"other_charges_calculation":"<div class=\\"tax-break-up\\" style=\\"overflow-x: auto;\\">\\n\\t<table class=\\"table table-bordered table-hover\\">\\n\\t\\t<thead>\\n\\t\\t\\t<tr>\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t<th class=\\"text-left\\">HSN/SAC</th>\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t<th class=\\"text-right\\">Taxable Amount</th>\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t<th class=\\"text-right\\">Output Tax SGST </th>\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t<th class=\\"text-right\\">Output Tax CGST </th>\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t</tr>\\n\\t\\t</thead>\\n\\t\\t<tbody>\\n\\t\\t\\t\\n\\t\\t\\t\\t<tr>\\n\\t\\t\\t\\t\\t<td>997159</td>\\n\\t\\t\\t\\t\\t<td class=\\"text-right\\">\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t₹ 3,89,236.00\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t</td>\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t<td class=\\"text-right\\">\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t(9.0%)\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t₹ 35,031.24\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t</td>\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t<td class=\\"text-right\\">\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t(9.0%)\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t₹ 35,031.24\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t</td>\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t</tr>\\n\\t\\t\\t\\n\\t\\t</tbody>\\n\\t</table>\\n</div>","total_billing_hours":0,"total_billing_amount":0,"base_paid_amount":0,"paid_amount":0,"base_change_amount":0,"change_amount":0,"allocate_advances_automatically":0,"only_include_allocated_payments":0,"write_off_amount":0,"base_write_off_amount":0,"write_off_outstanding_amount_automatically":0,"redeem_loyalty_points":0,"loyalty_points":0,"loyalty_amount":0,"dont_create_loyalty_points":0,"customer_address":"JIO PAYMENTS BANK LIMITED-Billing","address_display":"3RD FLOOR, MAKER CHAMBERS IV,<br>222NARIMAN POINTMUMBAIMUMBAI400021MH<br>Mumbai<br>\\nMaharashtra<br>400021<br>India<br>\\n","billing_address_gstin":"27AADCJ8257C2ZI","gst_category":"Registered Regular","place_of_supply":"27-Maharashtra","territory":"India","shipping_address_name":"JIO PAYMENTS BANK LIMITED-Billing","shipping_address":"3RD FLOOR, MAKER CHAMBERS IV,<br>222NARIMAN POINTMUMBAIMUMBAI400021MH<br>Mumbai<br>\\nMaharashtra<br>400021<br>India<br>\\n","dispatch_address_name":"Reliance Payment Solutions Limited-Billing Regular for Sales MH","dispatch_address":"5 TTC Industrail Area, Reliance Corporate Park,<br>Thane Belapur Road, Ghansoli<br>Navi Mumbai<br>\\nMaharashtra<br>400701<br>India<br>\\n","company_address":"Reliance Payment Solutions Limited-Billing Regular for Sales MH","company_gstin":"27AADCR7144Q1ZQ","company_address_display":"5 TTC Industrail Area, Reliance Corporate Park,<br>Thane Belapur Road, Ghansoli<br>Navi Mumbai<br>\\nMaharashtra<br>400701<br>India<br>\\n","ignore_default_payment_terms_template":0,"import_supplier":0,"mid":"Fetch for JULY 24","po_no":"Fetch for JULY 24","debit_to":"5301001 - Sundry Debtors-Domestic - RPSL","party_account_currency":"INR","is_opening":"No","against_income_account":"6100013 - Income - Commission - RPSL","irn":"2347a391beb1e7cb291580f78a93250a07f4b559e65636e45f0a3ea82e81e13b","acknowledgement_number":"122423063648078","acknowledgement_date":"2024-09-12 15:53:00","signed_invoice":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjRERTE1NDRBRTY5NUJEQzg0RUM3QkMxMkYyRjU3RjgxM0Y0NEUzMDEiLCJ4NXQiOiJUZUZVU3VhVnZjaE94N3dTOHZWX2dUOUU0d0UiLCJ0eXAiOiJKV1QifQ.eyJkYXRhIjoie1wiQWNrTm9cIjoxMjI0MjMwNjM2NDgwNzgsXCJBY2tEdFwiOlwiMjAyNC0wOS0xMiAxNTo1MzowMFwiLFwiSXJuXCI6XCIyMzQ3YTM5MWJlYjFlN2NiMjkxNTgwZjc4YTkzMjUwYTA3ZjRiNTU5ZTY1NjM2ZTQ1ZjBhM2VhODJlODFlMTNiXCIsXCJWZXJzaW9uXCI6XCIxLjFcIixcIlRyYW5EdGxzXCI6e1wiVGF4U2NoXCI6XCJHU1RcIixcIlN1cFR5cFwiOlwiQjJCXCIsXCJSZWdSZXZcIjpcIk5cIixcIklnc3RPbkludHJhXCI6XCJOXCJ9LFwiRG9jRHRsc1wiOntcIlR5cFwiOlwiSU5WXCIsXCJOb1wiOlwiSlNNSDI0SU5WMDAwMDE4NlwiLFwiRHRcIjpcIjExLzA5LzIwMjRcIn0sXCJTZWxsZXJEdGxzXCI6e1wiR3N0aW5cIjpcIjI3QUFEQ1I3MTQ0UTFaUVwiLFwiTGdsTm1cIjpcIkppbyBQYXltZW50IFNvbHV0aW9ucyBMaW1pdGVkXCIsXCJUcmRObVwiOlwiSmlvIFBheW1lbnQgU29sdXRpb25zIExpbWl0ZWRcIixcIkFkZHIxXCI6XCI1IFRUQyBJbmR1c3RyYWlsIEFyZWEsIFJlbGlhbmNlIENvcnBvcmF0ZSBQYXJrLFwiLFwiQWRkcjJcIjpcIlRoYW5lIEJlbGFwdXIgUm9hZCwgR2hhbnNvbGlcIixcIkxvY1wiOlwiTmF2aSBNdW1iYWlcIixcIlBpblwiOjQwMDcwMSxcIlN0Y2RcIjpcIjI3XCJ9LFwiQnV5ZXJEdGxzXCI6e1wiR3N0aW5cIjpcIjI3QUFEQ0o4MjU3QzJaSVwiLFwiTGdsTm1cIjpcIkpJTyBQQVlNRU5UUyBCQU5LIExJTUlURURcIixcIlRyZE5tXCI6XCJKSU8gUEFZTUVOVFMgQkFOSyBMSU1JVEVEXCIsXCJQb3NcIjpcIjI3XCIsXCJBZGRyMVwiOlwiM1JEIEZMT09SLCBNQUtFUiBDSEFNQkVSUyBJVixcIixcIkFkZHIyXCI6XCIyMjJOQVJJTUFOIFBPSU5UTVVNQkFJTVVNQkFJNDAwMDIxTUhcIixcIkxvY1wiOlwiTXVtYmFpXCIsXCJQaW5cIjo0MDAwMjEsXCJTdGNkXCI6XCIyN1wifSxcIkRpc3BEdGxzXCI6e1wiTm1cIjpcIkppbyBQYXltZW50IFNvbHV0aW9ucyBMaW1pdGVkXCIsXCJBZGRyMVwiOlwiNSBUVEMgSW5kdXN0cmFpbCBBcmVhLCBSZWxpYW5jZSBDb3Jwb3JhdGUgUGFyayxcIixcIkFkZHIyXCI6XCJUaGFuZSBCZWxhcHVyIFJvYWQsIEdoYW5zb2xpXCIsXCJMb2NcIjpcIk5hdmkgTXVtYmFpXCIsXCJQaW5cIjo0MDA3MDEsXCJTdGNkXCI6XCIyN1wifSxcIlNoaXBEdGxzXCI6e1wiR3N0aW5cIjpcIjI3QUFEQ0o4MjU3QzJaSVwiLFwiTGdsTm1cIjpcIkpJTyBQQVlNRU5UUyBCQU5LIExJTUlURURcIixcIkFkZHIxXCI6XCIzUkQgRkxPT1IsIE1BS0VSIENIQU1CRVJTIElWLFwiLFwiQWRkcjJcIjpcIjIyMk5BUklNQU4gUE9JTlRNVU1CQUlNVU1CQUk0MDAwMjFNSFwiLFwiTG9jXCI6XCJNdW1iYWlcIixcIlBpblwiOjQwMDAyMSxcIlN0Y2RcIjpcIjI3XCJ9LFwiSXRlbUxpc3RcIjpbe1wiSXRlbU5vXCI6MCxcIlNsTm9cIjpcIjFcIixcIklzU2VydmNcIjpcIllcIixcIlByZERlc2NcIjpcIlNFUlZJQ0UgRkVFXCIsXCJIc25DZFwiOlwiOTk3MTU5XCIsXCJRdHlcIjoxLjAsXCJVbml0XCI6XCJOT1NcIixcIlVuaXRQcmljZVwiOjM4OTIzNi4wLFwiVG90QW10XCI6Mzg5MjM2LjAwLFwiRGlzY291bnRcIjowLjAwLFwiQXNzQW10XCI6Mzg5MjM2LjAwLFwiR3N0UnRcIjoxOC4wMDAsXCJJZ3N0QW10XCI6MC4wMCxcIkNnc3RBbXRcIjozNTAzMS4wMCxcIlNnc3RBbXRcIjozNTAzMS4wMCxcIkNlc1J0XCI6MC4wMDAsXCJDZXNBbXRcIjowLjAwLFwiQ2VzTm9uQWR2bEFtdFwiOjAuMDAsXCJPdGhDaHJnXCI6MC4wMCxcIlRvdEl0ZW1WYWxcIjo0NTkyOTguMDAsXCJBdHRyaWJEdGxzXCI6W3tcIk5tXCI6XCJTRVJWSUNFIEZFRVwiLFwiVmFsXCI6XCIzODkyMzYuMFwifV19XSxcIlZhbER0bHNcIjp7XCJBc3NWYWxcIjozODkyMzYuMDAsXCJDZ3N0VmFsXCI6MzUwMzEuMDAsXCJTZ3N0VmFsXCI6MzUwMzEuMDAsXCJJZ3N0VmFsXCI6MC4wMCxcIkNlc1ZhbFwiOjAuMDAsXCJTdENlc1ZhbFwiOjAuMDAsXCJEaXNjb3VudFwiOjAuMDAsXCJPdGhDaHJnXCI6MC4wMCxcIlJuZE9mZkFtdFwiOjAuMDAsXCJUb3RJbnZWYWxcIjo0NTkyOTguMDAsXCJUb3RJbnZWYWxGY1wiOjQ1OTI5OC4wMH19IiwiaXNzIjoiTklDIn0.j2DSuKQ2lFsL6_7Hzejk7SsGeoX2J-ylwkRUBV4_nsgjW7L0wwYr0SVsba9BJ33BewULsHYaEQQONiNa7A4Nko5d9_PBAp0ceq4CGYKAaE1gXPiZE6if8We715fYa2jzPgeVmfo4ch7-j84xgJJFfqNT3BBaFeg2ZF98f0lbWOyAWAqsfO8MrzrJU1QyUw8eoFxy8q7T8CSwgBpnnggR-VtKXvDUzj-lkYJuIlum9mHFv_ueFUb09LtrWEF5F_zMMmQNGWwx2kqkEuzTqkTkqpLoY-1D6zf8pOkiKsU38RQOCtALX3gSPGlubb4SvEbPfnNxh-tmYUq6JAWlUl_jPg","signed_qr_code":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjRERTE1NDRBRTY5NUJEQzg0RUM3QkMxMkYyRjU3RjgxM0Y0NEUzMDEiLCJ4NXQiOiJUZUZVU3VhVnZjaE94N3dTOHZWX2dUOUU0d0UiLCJ0eXAiOiJKV1QifQ.eyJkYXRhIjoie1wiU2VsbGVyR3N0aW5cIjpcIjI3QUFEQ1I3MTQ0UTFaUVwiLFwiQnV5ZXJHc3RpblwiOlwiMjdBQURDSjgyNTdDMlpJXCIsXCJEb2NOb1wiOlwiSlNNSDI0SU5WMDAwMDE4NlwiLFwiRG9jVHlwXCI6XCJJTlZcIixcIkRvY0R0XCI6XCIxMS8wOS8yMDI0XCIsXCJUb3RJbnZWYWxcIjo0NTkyOTguMDAsXCJJdGVtQ250XCI6MSxcIk1haW5Ic25Db2RlXCI6XCI5OTcxNTlcIixcIklyblwiOlwiMjM0N2EzOTFiZWIxZTdjYjI5MTU4MGY3OGE5MzI1MGEwN2Y0YjU1OWU2NTYzNmU0NWYwYTNlYTgyZTgxZTEzYlwiLFwiSXJuRHRcIjpcIjIwMjQtMDktMTIgMTU6NTM6MDBcIn0iLCJpc3MiOiJOSUMifQ.lD2sVjtAWpwV7fUbb1QlckMotEMBkium3u2H0-i7u3lBFPeEofl3ZzPYbpawVVdS1I9a4Oqmt9luj3zPYBhO0MWePjxmN_spjLrLwsx2ji7v9LYsZYPD9f1uypV0RtVrmHNsvF-hioRczgn3KZYLj4BrrfrJ-y1dl9P3dt4041f7U-XoCpaKqlJfsmTkHPsjzkUmISRukWiWhUmmzsriXQ9tSRO8g-RZ3wcmCuyRXUtj-WkTtb5LCCKHXWX3A8yKCIJcqC6k1-cj8Y4HscaHQGWbmGdixSkbQ8W_Jlzz0wEhqZ60k0FOXSvN2bF4y4GN99HePDfbVZwiCk2NeUilAg","irn_status":"ACT","irn_cancelled":0,"eway_bill_cancelled":0,"gst_invoice":1,"cdn":0,"custom_export_type":"","amount_eligible_for_commission":389236,"commission_rate":0,"total_commission":0,"group_same_items":0,"invoice_copy":"Original for Recipient","language":"en","status":"Unpaid","einvoice_status":"","customer_group":"Commercial","is_internal_customer":0,"is_discounted":0,"remarks":"Fetch for JULY 24","repost_required":0,"distance":0,"gst_vehicle_type":"Regular","lr_date":"2024-09-12","mode_of_transport":"Road","doctype":"Sales Invoice","taxes":[{"name":"88072034be","creation":"2024-09-12 15:53:22.199120","modified":"2024-09-12 15:53:22.199120","modified_by":"chandresh.limbachiya@jiopay.in","docstatus":1,"idx":1,"charge_type":"On Net Total","account_head":"3805254 - Output Tax SGST - RPSL","description":"Output Tax SGST ","included_in_print_rate":0,"included_in_paid_amount":0,"cost_center":"Main - RPSL","rate":0,"tax_amount":35031,"total":424267,"tax_amount_after_discount_amount":35031,"base_tax_amount":35031,"base_total":424267,"base_tax_amount_after_discount_amount":35031,"item_wise_tax_detail":"{\\"STO-ITEM-2023-01029\\":[9.0,35031.24]}","dont_recompute_tax":0,"parent":"JSMH24INV0000186","parentfield":"taxes","parenttype":"Sales Invoice","doctype":"Sales Taxes and Charges"},{"name":"eb8f4568fa","creation":"2024-09-12 15:53:22.199609","modified":"2024-09-12 15:53:22.199609","modified_by":"chandresh.limbachiya@jiopay.in","docstatus":1,"idx":2,"charge_type":"On Net Total","account_head":"3805253 - Output Tax CGST - RPSL","description":"Output Tax CGST ","included_in_print_rate":0,"included_in_paid_amount":0,"cost_center":"Main - RPSL","rate":0,"tax_amount":35031,"total":459298,"tax_amount_after_discount_amount":35031,"base_tax_amount":35031,"base_total":459298,"base_tax_amount_after_discount_amount":35031,"item_wise_tax_detail":"{\\"STO-ITEM-2023-01029\\":[9.0,35031.24]}","dont_recompute_tax":0,"parent":"JSMH24INV0000186","parentfield":"taxes","parenttype":"Sales Invoice","doctype":"Sales Taxes and Charges"}],"payments":[],"items":[{"name":"4f2720dc25","owner":"chandresh.limbachiya@jiopay.in","creation":"2024-09-12 15:42:25.644639","modified":"2024-09-12 15:53:21.980363","modified_by":"chandresh.limbachiya@jiopay.in","docstatus":1,"idx":1,"has_item_scanned":0,"item_code":"STO-ITEM-2023-01029","item_name":"SERVICE FEE","item_type":"Service","description":"SERVICE FEE","gst_hsn_code":"997159","is_nil_exempt":0,"is_non_gst":0,"item_group":"Service","image":"","qty":1,"stock_uom":"EA","uom":"EA","conversion_factor":1,"stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":389236,"amount":389236,"item_tax_template":"GST 18% - RPSL","base_rate":389236,"base_amount":389236,"stock_uom_rate":389236,"is_free_item":0,"grant_commission":1,"net_rate":389236,"net_amount":389236,"base_net_rate":389236,"base_net_amount":389236,"taxable_value":389236,"delivered_by_supplier":0,"income_account":"6100013 - Income - Commission - RPSL","is_fixed_asset":0,"enable_deferred_revenue":0,"weight_per_unit":0,"total_weight":0,"warehouse":"Stores - RPSL","incoming_rate":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{\\"3805254 - Output Tax SGST - RPSL\\": 9.0, \\"3805253 - Output Tax CGST - RPSL\\": 9.0, \\"3805261 - Output Tax IGST - RPSL\\": 18.0, \\"5610029 - Input Tax SGST - RPSL\\": 9.0, \\"5610028 - Input Tax CGST - RPSL\\": 9.0, \\"5610030 - Input Tax IGST - RPSL\\": 18.0, \\"3247444 - Input Tax SGST RCM - RPSL\\": 9.0, \\"3247443 - Input Tax CGST RCM - RPSL\\": 9.0, \\"3247446 - Input Tax IGST RCM - RPSL\\": 18.0}","actual_batch_qty":0,"actual_qty":0,"delivered_qty":0,"cost_center":"Main - RPSL","state":"Maharashtra","page_break":0,"parent":"JSMH24INV0000186","parentfield":"items","parenttype":"Sales Invoice","doctype":"Sales Invoice Item"}],"pricing_rules":[],"timesheets":[],"packed_items":[],"advances":[],"sales_team":[],"payment_schedule":[{"name":"ac7ed8dcca","owner":"chandresh.limbachiya@jiopay.in","creation":"2024-09-12 15:42:25.644639","modified":"2024-09-12 15:53:21.980363","modified_by":"chandresh.limbachiya@jiopay.in","docstatus":1,"idx":1,"payment_term":"Monthly","description":"Payment within 30 Days post delivery","due_date":"2024-10-11","invoice_portion":100,"discount_type":"Percentage","discount":0,"payment_amount":459298,"outstanding":459298,"paid_amount":0,"discounted_amount":0,"base_payment_amount":459298,"parent":"JSMH24INV0000186","parentfield":"payment_schedule","parenttype":"Sales Invoice","doctype":"Payment Schedule"}],"__onload":{"make_payment_via_journal_entry":0},"__last_sync_on":"2024-09-12T10:42:31.411Z"}', 'print_format': 'Sales Invoice1 (Final)', 'no_letterhead': '0', 'letterhead': 'Self Invoice', 'settings': '{}', '_lang': 'en', 'cmd': 'frappe.www.printview.get_html_and_style'}
+2024-09-12 16:15:25,024 ERROR frappe New Exception collected with id: 2024-09-12 16:15:25.015929-10.200.43.223-2d9
+Site: jio
+Form Dict: {'doc': '{"name":"JSMH24INV0000186","owner":"chandresh.limbachiya@jiopay.in","creation":"2024-09-12 15:42:25.644639","modified":"2024-09-12 15:53:21.980363","modified_by":"chandresh.limbachiya@jiopay.in","docstatus":1,"idx":0,"title":"JIO PAYMENTS BANK LIMITED","naming_series":"SINV-.YY.###","custom_billing_type":"Gross Pay","advance_series":"SI2024-2025JPSL27","customer":"8063228","customer_name":"JIO PAYMENTS BANK LIMITED","custom_group_id":"rgosm0WdQvW6","company":"Jio Payment Solutions Limited","posting_date":"2024-09-11","posting_time":"15:42:21.888781","set_posting_time":1,"due_date":"2024-10-11","is_pos":0,"is_consolidated":0,"is_return":0,"taxes_and_charges_added":0,"custom_non_gst":0,"custom_export_customer":0,"reason_for_issuing_document":"","update_billed_amount_in_sales_order":0,"update_billed_amount_in_delivery_note":1,"is_debit_note":0,"is_reverse_charge":0,"is_export_with_gst":0,"state":"Maharashtra","custom_state_name":"MH","currency":"INR","conversion_rate":1,"selling_price_list":"Standard Selling","price_list_currency":"INR","plc_conversion_rate":1,"ignore_pricing_rule":0,"update_stock":0,"total_qty":1,"total_net_weight":0,"base_total":389236,"base_net_total":389236,"total":389236,"net_total":389236,"tax_category":"","taxes_and_charges":"Output GST In-state - RPSL","base_total_taxes_and_charges":70062,"total_taxes_and_charges":70062,"base_grand_total":459298,"base_rounding_adjustment":0,"base_rounded_total":459298,"base_in_words":"INR Four Lakh, Fifty Nine Thousand, Two Hundred And Ninety Eight only.","grand_total":459298,"rounding_adjustment":0,"use_company_roundoff_cost_center":0,"rounded_total":459298,"in_words":"INR Four Lakh, Fifty Nine Thousand, Two Hundred And Ninety Eight only.","total_advance":0,"outstanding_amount":459298,"disable_rounded_total":0,"apply_discount_on":"Grand Total","base_discount_amount":0,"is_cash_or_non_trade_discount":0,"additional_discount_percentage":0,"discount_amount":0,"other_charges_calculation":"<div class=\\"tax-break-up\\" style=\\"overflow-x: auto;\\">\\n\\t<table class=\\"table table-bordered table-hover\\">\\n\\t\\t<thead>\\n\\t\\t\\t<tr>\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t<th class=\\"text-left\\">HSN/SAC</th>\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t<th class=\\"text-right\\">Taxable Amount</th>\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t<th class=\\"text-right\\">Output Tax SGST </th>\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t<th class=\\"text-right\\">Output Tax CGST </th>\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t</tr>\\n\\t\\t</thead>\\n\\t\\t<tbody>\\n\\t\\t\\t\\n\\t\\t\\t\\t<tr>\\n\\t\\t\\t\\t\\t<td>997159</td>\\n\\t\\t\\t\\t\\t<td class=\\"text-right\\">\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t₹ 3,89,236.00\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t</td>\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t<td class=\\"text-right\\">\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t(9.0%)\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t₹ 35,031.24\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t</td>\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t<td class=\\"text-right\\">\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t(9.0%)\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t₹ 35,031.24\\n\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t</td>\\n\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t</tr>\\n\\t\\t\\t\\n\\t\\t</tbody>\\n\\t</table>\\n</div>","total_billing_hours":0,"total_billing_amount":0,"base_paid_amount":0,"paid_amount":0,"base_change_amount":0,"change_amount":0,"allocate_advances_automatically":0,"only_include_allocated_payments":0,"write_off_amount":0,"base_write_off_amount":0,"write_off_outstanding_amount_automatically":0,"redeem_loyalty_points":0,"loyalty_points":0,"loyalty_amount":0,"dont_create_loyalty_points":0,"customer_address":"JIO PAYMENTS BANK LIMITED-Billing","address_display":"3RD FLOOR, MAKER CHAMBERS IV,<br>222NARIMAN POINTMUMBAIMUMBAI400021MH<br>Mumbai<br>\\nMaharashtra<br>400021<br>India<br>\\n","billing_address_gstin":"27AADCJ8257C2ZI","gst_category":"Registered Regular","place_of_supply":"27-Maharashtra","territory":"India","shipping_address_name":"JIO PAYMENTS BANK LIMITED-Billing","shipping_address":"3RD FLOOR, MAKER CHAMBERS IV,<br>222NARIMAN POINTMUMBAIMUMBAI400021MH<br>Mumbai<br>\\nMaharashtra<br>400021<br>India<br>\\n","dispatch_address_name":"Reliance Payment Solutions Limited-Billing Regular for Sales MH","dispatch_address":"5 TTC Industrail Area, Reliance Corporate Park,<br>Thane Belapur Road, Ghansoli<br>Navi Mumbai<br>\\nMaharashtra<br>400701<br>India<br>\\n","company_address":"Reliance Payment Solutions Limited-Billing Regular for Sales MH","company_gstin":"27AADCR7144Q1ZQ","company_address_display":"5 TTC Industrail Area, Reliance Corporate Park,<br>Thane Belapur Road, Ghansoli<br>Navi Mumbai<br>\\nMaharashtra<br>400701<br>India<br>\\n","ignore_default_payment_terms_template":0,"import_supplier":0,"mid":"Fetch for JULY 24","po_no":"Fetch for JULY 24","debit_to":"5301001 - Sundry Debtors-Domestic - RPSL","party_account_currency":"INR","is_opening":"No","against_income_account":"6100013 - Income - Commission - RPSL","irn":"2347a391beb1e7cb291580f78a93250a07f4b559e65636e45f0a3ea82e81e13b","acknowledgement_number":"122423063648078","acknowledgement_date":"2024-09-12 15:53:00","signed_invoice":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjRERTE1NDRBRTY5NUJEQzg0RUM3QkMxMkYyRjU3RjgxM0Y0NEUzMDEiLCJ4NXQiOiJUZUZVU3VhVnZjaE94N3dTOHZWX2dUOUU0d0UiLCJ0eXAiOiJKV1QifQ.eyJkYXRhIjoie1wiQWNrTm9cIjoxMjI0MjMwNjM2NDgwNzgsXCJBY2tEdFwiOlwiMjAyNC0wOS0xMiAxNTo1MzowMFwiLFwiSXJuXCI6XCIyMzQ3YTM5MWJlYjFlN2NiMjkxNTgwZjc4YTkzMjUwYTA3ZjRiNTU5ZTY1NjM2ZTQ1ZjBhM2VhODJlODFlMTNiXCIsXCJWZXJzaW9uXCI6XCIxLjFcIixcIlRyYW5EdGxzXCI6e1wiVGF4U2NoXCI6XCJHU1RcIixcIlN1cFR5cFwiOlwiQjJCXCIsXCJSZWdSZXZcIjpcIk5cIixcIklnc3RPbkludHJhXCI6XCJOXCJ9LFwiRG9jRHRsc1wiOntcIlR5cFwiOlwiSU5WXCIsXCJOb1wiOlwiSlNNSDI0SU5WMDAwMDE4NlwiLFwiRHRcIjpcIjExLzA5LzIwMjRcIn0sXCJTZWxsZXJEdGxzXCI6e1wiR3N0aW5cIjpcIjI3QUFEQ1I3MTQ0UTFaUVwiLFwiTGdsTm1cIjpcIkppbyBQYXltZW50IFNvbHV0aW9ucyBMaW1pdGVkXCIsXCJUcmRObVwiOlwiSmlvIFBheW1lbnQgU29sdXRpb25zIExpbWl0ZWRcIixcIkFkZHIxXCI6XCI1IFRUQyBJbmR1c3RyYWlsIEFyZWEsIFJlbGlhbmNlIENvcnBvcmF0ZSBQYXJrLFwiLFwiQWRkcjJcIjpcIlRoYW5lIEJlbGFwdXIgUm9hZCwgR2hhbnNvbGlcIixcIkxvY1wiOlwiTmF2aSBNdW1iYWlcIixcIlBpblwiOjQwMDcwMSxcIlN0Y2RcIjpcIjI3XCJ9LFwiQnV5ZXJEdGxzXCI6e1wiR3N0aW5cIjpcIjI3QUFEQ0o4MjU3QzJaSVwiLFwiTGdsTm1cIjpcIkpJTyBQQVlNRU5UUyBCQU5LIExJTUlURURcIixcIlRyZE5tXCI6XCJKSU8gUEFZTUVOVFMgQkFOSyBMSU1JVEVEXCIsXCJQb3NcIjpcIjI3XCIsXCJBZGRyMVwiOlwiM1JEIEZMT09SLCBNQUtFUiBDSEFNQkVSUyBJVixcIixcIkFkZHIyXCI6XCIyMjJOQVJJTUFOIFBPSU5UTVVNQkFJTVVNQkFJNDAwMDIxTUhcIixcIkxvY1wiOlwiTXVtYmFpXCIsXCJQaW5cIjo0MDAwMjEsXCJTdGNkXCI6XCIyN1wifSxcIkRpc3BEdGxzXCI6e1wiTm1cIjpcIkppbyBQYXltZW50IFNvbHV0aW9ucyBMaW1pdGVkXCIsXCJBZGRyMVwiOlwiNSBUVEMgSW5kdXN0cmFpbCBBcmVhLCBSZWxpYW5jZSBDb3Jwb3JhdGUgUGFyayxcIixcIkFkZHIyXCI6XCJUaGFuZSBCZWxhcHVyIFJvYWQsIEdoYW5zb2xpXCIsXCJMb2NcIjpcIk5hdmkgTXVtYmFpXCIsXCJQaW5cIjo0MDA3MDEsXCJTdGNkXCI6XCIyN1wifSxcIlNoaXBEdGxzXCI6e1wiR3N0aW5cIjpcIjI3QUFEQ0o4MjU3QzJaSVwiLFwiTGdsTm1cIjpcIkpJTyBQQVlNRU5UUyBCQU5LIExJTUlURURcIixcIkFkZHIxXCI6XCIzUkQgRkxPT1IsIE1BS0VSIENIQU1CRVJTIElWLFwiLFwiQWRkcjJcIjpcIjIyMk5BUklNQU4gUE9JTlRNVU1CQUlNVU1CQUk0MDAwMjFNSFwiLFwiTG9jXCI6XCJNdW1iYWlcIixcIlBpblwiOjQwMDAyMSxcIlN0Y2RcIjpcIjI3XCJ9LFwiSXRlbUxpc3RcIjpbe1wiSXRlbU5vXCI6MCxcIlNsTm9cIjpcIjFcIixcIklzU2VydmNcIjpcIllcIixcIlByZERlc2NcIjpcIlNFUlZJQ0UgRkVFXCIsXCJIc25DZFwiOlwiOTk3MTU5XCIsXCJRdHlcIjoxLjAsXCJVbml0XCI6XCJOT1NcIixcIlVuaXRQcmljZVwiOjM4OTIzNi4wLFwiVG90QW10XCI6Mzg5MjM2LjAwLFwiRGlzY291bnRcIjowLjAwLFwiQXNzQW10XCI6Mzg5MjM2LjAwLFwiR3N0UnRcIjoxOC4wMDAsXCJJZ3N0QW10XCI6MC4wMCxcIkNnc3RBbXRcIjozNTAzMS4wMCxcIlNnc3RBbXRcIjozNTAzMS4wMCxcIkNlc1J0XCI6MC4wMDAsXCJDZXNBbXRcIjowLjAwLFwiQ2VzTm9uQWR2bEFtdFwiOjAuMDAsXCJPdGhDaHJnXCI6MC4wMCxcIlRvdEl0ZW1WYWxcIjo0NTkyOTguMDAsXCJBdHRyaWJEdGxzXCI6W3tcIk5tXCI6XCJTRVJWSUNFIEZFRVwiLFwiVmFsXCI6XCIzODkyMzYuMFwifV19XSxcIlZhbER0bHNcIjp7XCJBc3NWYWxcIjozODkyMzYuMDAsXCJDZ3N0VmFsXCI6MzUwMzEuMDAsXCJTZ3N0VmFsXCI6MzUwMzEuMDAsXCJJZ3N0VmFsXCI6MC4wMCxcIkNlc1ZhbFwiOjAuMDAsXCJTdENlc1ZhbFwiOjAuMDAsXCJEaXNjb3VudFwiOjAuMDAsXCJPdGhDaHJnXCI6MC4wMCxcIlJuZE9mZkFtdFwiOjAuMDAsXCJUb3RJbnZWYWxcIjo0NTkyOTguMDAsXCJUb3RJbnZWYWxGY1wiOjQ1OTI5OC4wMH19IiwiaXNzIjoiTklDIn0.j2DSuKQ2lFsL6_7Hzejk7SsGeoX2J-ylwkRUBV4_nsgjW7L0wwYr0SVsba9BJ33BewULsHYaEQQONiNa7A4Nko5d9_PBAp0ceq4CGYKAaE1gXPiZE6if8We715fYa2jzPgeVmfo4ch7-j84xgJJFfqNT3BBaFeg2ZF98f0lbWOyAWAqsfO8MrzrJU1QyUw8eoFxy8q7T8CSwgBpnnggR-VtKXvDUzj-lkYJuIlum9mHFv_ueFUb09LtrWEF5F_zMMmQNGWwx2kqkEuzTqkTkqpLoY-1D6zf8pOkiKsU38RQOCtALX3gSPGlubb4SvEbPfnNxh-tmYUq6JAWlUl_jPg","signed_qr_code":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjRERTE1NDRBRTY5NUJEQzg0RUM3QkMxMkYyRjU3RjgxM0Y0NEUzMDEiLCJ4NXQiOiJUZUZVU3VhVnZjaE94N3dTOHZWX2dUOUU0d0UiLCJ0eXAiOiJKV1QifQ.eyJkYXRhIjoie1wiU2VsbGVyR3N0aW5cIjpcIjI3QUFEQ1I3MTQ0UTFaUVwiLFwiQnV5ZXJHc3RpblwiOlwiMjdBQURDSjgyNTdDMlpJXCIsXCJEb2NOb1wiOlwiSlNNSDI0SU5WMDAwMDE4NlwiLFwiRG9jVHlwXCI6XCJJTlZcIixcIkRvY0R0XCI6XCIxMS8wOS8yMDI0XCIsXCJUb3RJbnZWYWxcIjo0NTkyOTguMDAsXCJJdGVtQ250XCI6MSxcIk1haW5Ic25Db2RlXCI6XCI5OTcxNTlcIixcIklyblwiOlwiMjM0N2EzOTFiZWIxZTdjYjI5MTU4MGY3OGE5MzI1MGEwN2Y0YjU1OWU2NTYzNmU0NWYwYTNlYTgyZTgxZTEzYlwiLFwiSXJuRHRcIjpcIjIwMjQtMDktMTIgMTU6NTM6MDBcIn0iLCJpc3MiOiJOSUMifQ.lD2sVjtAWpwV7fUbb1QlckMotEMBkium3u2H0-i7u3lBFPeEofl3ZzPYbpawVVdS1I9a4Oqmt9luj3zPYBhO0MWePjxmN_spjLrLwsx2ji7v9LYsZYPD9f1uypV0RtVrmHNsvF-hioRczgn3KZYLj4BrrfrJ-y1dl9P3dt4041f7U-XoCpaKqlJfsmTkHPsjzkUmISRukWiWhUmmzsriXQ9tSRO8g-RZ3wcmCuyRXUtj-WkTtb5LCCKHXWX3A8yKCIJcqC6k1-cj8Y4HscaHQGWbmGdixSkbQ8W_Jlzz0wEhqZ60k0FOXSvN2bF4y4GN99HePDfbVZwiCk2NeUilAg","irn_status":"ACT","irn_cancelled":0,"eway_bill_cancelled":0,"gst_invoice":1,"cdn":0,"custom_export_type":"","amount_eligible_for_commission":389236,"commission_rate":0,"total_commission":0,"group_same_items":0,"invoice_copy":"Original for Recipient","language":"en","status":"Unpaid","einvoice_status":"","customer_group":"Commercial","is_internal_customer":0,"is_discounted":0,"remarks":"Fetch for JULY 24","repost_required":0,"distance":0,"gst_vehicle_type":"Regular","lr_date":"2024-09-12","mode_of_transport":"Road","doctype":"Sales Invoice","taxes":[{"name":"88072034be","creation":"2024-09-12 15:53:22.199120","modified":"2024-09-12 15:53:22.199120","modified_by":"chandresh.limbachiya@jiopay.in","docstatus":1,"idx":1,"charge_type":"On Net Total","account_head":"3805254 - Output Tax SGST - RPSL","description":"Output Tax SGST ","included_in_print_rate":0,"included_in_paid_amount":0,"cost_center":"Main - RPSL","rate":0,"tax_amount":35031,"total":424267,"tax_amount_after_discount_amount":35031,"base_tax_amount":35031,"base_total":424267,"base_tax_amount_after_discount_amount":35031,"item_wise_tax_detail":"{\\"STO-ITEM-2023-01029\\":[9.0,35031.24]}","dont_recompute_tax":0,"parent":"JSMH24INV0000186","parentfield":"taxes","parenttype":"Sales Invoice","doctype":"Sales Taxes and Charges"},{"name":"eb8f4568fa","creation":"2024-09-12 15:53:22.199609","modified":"2024-09-12 15:53:22.199609","modified_by":"chandresh.limbachiya@jiopay.in","docstatus":1,"idx":2,"charge_type":"On Net Total","account_head":"3805253 - Output Tax CGST - RPSL","description":"Output Tax CGST ","included_in_print_rate":0,"included_in_paid_amount":0,"cost_center":"Main - RPSL","rate":0,"tax_amount":35031,"total":459298,"tax_amount_after_discount_amount":35031,"base_tax_amount":35031,"base_total":459298,"base_tax_amount_after_discount_amount":35031,"item_wise_tax_detail":"{\\"STO-ITEM-2023-01029\\":[9.0,35031.24]}","dont_recompute_tax":0,"parent":"JSMH24INV0000186","parentfield":"taxes","parenttype":"Sales Invoice","doctype":"Sales Taxes and Charges"}],"payments":[],"items":[{"name":"4f2720dc25","owner":"chandresh.limbachiya@jiopay.in","creation":"2024-09-12 15:42:25.644639","modified":"2024-09-12 15:53:21.980363","modified_by":"chandresh.limbachiya@jiopay.in","docstatus":1,"idx":1,"has_item_scanned":0,"item_code":"STO-ITEM-2023-01029","item_name":"SERVICE FEE","item_type":"Service","description":"SERVICE FEE","gst_hsn_code":"997159","is_nil_exempt":0,"is_non_gst":0,"item_group":"Service","image":"","qty":1,"stock_uom":"EA","uom":"EA","conversion_factor":1,"stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":389236,"amount":389236,"item_tax_template":"GST 18% - RPSL","base_rate":389236,"base_amount":389236,"stock_uom_rate":389236,"is_free_item":0,"grant_commission":1,"net_rate":389236,"net_amount":389236,"base_net_rate":389236,"base_net_amount":389236,"taxable_value":389236,"delivered_by_supplier":0,"income_account":"6100013 - Income - Commission - RPSL","is_fixed_asset":0,"enable_deferred_revenue":0,"weight_per_unit":0,"total_weight":0,"warehouse":"Stores - RPSL","incoming_rate":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{\\"3805254 - Output Tax SGST - RPSL\\": 9.0, \\"3805253 - Output Tax CGST - RPSL\\": 9.0, \\"3805261 - Output Tax IGST - RPSL\\": 18.0, \\"5610029 - Input Tax SGST - RPSL\\": 9.0, \\"5610028 - Input Tax CGST - RPSL\\": 9.0, \\"5610030 - Input Tax IGST - RPSL\\": 18.0, \\"3247444 - Input Tax SGST RCM - RPSL\\": 9.0, \\"3247443 - Input Tax CGST RCM - RPSL\\": 9.0, \\"3247446 - Input Tax IGST RCM - RPSL\\": 18.0}","actual_batch_qty":0,"actual_qty":0,"delivered_qty":0,"cost_center":"Main - RPSL","state":"Maharashtra","page_break":0,"parent":"JSMH24INV0000186","parentfield":"items","parenttype":"Sales Invoice","doctype":"Sales Invoice Item"}],"pricing_rules":[],"timesheets":[],"packed_items":[],"advances":[],"sales_team":[],"payment_schedule":[{"name":"ac7ed8dcca","owner":"chandresh.limbachiya@jiopay.in","creation":"2024-09-12 15:42:25.644639","modified":"2024-09-12 15:53:21.980363","modified_by":"chandresh.limbachiya@jiopay.in","docstatus":1,"idx":1,"payment_term":"Monthly","description":"Payment within 30 Days post delivery","due_date":"2024-10-11","invoice_portion":100,"discount_type":"Percentage","discount":0,"payment_amount":459298,"outstanding":459298,"paid_amount":0,"discounted_amount":0,"base_payment_amount":459298,"parent":"JSMH24INV0000186","parentfield":"payment_schedule","parenttype":"Sales Invoice","doctype":"Payment Schedule"}],"__onload":{"make_payment_via_journal_entry":0},"__last_sync_on":"2024-09-12T10:45:24.146Z"}', 'print_format': 'Sales Invoice1 (Final)', 'no_letterhead': '0', 'letterhead': 'Self Invoice', 'settings': '{}', '_lang': 'en', 'cmd': 'frappe.www.printview.get_html_and_style'}
+2024-09-13 14:00:31,016 ERROR frappe Error while inserting deferred Route History record: Route History 9c5529330e: 'Route' (query-report/General Ledger?company=JIO Payments Bank Limited&from_date=2024-08-12&to_date=2024-09-12&group_by=Group by Voucher (Consolidated)&include_dimensions=1&include_default_book_entries=1) will get truncated, as max characters allowed is 140
+Site: jio
+Form Dict: {}
+2024-11-19 15:29:47,033 ERROR frappe New Exception collected with id: 2024-11-19 15:29:46.952311-10.200.43.223-63d
+Site: jio
+Form Dict: {'doctype': 'Purchase Order', 'current_filters': '[["Purchase Order","transaction_date","fiscal year","2024-2025"],["Purchase Order","workflow_state","=","Proposal Created, PV & Final Approval"],["Purchase Order","po_type","=","YEXP Proposal"]]', 'field': 'assigned_to', 'cmd': 'frappe.desk.listview.get_group_by_count'}
+2024-11-19 15:50:39,173 ERROR frappe New Exception collected with id: 2024-11-19 15:50:39.171947-10.200.43.223-e58
+Site: jio
+Form Dict: {'name': '1925', 'method': 'retry_sending', 'args': '{"name":1925}', 'cmd': 'run_doc_method'}
+2024-11-19 20:41:08,822 ERROR frappe New Exception collected with id: 2024-11-19 20:41:08.752864-10.200.43.223-f86
+Site: jio
+Form Dict: {'doctype': 'Task', 'cmd': 'frappe.utils.print_format.download_pdf'}
+2024-11-21 10:00:53,656 ERROR frappe Error while inserting deferred Route History record: Route History 7ba3700011: 'Route' (query-report/General Ledger?company=JIO Insurance Broking Limited&from_date=2024-10-19&to_date=2024-11-19&group_by=Group by Voucher (Consolidated)&include_dimensions=1&include_default_book_entries=1) will get truncated, as max characters allowed is 140
+Site: jio
+Form Dict: {}
+2024-11-21 15:19:04,569 ERROR frappe New Exception collected with id: 2024-11-21 15:19:04.478773-10.200.43.223-d7d
+Site: jio
+Form Dict: {'dt': 'Sales Invoice', 'dn': 'JBMH24INV0000582', 'payment_request_type': 'Inward', 'party_type': 'Customer', 'party': '2000115992', 'cmd': 'erpnext.accounts.doctype.payment_request.payment_request.make_payment_request'}
+2024-11-22 12:00:50,416 ERROR frappe Error while inserting deferred Route History record: Route History ece4a9a7d0: 'Route' (query-report/Trial Balance Account Wise Report?company=Jio Finance Limited&fiscal_year=2024-2025&from_date=2024-04-01&to_date=2025-03-31&with_period_closing_entry=1&include_default_book_entries=1) will get truncated, as max characters allowed is 140
+Site: jio
+Form Dict: {}
+2024-11-22 12:00:50,423 ERROR frappe Error while inserting deferred Route History record: Route History 8077cbfcd5: 'Route' (query-report/General Ledger?company=JIO Payments Bank Limited&from_date=2024-10-21&to_date=2024-11-21&group_by=Group by Voucher (Consolidated)&include_dimensions=1&include_default_book_entries=1) will get truncated, as max characters allowed is 140
+Site: jio
+Form Dict: {}
+2024-11-22 12:57:30,592 ERROR frappe Could not take error snapshot: characters_written
+Site: jio
+Form Dict: {'doc': '{"name":"607b13718e","owner":"swati@8848digital.com","creation":"2024-08-23 11:27:07.834133","modified":"2024-08-23 11:27:07.834133","modified_by":"swati@8848digital.com","docstatus":0,"idx":0,"file_name":"Gold logo (1) (1).png","is_private":0,"file_type":"PNG","is_home_folder":0,"is_attachments_folder":0,"file_size":134638,"file_url":"/private/files/Gold logo (1) (1).png","folder":"Home/Attachments","is_folder":0,"attached_to_doctype":"Print Format","attached_to_name":"PO-3","content_hash":"cbd5d79a0864b118468aded57d457531","uploaded_to_dropbox":0,"uploaded_to_google_drive":0,"doctype":"File","__last_sync_on":"2024-11-22T07:27:22.545Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    response = frappe.api.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api.py", line 55, in handle
+    return frappe.handler.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 47, in handle
+    data = execute_cmd(cmd)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1620, in call
+    return fn(*args, **newargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 31, in savedocs
+    doc.save()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in save
+    return self._save(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 344, in _save
+    self.run_before_save_methods()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1051, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 915, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1277, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1259, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 912, in fn
+    return method_object(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/file/file.py", line 95, in validate
+    self.handle_is_private_changed()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/file/file.py", line 215, in handle_is_private_changed
+    frappe.throw(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 540, in throw
+    msgprint(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 508, in msgprint
+    _raise_exception()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 454, in _raise_exception
+    raise raise_exception(msg)
+FileExistsError: A file with same name jio/public/files/Gold logo (1) (1).png already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 60, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 155, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2024-11-22 13:00:56,922 ERROR frappe Could not take error snapshot: characters_written
+Site: jio
+Form Dict: {'doc': '{"name":"e9a9de35d8","owner":"rehan.ansari@cloverinfotech.com","creation":"2024-11-22 12:56:40.477505","modified":"2024-11-22 12:56:40.477505","modified_by":"rehan.ansari@cloverinfotech.com","docstatus":0,"idx":0,"file_name":"Gold logo (1) (1).png","is_private":0,"file_type":"PNG","is_home_folder":0,"is_attachments_folder":0,"file_size":134638,"file_url":"/private/files/Gold logo (1) (1).png","folder":"Home/Attachments","is_folder":0,"attached_to_doctype":"Print Format","attached_to_name":"PO-3","content_hash":"cbd5d79a0864b118468aded57d457531","uploaded_to_dropbox":0,"uploaded_to_google_drive":0,"doctype":"File","__last_sync_on":"2024-11-22T07:30:54.963Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    response = frappe.api.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api.py", line 55, in handle
+    return frappe.handler.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 47, in handle
+    data = execute_cmd(cmd)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1620, in call
+    return fn(*args, **newargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 31, in savedocs
+    doc.save()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in save
+    return self._save(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 344, in _save
+    self.run_before_save_methods()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1051, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 915, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1277, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1259, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 912, in fn
+    return method_object(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/file/file.py", line 95, in validate
+    self.handle_is_private_changed()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/file/file.py", line 215, in handle_is_private_changed
+    frappe.throw(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 540, in throw
+    msgprint(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 508, in msgprint
+    _raise_exception()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 454, in _raise_exception
+    raise raise_exception(msg)
+FileExistsError: A file with same name jio/public/files/Gold logo (1) (1).png already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 60, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 155, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2024-11-22 13:02:15,926 ERROR frappe Could not take error snapshot: characters_written
+Site: jio
+Form Dict: {'doc': '{"name":"e9a9de35d8","owner":"rehan.ansari@cloverinfotech.com","creation":"2024-11-22 12:56:40.477505","modified":"2024-11-22 12:56:40.477505","modified_by":"rehan.ansari@cloverinfotech.com","docstatus":0,"idx":0,"file_name":"Gold logo (1) (1).png","is_private":0,"file_type":"PNG","is_home_folder":0,"is_attachments_folder":0,"file_size":134638,"file_url":"/private/files/Gold logo (1) (1).png","folder":"Home/Attachments","is_folder":0,"attached_to_doctype":"Print Format","attached_to_name":"PO-3","content_hash":"cbd5d79a0864b118468aded57d457531","uploaded_to_dropbox":0,"uploaded_to_google_drive":0,"doctype":"File","__last_sync_on":"2024-11-22T07:32:13.807Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    response = frappe.api.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api.py", line 55, in handle
+    return frappe.handler.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 47, in handle
+    data = execute_cmd(cmd)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1620, in call
+    return fn(*args, **newargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 31, in savedocs
+    doc.save()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in save
+    return self._save(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 344, in _save
+    self.run_before_save_methods()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1051, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 915, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1277, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1259, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 912, in fn
+    return method_object(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/file/file.py", line 95, in validate
+    self.handle_is_private_changed()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/file/file.py", line 215, in handle_is_private_changed
+    frappe.throw(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 540, in throw
+    msgprint(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 508, in msgprint
+    _raise_exception()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 454, in _raise_exception
+    raise raise_exception(msg)
+FileExistsError: A file with same name jio/public/files/Gold logo (1) (1).png already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 60, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 155, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2024-11-22 13:02:46,387 ERROR frappe Could not take error snapshot: characters_written
+Site: jio
+Form Dict: {'doc': '{"name":"e9a9de35d8","owner":"rehan.ansari@cloverinfotech.com","creation":"2024-11-22 12:56:40.477505","modified":"2024-11-22 12:56:40.477505","modified_by":"rehan.ansari@cloverinfotech.com","docstatus":0,"idx":0,"file_name":"Gold logo (1) (1).png","is_private":0,"file_type":"PNG","is_home_folder":0,"is_attachments_folder":0,"file_size":134638,"file_url":"/private/files/Gold logo (1) (1).png","folder":"Home/Attachments","is_folder":0,"attached_to_doctype":"Print Format","attached_to_name":"PO-3","content_hash":"cbd5d79a0864b118468aded57d457531","uploaded_to_dropbox":0,"uploaded_to_google_drive":0,"doctype":"File","__last_sync_on":"2024-11-22T07:32:13.807Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    response = frappe.api.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api.py", line 55, in handle
+    return frappe.handler.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 47, in handle
+    data = execute_cmd(cmd)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1620, in call
+    return fn(*args, **newargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 31, in savedocs
+    doc.save()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in save
+    return self._save(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 344, in _save
+    self.run_before_save_methods()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1051, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 915, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1277, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1259, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 912, in fn
+    return method_object(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/file/file.py", line 95, in validate
+    self.handle_is_private_changed()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/file/file.py", line 215, in handle_is_private_changed
+    frappe.throw(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 540, in throw
+    msgprint(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 508, in msgprint
+    _raise_exception()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 454, in _raise_exception
+    raise raise_exception(msg)
+FileExistsError: A file with same name jio/public/files/Gold logo (1) (1).png already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 60, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 155, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2024-11-22 13:03:23,359 ERROR frappe Could not take error snapshot: characters_written
+Site: jio
+Form Dict: {'doc': '{"name":"e9a9de35d8","owner":"rehan.ansari@cloverinfotech.com","creation":"2024-11-22 12:56:40.477505","modified":"2024-11-22 12:56:40.477505","modified_by":"rehan.ansari@cloverinfotech.com","docstatus":0,"idx":0,"file_name":"Gold logo (1) (1).png","is_private":0,"file_type":"PNG","is_home_folder":0,"is_attachments_folder":0,"file_size":134638,"file_url":"/private/files/Gold logo (1) (1).png","folder":"Home/Attachments","is_folder":0,"attached_to_doctype":"Print Format","attached_to_name":"PO-3","content_hash":"cbd5d79a0864b118468aded57d457531","uploaded_to_dropbox":0,"uploaded_to_google_drive":0,"doctype":"File","__last_sync_on":"2024-11-22T07:33:20.149Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    response = frappe.api.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api.py", line 55, in handle
+    return frappe.handler.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 47, in handle
+    data = execute_cmd(cmd)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1620, in call
+    return fn(*args, **newargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/form/save.py", line 31, in savedocs
+    doc.save()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 309, in save
+    return self._save(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 344, in _save
+    self.run_before_save_methods()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1051, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 915, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1277, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1259, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 912, in fn
+    return method_object(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/file/file.py", line 95, in validate
+    self.handle_is_private_changed()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/file/file.py", line 215, in handle_is_private_changed
+    frappe.throw(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 540, in throw
+    msgprint(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 508, in msgprint
+    _raise_exception()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 454, in _raise_exception
+    raise raise_exception(msg)
+FileExistsError: A file with same name jio/public/files/Gold logo (1) (1).png already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 60, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 155, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2024-11-25 12:31:13,279 ERROR frappe New Exception collected with id: 2024-11-25 12:31:13.213299-10.200.43.223-101
+Site: jio
+Form Dict: {'cmd': 'frappe.desk.form.utils.get_next'}
+2024-11-25 12:35:17,400 ERROR frappe New Exception collected with id: 2024-11-25 12:35:17.333488-10.200.43.223-b61
+Site: jio
+Form Dict: {'cmd': 'frappe.desk.form.utils.get_next'}
+2024-11-25 16:01:01,555 ERROR frappe Error while inserting deferred Route History record: Route History 7f5e88dd6c: 'Route' (query-report/Trial Balance?company=Jio Financial Services Limited&fiscal_year=2024-2025&from_date=2024-04-01&to_date=2024-09-30&with_period_closing_entry=1&include_default_book_entries=1&show_net_values=1) will get truncated, as max characters allowed is 140
+Site: jio
+Form Dict: {}
+2024-11-26 11:00:40,573 ERROR frappe Error while inserting deferred Route History record: Route History c39228132b: 'Route' (query-report/Trial Balance Account Wise Report?company=JIO Insurance Broking Limited&fiscal_year=2024-2025&from_date=2024-04-01&to_date=2024-10-31&with_period_closing_entry=1&include_default_book_entries=1) will get truncated, as max characters allowed is 140
+Site: jio
+Form Dict: {}

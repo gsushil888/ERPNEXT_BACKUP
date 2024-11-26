@@ -1,17 +1,4 @@
-Dear Team,
-
-I hope this message finds you well.
-
-There are {{ len .Alerts.Firing }} server having cpu system usage percentages goes above 80%.
-
-======================
-{{ range .Alerts }}
-Started At: {{ .StartsAt }}
-{{ range $key, $value := .Labels }}{{ if eq $key "host.hostname.keyword" }}Hostname: {{ $value }}
-{{ end }}{{ end }}======================
-{{ end }}
-
-------------Updated----------
+-----------LATEST---------
 Dear Team,
 
 I hope this message finds you well.
@@ -26,5 +13,23 @@ Alert Started At: {{ .StartsAt | date "02-Jan-2006 03:04:05 PM" }}
 Hostname: {{ (index .Labels "host.hostname.keyword") }}
 Cpu system's process utilization(%): {{ printf "%.2f" (index .Values "B") }}%
 ==============================
+{{ end }}
+
+
+---------PAYLOAD----------
+
+
+---------OLD----------
+Dear Team,
+
+I hope this message finds you well.
+
+There are {{ len .Alerts.Firing }} server having cpu system usage percentages goes above 80%.
+
+======================
+{{ range .Alerts }}
+Started At: {{ .StartsAt }}
+{{ range $key, $value := .Labels }}{{ if eq $key "host.hostname.keyword" }}Hostname: {{ $value }}
+{{ end }}{{ end }}======================
 {{ end }}
 

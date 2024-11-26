@@ -1,3 +1,5 @@
+-----------LATEST---------
+
 Dear Team,
 
 I hope this message finds you well.
@@ -21,7 +23,7 @@ URL PROCESSED = {{ $value }}{{ end }}{{ end }}
 
 Best regards.
 
-----------PAYLOAD-----------
+---------PAYLOAD----------
 
 [
   {
@@ -88,11 +90,7 @@ Best regards.
   }
 ]
 
-
-
----------------------------
-
+---------OLD----------
 Application Alert: {{ range .Alerts }}{{ if ne (index .Labels "error.keyword") "N/A" }}URL is not working{{ else if (index .Labels "response_time_status.keyword") }}Time exceeded{{ else if (index .Labels "response_code_status.keyword") }}Response code does not match{{ end }}{{ end }}
-
 
 URL Synthetic

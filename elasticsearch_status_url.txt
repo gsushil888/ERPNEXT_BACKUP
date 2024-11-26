@@ -3,3 +3,4 @@
 
 http://10.100.0.199:9200/_cat/allocation?v&pretty
 
+du -sh /var/lib/elasticsearch

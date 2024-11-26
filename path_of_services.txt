@@ -1,0 +1,2 @@
+sudo nano /etc/systemd/system/filebeat.service
+sudo nano /etc/systemd/system/metricbeat.service

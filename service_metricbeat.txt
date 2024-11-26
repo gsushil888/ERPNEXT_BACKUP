@@ -1,0 +1,15 @@
+[Unit]
+Description=Metricbeat
+Documentation=https://www.elastic.co/beats/metricbeat
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=elkmon
+Group=elkmon
+ExecStart=/elkmon/elk-beats/metricbeat-8.15.1/metricbeat -e -c /elkmon/elk-beats/metricbeat-8.15.1/metricbeat.yml
+Restart=always
+WorkingDirectory=/elkmon/elk-beats/metricbeat-8.15.1/
+
+[Install]
+WantedBy=multi-user.target

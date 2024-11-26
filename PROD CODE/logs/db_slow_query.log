@@ -1,0 +1,43 @@
+# Time: 241125 18:31:02
+# User@Host: _74e0951ded028790[_74e0951ded028790] @  [10.200.41.138]
+# Thread_id: 236273  Schema: _74e0951ded028790  QC_hit: No
+# Query_time: 13.383971  Lock_time: 0.013441  Rows_sent: 0  Rows_examined: 427
+# Rows_affected: 427  Bytes_sent: 13
+use _74e0951ded028790;
+SET timestamp=1732539662;
+DELETE FROM `tabPayment Ledger Entry` WHERE `voucher_type`='Journal Entry' AND `voucher_no`='ACC-JV-2023-00101';
+# Time: 241126 10:50:39
+# User@Host: root[root] @ localhost []
+# Thread_id: 245054  Schema:   QC_hit: No
+# Query_time: 20.000147  Lock_time: 0.000000  Rows_sent: 1  Rows_examined: 0
+# Rows_affected: 0  Bytes_sent: 66
+SET timestamp=1732598439;
+select sleep(20);
+# Time: 241126 10:58:55
+# User@Host: root[root] @ localhost []
+# Thread_id: 245795  Schema:   QC_hit: No
+# Query_time: 25.000138  Lock_time: 0.000000  Rows_sent: 1  Rows_examined: 0
+# Rows_affected: 0  Bytes_sent: 66
+SET timestamp=1732598935;
+select sleep(25);
+# Time: 241126 11:20:02
+# User@Host: root[root] @ localhost []
+# Thread_id: 246731  Schema:   QC_hit: No
+# Query_time: 20.000161  Lock_time: 0.000000  Rows_sent: 1  Rows_examined: 0
+# Rows_affected: 0  Bytes_sent: 66
+SET timestamp=1732600202;
+select sleep(20);
+# Time: 241126 11:24:08
+# User@Host: root[root] @ localhost []
+# Thread_id: 246901  Schema:   QC_hit: No
+# Query_time: 21.000160  Lock_time: 0.000000  Rows_sent: 1  Rows_examined: 0
+# Rows_affected: 0  Bytes_sent: 66
+SET timestamp=1732600448;
+select sleep(21);
+# Time: 241126 12:06:39
+# User@Host: root[root] @ localhost []
+# Thread_id: 249880  Schema:   QC_hit: No
+# Query_time: 22.000164  Lock_time: 0.000000  Rows_sent: 1  Rows_examined: 0
+# Rows_affected: 0  Bytes_sent: 66
+SET timestamp=1732602999;
+select sleep(22);
